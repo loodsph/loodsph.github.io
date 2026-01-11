@@ -25,7 +25,7 @@ Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che l
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.tailwindcss.com"></script>
 
-<div class="not-prose my-8 bg-gray-900 text-gray-100 rounded-xl overflow-hidden shadow-2xl border border-gray-700 font-sans">
+<div id="chart-container-wrapper" class="not-prose my-8 bg-gray-900 text-gray-100 rounded-xl overflow-hidden shadow-2xl border border-gray-700 font-sans">
     
     <div class="p-6 md:p-8">
         <div class="text-center mb-6">
