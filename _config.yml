@@ -1,0 +1,6 @@
+title: The Stack Trace
+description: >-
+  Cardistry experiments and interactive code
+theme: minima
+plugins:
+  - jekyll-seo-tag
