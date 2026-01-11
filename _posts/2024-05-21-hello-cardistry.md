@@ -9,11 +9,13 @@ tags: [immobiliare, inflazione, dataviz, javascript]
 "Il mattone!" --- Insomma.
 
 Non saprei quantificare quante volte ho sentito dare questa risposta con il tono tronfio di chi ha capito tutto. In Italia, la proprietà immobiliare è quasi una religione. Tutti (e dico tutti) affermano con assoluta certezza: **"il mattone è l'unico investimento sicuro"**.
-
+<br>
+<br>
 Non capisco quest'idea per la quale la casa sia una cosa fondamentale, un obiettivo di vita, perché con l'affitto si "regalano soldi". Ci sono mille risorse anche molto divulgative che smontano questo mito (ad esempio **Ben Felix** ha fatto vari [video](https://www.youtube.com/watch?v=lBG-g1CKfgs) e articoli a riguardo). Era una cosa abbastanza vera negli anni '80. Quel mondo non esiste più.
-
+<br>
+<br>
 Allora ho voluto fare i conti con dati ufficiali alla mano e ne ho tirato fuori un tool interattivo.
-
+<div style="height: 40px;"></div>
 ### L'Osservatorio Interattivo
 
 Qui sotto ho integrato lo script che ho scritto.
@@ -226,30 +228,39 @@ Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che l
 
 1.  **La Linea Blu (Valore Nominale):** È il prezzo "da vetrina". È la cifra che scrivi sull'assegno. Se hai comprato casa nel 2010 a 200.000€ e oggi vale 210.000€, la linea blu ti dice che hai guadagnato. Evviva!
 2.  **La Linea Rossa (Valore Reale):** Questa è la linea che conta davvero. È il valore della casa depurato dall'inflazione.
-
+<br>
+<br>
 Vediamo un numero più alto e pensiamo di essere ricchi. Ma se nel frattempo il costo del pane, della benzina e delle bollette è raddoppiato...
-
+<br>
+<br>
 In molte zone d'Italia, il valore reale degli immobili è **crollato di oltre 20-30 punti percentuali** rispetto al 2010. Significa che, in termini di potere d'acquisto, chi ha tenuto i soldi "nel mattone" è diventato più povero, non più ricco.
-
+<br>
+<br>
 ### "Eh, ma Milano..."
-<button onclick="setChartParams('Milano', '2010')" class="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ml-2 transition-all">
+<button onclick="setChartParams('Milano', '2023')" class="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ml-2 transition-all">
     👉 Vedi grafico Milano
 </button>
 Se guardiamo il grafico su Milano, la linea blu schizza verso l'alto. Chi ha comprato ha fatto un affare, giusto? Sì, ma molto meno di quanto sembri. Anche nel mercato più caldo d'Italia, l'inflazione (specialmente quella post-2021) ha "mangiato" una fetta enorme di quel profitto. Il guadagno *reale* è drasticamente inferiore al guadagno *nominale* che si legge sui giornali.
-
+<br>
+<br>
 Senza considerare che un investimento si vede almeno a vent'anni di distanza. Come si fa a prevedere il mercato immobiliare di un posto, anzi di un quartiere, a vent'anni di distanza?
-
+<br>
+<br>
 E se usciamo da Milano e guardiamo a Roma o al Sud? La situazione è drammatica: prezzi nominali fermi o in calo e prezzi reali che sprofondano.
-
+<button onclick="setChartParams('Roma', '2023')" class="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 ml-2 transition-all">
+    📉 Vedi Roma
+</button>
 ---
 
 ### Conclusioni
 
 Non sto dicendo che non si debba comprare casa o che non ci siano situazioni, di portafoglio o di vita, in cui sia economicamente sensato. Avere un tetto sopra la testa è una sicurezza emotiva e una bella comodità, ma non è automaticamente un "grande investimento". Anzi, *imho* non è proprio da considerarsi come un investimento: **è una spesa**.
-
+<br>
+<br>
 La prossima volta che qualcuno vi dice "Ho venduto casa allo stesso prezzo a cui l'ho comprata 10 anni fa, almeno non ci ho perso niente", fategli vedere la linea rossa. In realtà, l'inflazione si è mangiata un quarto dei suoi risparmi senza che se ne accorgesse. Questo senza considerare le tasse e la perdita di valore dell'immobile nel tempo (dopo 30 anni, lo vogliamo rifare questo tetto?).
-
-> *Poi ci sarebbero altre mille considerazioni da fare: l'utilità delle serie storiche per la previsione del futuro, l'idea di legarsi mani e piedi ad un solo asset...*
+<br>
+<br>
+_Poi ci sarebbero altre mille considerazioni da fare: l'utilità delle serie storiche per la previsione del futuro, l'idea di legarsi mani e piedi ad un solo asset..._
 
 #### Fonti
 * **Prezzi delle Abitazioni (IPAB):** Dati ISTAT relativi all'Indice dei prezzi delle abitazioni acquistate dalle famiglie.
