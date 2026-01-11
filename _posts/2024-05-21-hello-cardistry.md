@@ -55,7 +55,7 @@ Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che l
                             <option value="2010">2010 (Standard)</option>
                             <option value="2015">2015</option>
                             <option value="2020">2020 (Post-Covid)</option>
-                            <option value="2023">2023 (Oggi)</option>
+                            <option value="2023" selected>2023</option>
                         </select>
                     </div>
                 </div>
@@ -203,6 +203,24 @@ Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che l
             }
         });
     }
+// --- FUNZIONE PER I BOTTONI NEL TESTO ---
+    window.setChartParams = function(area, year) {
+        const areaSelect = document.getElementById('areaSelect');
+        const yearSelect = document.getElementById('baseYearSelect');
+        
+        // 1. Cambia i valori delle select (se passati)
+        if (area) areaSelect.value = area;
+        if (year) yearSelect.value = year;
+
+        // 2. Simula l'evento "change" per far scattare l'aggiornamento del grafico
+        areaSelect.dispatchEvent(new Event('change'));
+
+        // 3. (Opzionale) Scorre la pagina dolcemente fino al grafico per farlo vedere
+        document.getElementById('chart-container-wrapper').scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+        });
+    };
 </script>
 ### Come leggere i dati
 
@@ -214,7 +232,9 @@ Vediamo un numero più alto e pensiamo di essere ricchi. Ma se nel frattempo il 
 In molte zone d'Italia, il valore reale degli immobili è **crollato di oltre 20-30 punti percentuali** rispetto al 2010. Significa che, in termini di potere d'acquisto, chi ha tenuto i soldi "nel mattone" è diventato più povero, non più ricco.
 
 ### "Eh, ma Milano..."
-
+<button onclick="setChartParams('Milano', '2010')" class="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ml-2 transition-all">
+    👉 Vedi grafico Milano
+</button>
 Se guardiamo il grafico su Milano, la linea blu schizza verso l'alto. Chi ha comprato ha fatto un affare, giusto? Sì, ma molto meno di quanto sembri. Anche nel mercato più caldo d'Italia, l'inflazione (specialmente quella post-2021) ha "mangiato" una fetta enorme di quel profitto. Il guadagno *reale* è drasticamente inferiore al guadagno *nominale* che si legge sui giornali.
 
 Senza considerare che un investimento si vede almeno a vent'anni di distanza. Come si fa a prevedere il mercato immobiliare di un posto, anzi di un quartiere, a vent'anni di distanza?
