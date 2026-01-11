@@ -75,13 +75,20 @@ a {
   border-top: 5px solid $brand-color;
   border-bottom: 1px solid $grey-color-light;
 }
-// SPAZIATURA PARAGRAFI (Stile Substack)
-p {
-  margin-bottom: 1.5rem; // Questo crea lo spazio vuoto SOTTO ogni paragrafo
+
+// SPAZIATURA PARAGRAFI "SUBSTACK STYLE"
+.post-content p {
+  margin-bottom: 2em;       // Molto spazio sotto ogni blocco (circa 2 righe vuote visive)
   margin-top: 0;
+  line-height: 1.8;         // Aumentiamo anche l'aria TRA le righe dello stesso paragrafo
 }
 
-//Distanziamo anche le liste per non averle appiccicate
-ul, ol {
-  margin-bottom: 1.5rem;
+// Spaziatura per le liste (per non averle schiacciate)
+.post-content ul, 
+.post-content ol {
+  margin-bottom: 2em;
+}
+
+.post-content li {
+  margin-bottom: 0.5em;     // Un po' di aria anche tra i punti dell'elenco
 }

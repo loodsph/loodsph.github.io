@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "IL MATTONE! (O perché la tua casa non è un bancomat)"
+title: "IL MATTONE! - la tua casa non è un bancomat"
 date: 2026-01-11 22:00:00 +0100
 categories: [economia, coding]
 tags: [immobiliare, inflazione, dataviz, javascript]
