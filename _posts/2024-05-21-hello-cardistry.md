@@ -126,7 +126,7 @@ Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che l
         areas.forEach(area => {
             const option = document.createElement('option');
             option.value = area; option.text = area;
-            if (area === "Milano") option.selected = true; 
+            if (area === "Italia") option.selected = true; 
             areaSelect.appendChild(option);
         });
 

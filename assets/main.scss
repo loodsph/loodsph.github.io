@@ -1,0 +1,77 @@
+---
+---
+
+// Import the base Minima theme.
+@import "minima";
+
+// Import Google Fonts for the body text.
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,700;1,400&display=swap');
+
+// 1. Color System
+// =============================================================================
+
+$text-color:       #222222; // A softer black for readability.
+$background-color: #ffffff; // Clean white background.
+$brand-color:      #ff5200; // A vibrant orange for links and accents.
+
+// Re-assign Minima's color variables to ensure consistency.
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// 2. Typography
+// =============================================================================
+
+// Set the base font for the entire site.
+body {
+  font-family: 'Spectral', Georgia, serif;
+  font-size: 21px; // Larger base font size for readability.
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $background-color;
+}
+
+// Use a clean, system sans-serif for headings to create a nice contrast.
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+// 3. Layout
+// =============================================================================
+
+// Constrain the main content width and center it for a focused reading experience.
+.wrapper {
+  max-width: 720px;
+  // The following overrides Minima's default padding for wider screens.
+  // On smaller screens, Minima's @media query will add padding back.
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// 4. Links and Accents
+// =============================================================================
+
+// Style links with the brand color and a simple underline on hover.
+a {
+  color: $brand-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Ensure post content links also use the brand color.
+.post-content a {
+  color: $brand-color;
+}
+
+// 5. Header and Footer
+// =============================================================================
+
+// Add a brand-colored top border to the header for a touch of personality.
+.site-header {
+  border-top: 5px solid $brand-color;
+  border-bottom: 1px solid $grey-color-light;
+}
