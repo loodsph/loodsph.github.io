@@ -7,8 +7,7 @@ tags: [immobiliare, inflazione, dataviz, javascript]
 ---
 
 "Il mattone!" --- Insomma, parliamone.
-<br>
-<br>
+
 Non saprei quantificare quante volte ho sentito dare questa risposta con il tono tronfio di chi ha capito tutto. In Italia, la proprietà immobiliare è quasi una religione. Tutti (e dico tutti) affermano con assoluta certezza: **"il mattone è l'unico investimento sicuro"**.
 <br>
 <br>

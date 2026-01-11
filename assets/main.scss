@@ -75,3 +75,13 @@ a {
   border-top: 5px solid $brand-color;
   border-bottom: 1px solid $grey-color-light;
 }
+// SPAZIATURA PARAGRAFI (Stile Substack)
+p {
+  margin-bottom: 1.5rem; // Questo crea lo spazio vuoto SOTTO ogni paragrafo
+  margin-top: 0;
+}
+
+//Distanziamo anche le liste per non averle appiccicate
+ul, ol {
+  margin-bottom: 1.5rem;
+}
