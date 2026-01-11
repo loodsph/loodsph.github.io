@@ -6,8 +6,9 @@ categories: [economia, coding]
 tags: [immobiliare, inflazione, dataviz, javascript]
 ---
 
-"Il mattone!" --- Insomma.
-
+"Il mattone!" --- Insomma, parliamone.
+<br>
+<br>
 Non saprei quantificare quante volte ho sentito dare questa risposta con il tono tronfio di chi ha capito tutto. In Italia, la proprietà immobiliare è quasi una religione. Tutti (e dico tutti) affermano con assoluta certezza: **"il mattone è l'unico investimento sicuro"**.
 <br>
 <br>
@@ -240,6 +241,7 @@ In molte zone d'Italia, il valore reale degli immobili è **crollato di oltre 20
 <button onclick="setChartParams('Milano', '2023')" class="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ml-2 transition-all">
     👉 Vedi grafico Milano
 </button>
+<br>
 Se guardiamo il grafico su Milano, la linea blu schizza verso l'alto. Chi ha comprato ha fatto un affare, giusto? Sì, ma molto meno di quanto sembri. Anche nel mercato più caldo d'Italia, l'inflazione (specialmente quella post-2021) ha "mangiato" una fetta enorme di quel profitto. Il guadagno *reale* è drasticamente inferiore al guadagno *nominale* che si legge sui giornali.
 <br>
 <br>
@@ -250,6 +252,8 @@ E se usciamo da Milano e guardiamo a Roma o al Sud? La situazione è drammatica:
 <button onclick="setChartParams('Roma', '2023')" class="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 ml-2 transition-all">
     📉 Vedi Roma
 </button>
+<br>
+<br>
 ---
 
 ### Conclusioni
