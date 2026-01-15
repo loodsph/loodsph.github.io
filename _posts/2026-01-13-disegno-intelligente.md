@@ -74,7 +74,7 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
     
     const width = 200;
     const height = 200;
-    const stepsPerFrame = 8; // Velocità simulazione (come nell'originale)
+    const stepsPerFrame = 20; // Velocità simulazione (come nell'originale React)
 
     // Palette "Inferno" (Copiata esattamente dal codice React)
     const infernoColors = [
@@ -86,8 +86,8 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
     let f = 0.055;
     let k = 0.062;
     let Da = 1.0;
-    let Db = 0.3; // Nota: nel codice react era 0.3, nel mio precedente avevo messo 0.5. Corretto.
-    let dt = 0.2; // Nota: nel codice react era 0.2. Corretto.
+    let Db = 0.3;
+    let dt = 0.2;
     
     let isPlaying = false;
     let animationId;
@@ -126,6 +126,7 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
             const cx = Math.floor(width / 2);
             const cy = Math.floor(height / 2);
             const r = 20;
+            
             for (let y = cy - r; y < cy + r; y++) {
                 for (let x = cx - r; x < cx + r; x++) {
                     if (x >= 0 && x < width && y >= 0 && y < height) {
@@ -135,7 +136,7 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
                     }
                 }
             }
-            // Rumore casuale (importante per rompere la simmetria)
+            
             for (let i = 0; i < width * height; i++) {
                 V[i] += Math.random() * 0.05;
             }
