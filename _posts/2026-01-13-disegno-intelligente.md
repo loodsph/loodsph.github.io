@@ -18,184 +18,249 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
 <script src="https://cdn.tailwindcss.com"></script>
 
 <div id="gs-wrapper" class="not-prose my-10 bg-gray-900 text-gray-200 rounded-xl shadow-2xl overflow-hidden font-sans border border-gray-700">
+    
     <div class="p-4 bg-gray-800 border-b border-gray-700 flex justify-between items-center flex-wrap gap-4">
         <div>
             <h3 class="font-bold text-white text-lg m-0 p-0">Gray-Scott Lab</h3>
-            <p class="text-xs text-gray-400 m-0 p-0">Reazione-Diffusione in tempo reale</p>
+            <p class="text-xs text-gray-400 m-0 p-0">Simulazione Identica all'originale</p>
         </div>
         <div class="flex gap-2">
-             <button id="btn-play" class="bg-green-600 hover:bg-green-500 text-white px-4 py-1 rounded text-sm font-bold transition">▶ Play</button>
-             <button id="btn-reset" class="bg-red-600 hover:bg-red-500 text-white px-4 py-1 rounded text-sm font-bold transition">Reset</button>
+             <button id="gs-btn-play" class="bg-green-600 hover:bg-green-500 text-white px-4 py-1 rounded text-sm font-bold transition">▶ Play</button>
+             <button id="gs-btn-reset" class="bg-red-600 hover:bg-red-500 text-white px-4 py-1 rounded text-sm font-bold transition">Reset</button>
         </div>
     </div>
+
     <div class="flex flex-col md:flex-row">
-        <div class="flex-1 p-4 bg-black flex justify-center items-center relative">
-            <canvas id="gs-canvas" width="200" height="200" class="border border-gray-800 rounded shadow-lg cursor-crosshair touch-none w-full max-w-[400px] h-auto" style="image-rendering: pixelated;"></canvas>
-            <div id="loading-msg" class="absolute text-gray-500 text-xs">Caricamento...</div>
+        <div class="flex-1 p-4 bg-black flex justify-center items-center">
+            <canvas id="gs-canvas" width="200" height="200" class="border border-gray-800 rounded shadow-lg cursor-crosshair touch-none w-full max-w-[400px] aspect-square" style="image-rendering: pixelated;"></canvas>
         </div>
+
         <div class="w-full md:w-64 bg-gray-800 p-4 border-l border-gray-700 flex flex-col gap-4">
+            
             <div>
                 <label class="block text-xs uppercase text-gray-500 font-bold mb-2">Preset</label>
                 <div class="grid grid-cols-2 gap-2">
                     <button onclick="window.setGSPreset('mitosis')" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition">Mitosi</button>
                     <button onclick="window.setGSPreset('coral')" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition">Corallo</button>
+                    <button onclick="window.setGSPreset('fingerprint')" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition">Impronte</button>
+                    <button onclick="window.setGSPreset('waves')" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition">Onde</button>
                     <button onclick="window.setGSPreset('maze')" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition">Labirinto</button>
                     <button onclick="window.setGSPreset('holes')" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition">Buchi</button>
                 </div>
             </div>
+
             <div class="bg-gray-900 p-3 rounded border border-gray-700">
-                <p class="text-xs text-gray-400 font-mono">Feed (f): <span id="val-f" class="text-blue-400">0.055</span></p>
-                <p class="text-xs text-gray-400 font-mono">Kill (k): <span id="val-k" class="text-red-400">0.062</span></p>
+                <p class="text-xs text-gray-400 font-mono">F: <span id="gs-val-f" class="text-blue-400">0.055</span></p>
+                <p class="text-xs text-gray-400 font-mono">K: <span id="gs-val-k" class="text-red-400">0.062</span></p>
             </div>
-            <p class="text-xs text-gray-500 italic mt-auto">Clicca sul canvas per interagire.</p>
+            
+             <div class="bg-gray-800 p-3 rounded">
+                <p class="text-xs font-semibold mb-2 text-gray-400">Legenda Colori:</p>
+                <div class="h-4 rounded w-full" style="background: linear-gradient(to right, #000004, #280b54, #65156e, #9f2a63, #d44842, #f57d15, #fac127, #fcffa4);"></div>
+            </div>
+
+            <p class="text-xs text-gray-500 italic mt-auto">Clicca per perturbare.</p>
         </div>
     </div>
 </div>
 
 {% raw %}
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Verifichiamo che il canvas esista
+(function() {
+    // --- 1. CONFIGURAZIONE & VARIABILI ---
     const canvas = document.getElementById('gs-canvas');
-    if (!canvas) { console.error("Canvas Gray-Scott non trovato!"); return; }
-
+    if (!canvas) return;
     const ctx = canvas.getContext('2d', { alpha: false });
-    const loadingMsg = document.getElementById('loading-msg');
     
-    // Configurazione
-    const w = 200;
-    const h = 200;
+    const width = 200;
+    const height = 200;
+    const stepsPerFrame = 8; // Velocità simulazione (come nell'originale)
+
+    // Palette "Inferno" (Copiata esattamente dal codice React)
+    const infernoColors = [
+      [0, 0, 4], [40, 11, 84], [101, 21, 110], [159, 42, 99],
+      [212, 72, 66], [245, 125, 21], [250, 193, 39], [252, 255, 164]
+    ];
+
+    // Stato Simulazione
+    let f = 0.055;
+    let k = 0.062;
+    let Da = 1.0;
+    let Db = 0.3; // Nota: nel codice react era 0.3, nel mio precedente avevo messo 0.5. Corretto.
+    let dt = 0.2; // Nota: nel codice react era 0.2. Corretto.
     
-    let u = new Float32Array(w * h);
-    let v = new Float32Array(w * h);
-    let nextU = new Float32Array(w * h);
-    let nextV = new Float32Array(w * h);
-    
-    let params = { f: 0.055, k: 0.062, da: 1.0, db: 0.5, dt: 1.0 };
     let isPlaying = false;
     let animationId;
 
-    function init() {
-        for(let i=0; i<w*h; i++) {
-            u[i] = 1.0;
-            v[i] = 0.0;
-        }
-        perturb(w/2, h/2, 10);
-        draw();
-        if(loadingMsg) loadingMsg.style.display = 'none';
+    // Buffer (Typed Arrays per performance, identici a React)
+    let U = new Float32Array(width * height);
+    let V = new Float32Array(width * height);
+    let nextU = new Float32Array(width * height);
+    let nextV = new Float32Array(width * height);
+
+    // --- 2. FUNZIONI UTILI (Copia esatta React) ---
+    
+    function interpolateColor(t) {
+      t = Math.max(0, Math.min(1, t));
+      const idx = t * (infernoColors.length - 1);
+      const i = Math.floor(idx);
+      const frac = idx - i;
+      if (i >= infernoColors.length - 1) return infernoColors[infernoColors.length - 1];
+      const c1 = infernoColors[i];
+      const c2 = infernoColors[i + 1];
+      return [
+        Math.round(c1[0] + frac * (c2[0] - c1[0])),
+        Math.round(c1[1] + frac * (c2[1] - c1[1])),
+        Math.round(c1[2] + frac * (c2[2] - c1[2]))
+      ];
     }
 
-    function perturb(cx, cy, r) {
-        const r2 = r*r;
-        const startY = Math.max(0, cy - r);
-        const endY = Math.min(h, cy + r);
-        const startX = Math.max(0, cx - r);
-        const endX = Math.min(w, cx + r);
+    // --- 3. CORE SIMULATION ---
 
-        for(let y=startY; y<endY; y++) {
-            for(let x=startX; x<endX; x++) {
-                if( (x-cx)*(x-cx) + (y-cy)*(y-cy) < r2 ) {
-                    let i = y*w + x;
-                    u[i] = 0.5;
-                    v[i] = 0.25;
+    function reset(withPerturbation = true) {
+        for (let i = 0; i < width * height; i++) {
+            U[i] = 1.0;
+            V[i] = 0.0;
+        }
+        if (withPerturbation) {
+            const cx = Math.floor(width / 2);
+            const cy = Math.floor(height / 2);
+            const r = 20;
+            for (let y = cy - r; y < cy + r; y++) {
+                for (let x = cx - r; x < cx + r; x++) {
+                    if (x >= 0 && x < width && y >= 0 && y < height) {
+                        const idx = y * width + x;
+                        U[idx] = 0.5;
+                        V[idx] = 0.25;
+                    }
+                }
+            }
+            // Rumore casuale (importante per rompere la simmetria)
+            for (let i = 0; i < width * height; i++) {
+                V[i] += Math.random() * 0.05;
+            }
+        }
+        nextU.set(U);
+        nextV.set(V);
+        draw();
+    }
+
+    function addPerturbation(x, y, radius = 5) {
+        for (let dy = -radius; dy <= radius; dy++) {
+            for (let dx = -radius; dx <= radius; dx++) {
+                const px = x + dx;
+                const py = y + dy;
+                if (px >= 0 && px < width && py >= 0 && py < height) {
+                    if (dx * dx + dy * dy <= radius * radius) {
+                        const idx = py * width + px;
+                        U[idx] = 0.5;
+                        V[idx] = 0.25;
+                    }
                 }
             }
         }
     }
 
     function step() {
-        for(let y=1; y<h-1; y++) {
-            for(let x=1; x<w-1; x++) {
-                const i = y*w + x;
-                const lapU = (u[i-1] + u[i+1] + u[i-w] + u[i+w] - 4*u[i]);
-                const lapV = (v[i-1] + v[i+1] + v[i-w] + v[i+w] - 4*v[i]);
-                const uvv = u[i] * v[i] * v[i];
-                let du = params.da * lapU - uvv + params.f * (1 - u[i]);
-                let dv = params.db * lapV + uvv - (params.k + params.f) * v[i];
-                nextU[i] = u[i] + du * params.dt;
-                nextV[i] = v[i] + dv * params.dt;
-                if(nextU[i] < 0) nextU[i] = 0; else if(nextU[i] > 1) nextU[i] = 1;
-                if(nextV[i] < 0) nextV[i] = 0; else if(nextV[i] > 1) nextV[i] = 1;
+        // Implementazione esatta del loop React
+        for (let y = 1; y < height - 1; y++) {
+            for (let x = 1; x < width - 1; x++) {
+                const idx = y * width + x;
+                const idxUp = (y - 1) * width + x;
+                const idxDown = (y + 1) * width + x;
+                const idxLeft = y * width + (x - 1);
+                const idxRight = y * width + (x + 1);
+
+                const lapU = U[idxUp] + U[idxDown] + U[idxLeft] + U[idxRight] - 4 * U[idx];
+                const lapV = V[idxUp] + V[idxDown] + V[idxLeft] + V[idxRight] - 4 * V[idx];
+                
+                const uvv = U[idx] * V[idx] * V[idx];
+                
+                const dU = Da * lapU - uvv + f * (1 - U[idx]);
+                const dV = Db * lapV + uvv - (k + f) * V[idx];
+
+                nextU[idx] = U[idx] + dU * dt;
+                nextV[idx] = V[idx] + dV * dt;
+
+                // Clamp
+                if (nextU[idx] < 0) nextU[idx] = 0; else if (nextU[idx] > 1) nextU[idx] = 1;
+                if (nextV[idx] < 0) nextV[idx] = 0; else if (nextV[idx] > 1) nextV[idx] = 1;
             }
         }
-        let temp = u; u = nextU; nextU = temp;
-        temp = v; v = nextV; nextV = temp;
+        // Swap
+        let tempU = U; U = nextU; nextU = tempU;
+        let tempV = V; V = nextV; nextV = tempV;
     }
 
-    const imgData = ctx.createImageData(w, h);
-    const buf32 = new Uint32Array(imgData.data.buffer);
-
+    // --- 4. RENDERING (Canvas API Standard) ---
+    // Usiamo putImageData classico per essere fedeli ai colori, non la hack buffer 32bit
+    
     function draw() {
-        for(let i=0; i<w*h; i++) {
-            const val = v[i];
-            const t = Math.min(1, val * 3.5); 
-            const r = Math.min(255, t * 255 * 2); 
-            const g = Math.min(255, t * 255 * 0.8);
-            const b = Math.min(255, t * 255 * 0.2 + (val > 0.4 ? (val-0.4)*200 : 0));
-            buf32[i] = (255 << 24) | (b << 16) | (g << 8) | r;
+        const imageData = ctx.createImageData(width, height);
+        const data = imageData.data;
+        
+        for (let i = 0; i < width * height; i++) {
+            const vVal = V[i];
+            // Usa esattamente la funzione colore originale
+            const color = interpolateColor(vVal * 2.5); 
+            
+            data[i * 4] = color[0];     // R
+            data[i * 4 + 1] = color[1]; // G
+            data[i * 4 + 2] = color[2]; // B
+            data[i * 4 + 3] = 255;      // A
         }
-        ctx.putImageData(imgData, 0, 0);
+        
+        // Disegna su un canvas temporaneo e poi scala (o disegna diretto)
+        // Disegno diretto per semplicità e pixel-perfect look
+        ctx.putImageData(imageData, 0, 0);
     }
 
     function loop() {
-        if(!isPlaying) return;
-        for(let k=0; k<12; k++) step(); 
+        if (!isPlaying) return;
+        // Esegui N step matematici per ogni frame video
+        for (let i = 0; i < stepsPerFrame; i++) {
+            step();
+        }
         draw();
         animationId = requestAnimationFrame(loop);
     }
 
-    const btnPlay = document.getElementById('btn-play');
-    if(btnPlay) {
-        btnPlay.onclick = () => {
-            isPlaying = !isPlaying;
-            btnPlay.innerText = isPlaying ? "⏸ Pausa" : "▶ Play";
-            btnPlay.classList.toggle('bg-green-600');
-            btnPlay.classList.toggle('bg-yellow-600');
-            if(isPlaying) loop();
-        };
-    }
+    // --- 5. INTERAZIONE UI ---
 
-    const btnReset = document.getElementById('btn-reset');
-    if(btnReset) {
-        btnReset.onclick = () => {
-            isPlaying = false;
-            btnPlay.innerText = "▶ Play";
-            btnPlay.classList.remove('bg-yellow-600');
-            btnPlay.classList.add('bg-green-600');
-            init();
-        };
-    }
-
-    window.setGSPreset = function(name) {
-        if(name === 'mitosis') { params.f = 0.055; params.k = 0.062; }
-        if(name === 'coral')   { params.f = 0.0545; params.k = 0.062; }
-        if(name === 'maze')    { params.f = 0.029; params.k = 0.057; }
-        if(name === 'holes')   { params.f = 0.039; params.k = 0.058; }
-        
-        const elF = document.getElementById('val-f');
-        const elK = document.getElementById('val-k');
-        if(elF) elF.innerText = params.f.toFixed(3);
-        if(elK) elK.innerText = params.k.toFixed(3);
-        
-        init(); // Resetta la griglia
-        // Piccolo trucco: facciamo avanzare un po' la simulazione per mostrare subito il pattern
-        for(let i=0; i<50; i++) step(); 
-        draw();
-        
-        // Auto start
-        if(!isPlaying && btnPlay) btnPlay.click();
+    const btnPlay = document.getElementById('gs-btn-play');
+    const btnReset = document.getElementById('gs-btn-reset');
+    
+    btnPlay.onclick = () => {
+        isPlaying = !isPlaying;
+        btnPlay.innerText = isPlaying ? "⏸ Pausa" : "▶ Play";
+        btnPlay.classList.toggle('bg-green-600');
+        btnPlay.classList.toggle('bg-yellow-600');
+        if (isPlaying) loop();
     };
 
+    btnReset.onclick = () => {
+        isPlaying = false;
+        btnPlay.innerText = "▶ Play";
+        btnPlay.classList.remove('bg-yellow-600');
+        btnPlay.classList.add('bg-green-600');
+        reset(true);
+    };
+
+    // Gestione Mouse/Touch sul Canvas
     function handleInput(e) {
         const rect = canvas.getBoundingClientRect();
-        const scaleX = w / rect.width;
-        const scaleY = h / rect.height;
+        // Fattore di scala tra CSS pixel e Canvas pixel interni (200x200)
+        const scaleX = width / rect.width;
+        const scaleY = height / rect.height;
+        
         let clientX = e.touches ? e.touches[0].clientX : e.clientX;
         let clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
         const x = Math.floor((clientX - rect.left) * scaleX);
         const y = Math.floor((clientY - rect.top) * scaleY);
-        perturb(x, y, 8);
-        if(!isPlaying) draw();
+        
+        addPerturbation(x, y, 8);
+        draw(); // Ridisegna subito per feedback visivo
     }
 
     let isDrawing = false;
@@ -205,8 +270,29 @@ document.addEventListener("DOMContentLoaded", function() {
     canvas.addEventListener('touchstart', (e) => { e.preventDefault(); isDrawing = true; handleInput(e); }, {passive: false});
     canvas.addEventListener('touchmove', (e) => { e.preventDefault(); if(isDrawing) handleInput(e); }, {passive: false});
 
-    init();
-});
+    // --- 6. PRESETS ---
+    window.setGSPreset = function(name) {
+        // Valori presi dal codice React originale
+        if (name === 'mitosis')     { f = 0.055; k = 0.062; }
+        if (name === 'coral')       { f = 0.062; k = 0.063; } // Era diverso nel mio codice precedente
+        if (name === 'fingerprint') { f = 0.037; k = 0.06; }
+        if (name === 'spots')       { f = 0.03;  k = 0.062; }
+        if (name === 'waves')       { f = 0.014; k = 0.054; }
+        if (name === 'maze')        { f = 0.029; k = 0.057; }
+        if (name === 'holes')       { f = 0.039; k = 0.058; }
+
+        document.getElementById('gs-val-f').innerText = f.toFixed(3);
+        document.getElementById('gs-val-k').innerText = k.toFixed(3);
+
+        reset(true);
+        // Start automatico
+        if (!isPlaying) btnPlay.click();
+    };
+
+    // Avvio Iniziale
+    reset(true);
+
+})();
 </script>
 {% endraw %}
 
