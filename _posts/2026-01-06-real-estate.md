@@ -1,21 +1,19 @@
 ---
 layout: post
-title: "IL MATTONE! - la tua casa non è un bancomat"
+title: "L'unico investimento sicuro (?)"
 date: 2026-01-11 22:00:00 +0100
 categories: [economia, coding]
 tags: [immobiliare, inflazione, dataviz, javascript]
 ---
 
-"Il mattone!" --- Insomma, parliamone.
-
-Non saprei quantificare quante volte ho sentito dare questa risposta con il tono tronfio di chi ha capito tutto. In Italia, la proprietà immobiliare è quasi una religione. Tutti (e dico tutti) affermano con assoluta certezza: **"il mattone è l'unico investimento sicuro"**.
+Non saprei quantificare quante volte ho sentito dare questa frase con il tono tronfio di chi ha capito tutto: _"il mattone è l'unico investimento sicuro"_. In Italia, la proprietà immobiliare è quasi una religione.
 <br>
 <br>
 Non capisco quest'idea per la quale la casa sia una cosa fondamentale, un obiettivo di vita, perché con l'affitto si "regalano soldi". Ci sono mille risorse anche molto divulgative che smontano questo mito (ad esempio **Ben Felix** ha fatto vari [video](https://www.youtube.com/watch?v=lBG-g1CKfgs) e articoli a riguardo). Era una cosa abbastanza vera negli anni '80. Quel mondo non esiste più.
 <br>
 <br>
 Allora ho voluto fare i conti con dati ufficiali alla mano e ne ho tirato fuori un tool interattivo.
-<div style="height: 40px;"></div>
+
 ### L'Osservatorio Interattivo
 
 Qui sotto ho integrato lo script che ho scritto.
