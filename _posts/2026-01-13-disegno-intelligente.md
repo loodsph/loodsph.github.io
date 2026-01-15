@@ -87,308 +87,316 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
 {% raw %}
 <script>
 (function() {
-    // --- CONFIGURAZIONE ---
-    const canvas = document.getElementById('gs-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d'); // Alpha true default
+    function initGrayScott() {
+        const canvas = document.getElementById('gs-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
     
-    const width = 200;
-    const height = 200;
-    const scale = 3; // Canvas is 600x600
+        const width = 200;
+        const height = 200;
+        const scale = 3;
     
-    // Stato
-    let stepsPerFrame = 20;
-    let f = 0.055;
-    let k = 0.062;
-    let Da = 1.0;
-    let Db = 0.3;
-    let dt = 0.2;
-    let iteration = 0;
-    let isPlaying = false;
-    let animationId;
-    let currentPreset = 'mitosis';
+        // Stato
+        let stepsPerFrame = 20;
+        let f = 0.055;
+        let k = 0.062;
+        let Da = 1.0;
+        let Db = 0.3;
+        let dt = 0.2;
+        let iteration = 0;
+        let isPlaying = false;
+        let animationId;
+        let currentPreset = 'mitosis';
 
-    // Buffer
-    let U = new Float32Array(width * height);
-    let V = new Float32Array(width * height);
-    let nextU = new Float32Array(width * height);
-    let nextV = new Float32Array(width * height);
+        // Buffer
+        let U = new Float32Array(width * height);
+        let V = new Float32Array(width * height);
+        let nextU = new Float32Array(width * height);
+        let nextV = new Float32Array(width * height);
 
-    // Palette
-    const infernoColors = [
-      [0, 0, 4], [40, 11, 84], [101, 21, 110], [159, 42, 99],
-      [212, 72, 66], [245, 125, 21], [250, 193, 39], [252, 255, 164]
-    ];
+        // Palette
+        const infernoColors = [
+          [0, 0, 4], [40, 11, 84], [101, 21, 110], [159, 42, 99],
+          [212, 72, 66], [245, 125, 21], [250, 193, 39], [252, 255, 164]
+        ];
 
-    const presets = {
-        mitosis: { f: 0.055, k: 0.062, name: 'Mitosi' },
-        coral: { f: 0.062, k: 0.063, name: 'Corallo' },
-        fingerprint: { f: 0.037, k: 0.06, name: 'Impronte' },
-        spots: { f: 0.03, k: 0.062, name: 'Macchie' },
-        waves: { f: 0.014, k: 0.054, name: 'Onde' },
-        maze: { f: 0.029, k: 0.057, name: 'Labirinto' },
-    };
+        const presets = {
+            mitosis: { f: 0.055, k: 0.062, name: 'Mitosi' },
+            coral: { f: 0.062, k: 0.063, name: 'Corallo' },
+            fingerprint: { f: 0.037, k: 0.06, name: 'Impronte' },
+            spots: { f: 0.03, k: 0.062, name: 'Macchie' },
+            waves: { f: 0.014, k: 0.054, name: 'Onde' },
+            maze: { f: 0.029, k: 0.057, name: 'Labirinto' },
+        };
 
-    // --- CORE ---
-    function interpolateColor(t) {
-      t = Math.max(0, Math.min(1, t));
-      const idx = t * (infernoColors.length - 1);
-      const i = Math.floor(idx);
-      const frac = idx - i;
-      if (i >= infernoColors.length - 1) return infernoColors[infernoColors.length - 1];
-      const c1 = infernoColors[i];
-      const c2 = infernoColors[i + 1];
-      return [
-        Math.round(c1[0] + frac * (c2[0] - c1[0])),
-        Math.round(c1[1] + frac * (c2[1] - c1[1])),
-        Math.round(c1[2] + frac * (c2[2] - c1[2]))
-      ];
-    }
-
-    function reset(withPerturbation) {
-        for (let i = 0; i < width * height; i++) {
-            U[i] = 1.0;
-            V[i] = 0.0;
+        // --- CORE ---
+        function interpolateColor(t) {
+          t = Math.max(0, Math.min(1, t));
+          const idx = t * (infernoColors.length - 1);
+          const i = Math.floor(idx);
+          const frac = idx - i;
+          if (i >= infernoColors.length - 1) return infernoColors[infernoColors.length - 1];
+          const c1 = infernoColors[i];
+          const c2 = infernoColors[i + 1];
+          return [
+            Math.round(c1[0] + frac * (c2[0] - c1[0])),
+            Math.round(c1[1] + frac * (c2[1] - c1[1])),
+            Math.round(c1[2] + frac * (c2[2] - c1[2]))
+          ];
         }
-        if (withPerturbation) {
-            const cx = Math.floor(width / 2);
-            const cy = Math.floor(height / 2);
-            const r = 20;
-            for (let y = cy - r; y < cy + r; y++) {
-                for (let x = cx - r; x < cx + r; x++) {
-                    if (x >= 0 && x < width && y >= 0 && y < height) {
-                        const idx = y * width + x;
-                        U[idx] = 0.5;
-                        V[idx] = 0.25;
-                    }
-                }
-            }
+
+        function reset(withPerturbation) {
             for (let i = 0; i < width * height; i++) {
-                V[i] += Math.random() * 0.05;
+                U[i] = 1.0;
+                V[i] = 0.0;
             }
+            if (withPerturbation) {
+                const cx = Math.floor(width / 2);
+                const cy = Math.floor(height / 2);
+                const r = 20;
+                for (let y = cy - r; y < cy + r; y++) {
+                    for (let x = cx - r; x < cx + r; x++) {
+                        if (x >= 0 && x < width && y >= 0 && y < height) {
+                            const idx = y * width + x;
+                            U[idx] = 0.5;
+                            V[idx] = 0.25;
+                        }
+                    }
+                }
+                for (let i = 0; i < width * height; i++) {
+                    V[i] += Math.random() * 0.05;
+                }
+            }
+            nextU.set(U);
+            nextV.set(V);
+            iteration = 0;
+            updateUI();
+            draw();
         }
-        nextU.set(U);
-        nextV.set(V);
-        iteration = 0;
-        updateUI();
-        draw();
-    }
 
-    function addPerturbation(x, y, radius = 5) {
-        for (let dy = -radius; dy <= radius; dy++) {
-            for (let dx = -radius; dx <= radius; dx++) {
-                const px = x + dx;
-                const py = y + dy;
-                if (px >= 0 && px < width && py >= 0 && py < height) {
-                    if (dx * dx + dy * dy <= radius * radius) {
-                        const idx = py * width + px;
-                        U[idx] = 0.5;
-                        V[idx] = 0.25;
+        function addPerturbation(x, y, radius = 5) {
+            for (let dy = -radius; dy <= radius; dy++) {
+                for (let dx = -radius; dx <= radius; dx++) {
+                    const px = x + dx;
+                    const py = y + dy;
+                    if (px >= 0 && px < width && py >= 0 && py < height) {
+                        if (dx * dx + dy * dy <= radius * radius) {
+                            const idx = py * width + px;
+                            U[idx] = 0.5;
+                            V[idx] = 0.25;
+                        }
                     }
                 }
             }
         }
-    }
 
-    function step() {
-        for (let y = 1; y < height - 1; y++) {
-            for (let x = 1; x < width - 1; x++) {
-                const idx = y * width + x;
-                const idxUp = (y - 1) * width + x;
-                const idxDown = (y + 1) * width + x;
-                const idxLeft = y * width + (x - 1);
-                const idxRight = y * width + (x + 1);
+        function step() {
+            for (let y = 1; y < height - 1; y++) {
+                for (let x = 1; x < width - 1; x++) {
+                    const idx = y * width + x;
+                    const idxUp = (y - 1) * width + x;
+                    const idxDown = (y + 1) * width + x;
+                    const idxLeft = y * width + (x - 1);
+                    const idxRight = y * width + (x + 1);
 
-                const lapU = U[idxUp] + U[idxDown] + U[idxLeft] + U[idxRight] - 4 * U[idx];
-                const lapV = V[idxUp] + V[idxDown] + V[idxLeft] + V[idxRight] - 4 * V[idx];
-                
-                const uvv = U[idx] * V[idx] * V[idx];
-                
-                const dU = Da * lapU - uvv + f * (1 - U[idx]);
-                const dV = Db * lapV + uvv - (k + f) * V[idx];
+                    const lapU = U[idxUp] + U[idxDown] + U[idxLeft] + U[idxRight] - 4 * U[idx];
+                    const lapV = V[idxUp] + V[idxDown] + V[idxLeft] + V[idxRight] - 4 * V[idx];
+                    
+                    const uvv = U[idx] * V[idx] * V[idx];
+                    
+                    const dU = Da * lapU - uvv + f * (1 - U[idx]);
+                    const dV = Db * lapV + uvv - (k + f) * V[idx];
 
-                nextU[idx] = U[idx] + dU * dt;
-                nextV[idx] = V[idx] + dV * dt;
+                    nextU[idx] = U[idx] + dU * dt;
+                    nextV[idx] = V[idx] + dV * dt;
 
-                if (nextU[idx] < 0) nextU[idx] = 0; else if (nextU[idx] > 1) nextU[idx] = 1;
-                if (nextV[idx] < 0) nextV[idx] = 0; else if (nextV[idx] > 1) nextV[idx] = 1;
+                    if (nextU[idx] < 0) nextU[idx] = 0; else if (nextU[idx] > 1) nextU[idx] = 1;
+                    if (nextV[idx] < 0) nextV[idx] = 0; else if (nextV[idx] > 1) nextV[idx] = 1;
+                }
             }
+            let tempU = U; U = nextU; nextU = tempU;
+            let tempV = V; V = nextV; nextV = tempV;
         }
-        let tempU = U; U = nextU; nextU = tempU;
-        let tempV = V; V = nextV; nextV = tempV;
-    }
 
-    // --- RENDERING ---
-    const tempCanvas = document.createElement('canvas');
-    tempCanvas.width = width;
-    tempCanvas.height = height;
-    const tempCtx = tempCanvas.getContext('2d');
-    const imageData = tempCtx.createImageData(width, height);
-    const data = imageData.data;
+        // --- RENDERING ---
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = width;
+        tempCanvas.height = height;
+        const tempCtx = tempCanvas.getContext('2d');
+        const imageData = tempCtx.createImageData(width, height);
+        const data = imageData.data;
 
-    function draw() {
-        for (let i = 0; i < width * height; i++) {
-            const vVal = V[i];
-            const color = interpolateColor(vVal * 2.5); 
-            data[i * 4] = color[0];
-            data[i * 4 + 1] = color[1];
-            data[i * 4 + 2] = color[2];
-            data[i * 4 + 3] = 255;
+        function draw() {
+            for (let i = 0; i < width * height; i++) {
+                const vVal = V[i];
+                const color = interpolateColor(vVal * 2.5); 
+                data[i * 4] = color[0];
+                data[i * 4 + 1] = color[1];
+                data[i * 4 + 2] = color[2];
+                data[i * 4 + 3] = 255;
+            }
+            tempCtx.putImageData(imageData, 0, 0);
+            
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
+            ctx.drawImage(tempCanvas, 0, 0, canvas.width, canvas.height);
         }
-        tempCtx.putImageData(imageData, 0, 0);
-        
-        ctx.imageSmoothingEnabled = true;
-        ctx.imageSmoothingQuality = 'high';
-        ctx.drawImage(tempCanvas, 0, 0, canvas.width, canvas.height);
-    }
 
-    function loop() {
-        if (!isPlaying) return;
-        for (let i = 0; i < stepsPerFrame; i++) {
-            step();
+        function loop() {
+            if (!isPlaying) return;
+            for (let i = 0; i < stepsPerFrame; i++) {
+                step();
+            }
+            iteration += stepsPerFrame;
+            updateUI();
+            draw();
+            animationId = requestAnimationFrame(loop);
         }
-        iteration += stepsPerFrame;
-        updateUI();
-        draw();
-        animationId = requestAnimationFrame(loop);
-    }
 
-    // --- UI & EVENTS ---
-    const ui = {
-        iteration: document.getElementById('gs-iteration'),
-        btnPlay: document.getElementById('gs-btn-play'),
-        btnStep: document.getElementById('gs-btn-step'),
-        btnReset: document.getElementById('gs-btn-reset'),
-        checkPerturbation: document.getElementById('gs-check-perturbation'),
-        sliderSteps: document.getElementById('gs-slider-steps'),
-        valSteps: document.getElementById('gs-val-steps'),
-        sliderF: document.getElementById('gs-slider-f'),
-        valF: document.getElementById('gs-val-f'),
-        sliderK: document.getElementById('gs-slider-k'),
-        valK: document.getElementById('gs-val-k'),
-        presetsContainer: document.getElementById('gs-presets-container')
-    };
+        // --- UI & EVENTS ---
+        const ui = {
+            iteration: document.getElementById('gs-iteration'),
+            btnPlay: document.getElementById('gs-btn-play'),
+            btnStep: document.getElementById('gs-btn-step'),
+            btnReset: document.getElementById('gs-btn-reset'),
+            checkPerturbation: document.getElementById('gs-check-perturbation'),
+            sliderSteps: document.getElementById('gs-slider-steps'),
+            valSteps: document.getElementById('gs-val-steps'),
+            sliderF: document.getElementById('gs-slider-f'),
+            valF: document.getElementById('gs-val-f'),
+            sliderK: document.getElementById('gs-slider-k'),
+            valK: document.getElementById('gs-val-k'),
+            presetsContainer: document.getElementById('gs-presets-container')
+        };
 
-    function updateUI() {
-        ui.iteration.innerText = iteration;
-        ui.valSteps.innerText = stepsPerFrame;
-        ui.valF.innerText = f.toFixed(3);
-        ui.valK.innerText = k.toFixed(3);
-        
-        // Update sliders if changed programmatically (e.g. presets)
-        if (document.activeElement !== ui.sliderF) ui.sliderF.value = f;
-        if (document.activeElement !== ui.sliderK) ui.sliderK.value = k;
-    }
+        function updateUI() {
+            ui.iteration.innerText = iteration;
+            ui.valSteps.innerText = stepsPerFrame;
+            ui.valF.innerText = f.toFixed(3);
+            ui.valK.innerText = k.toFixed(3);
+            
+            // Update sliders if changed programmatically (e.g. presets)
+            if (document.activeElement !== ui.sliderF) ui.sliderF.value = f;
+            if (document.activeElement !== ui.sliderK) ui.sliderK.value = k;
+        }
 
-    // Presets Buttons
-    Object.entries(presets).forEach(([key, p]) => {
-        const btn = document.createElement('button');
-        btn.className = `py-1 px-2 rounded text-sm transition bg-gray-700 hover:bg-gray-600 text-white`;
-        btn.innerText = p.name;
-        btn.onclick = () => {
+        // Presets Buttons
+        ui.presetsContainer.innerHTML = '';
+        Object.entries(presets).forEach(([key, p]) => {
+            const btn = document.createElement('button');
+            btn.className = `py-1 px-2 rounded text-sm transition bg-gray-700 hover:bg-gray-600 text-white`;
+            btn.innerText = p.name;
+            btn.onclick = () => {
+                isPlaying = false;
+                updatePlayButton();
+                currentPreset = key;
+                f = p.f;
+                k = p.k;
+                reset(ui.checkPerturbation.checked);
+                updateUI();
+                highlightPreset(key);
+            };
+            ui.presetsContainer.appendChild(btn);
+        });
+
+        function highlightPreset(key) {
+            Array.from(ui.presetsContainer.children).forEach(btn => {
+                if (btn.innerText === presets[key]?.name) {
+                    btn.classList.remove('bg-gray-700');
+                    btn.classList.add('bg-purple-600');
+                } else {
+                    btn.classList.add('bg-gray-700');
+                    btn.classList.remove('bg-purple-600');
+                }
+            });
+        }
+        highlightPreset('mitosis');
+
+        function updatePlayButton() {
+            ui.btnPlay.innerText = isPlaying ? "⏸ Pausa" : "▶ Play";
+            ui.btnPlay.className = isPlaying 
+                ? "flex-1 py-2 px-4 rounded font-bold transition bg-yellow-600 hover:bg-yellow-500 text-white"
+                : "flex-1 py-2 px-4 rounded font-bold transition bg-green-600 hover:bg-green-500 text-white";
+            ui.btnStep.disabled = isPlaying;
+            if(isPlaying) ui.btnStep.classList.add('opacity-50', 'cursor-not-allowed');
+            else ui.btnStep.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+
+        ui.btnPlay.onclick = () => {
+            isPlaying = !isPlaying;
+            updatePlayButton();
+            if (isPlaying) loop();
+        };
+
+        ui.btnStep.onclick = () => {
+            if (isPlaying) return;
+            for (let i = 0; i < stepsPerFrame; i++) step();
+            iteration += stepsPerFrame;
+            updateUI();
+            draw();
+        };
+
+        ui.btnReset.onclick = () => {
             isPlaying = false;
             updatePlayButton();
-            currentPreset = key;
-            f = p.f;
-            k = p.k;
             reset(ui.checkPerturbation.checked);
-            updateUI();
-            highlightPreset(key);
         };
-        ui.presetsContainer.appendChild(btn);
-    });
 
-    function highlightPreset(key) {
-        Array.from(ui.presetsContainer.children).forEach(btn => {
-            if (btn.innerText === presets[key]?.name) {
-                btn.classList.remove('bg-gray-700');
-                btn.classList.add('bg-purple-600');
-            } else {
-                btn.classList.add('bg-gray-700');
-                btn.classList.remove('bg-purple-600');
-            }
-        });
-    }
-    highlightPreset('mitosis');
+        ui.checkPerturbation.onchange = () => {
+            isPlaying = false;
+            updatePlayButton();
+            reset(ui.checkPerturbation.checked);
+        };
 
-    function updatePlayButton() {
-        ui.btnPlay.innerText = isPlaying ? "⏸ Pausa" : "▶ Play";
-        ui.btnPlay.className = isPlaying 
-            ? "flex-1 py-2 px-4 rounded font-bold transition bg-yellow-600 hover:bg-yellow-500 text-white"
-            : "flex-1 py-2 px-4 rounded font-bold transition bg-green-600 hover:bg-green-500 text-white";
-        ui.btnStep.disabled = isPlaying;
-        if(isPlaying) ui.btnStep.classList.add('opacity-50', 'cursor-not-allowed');
-        else ui.btnStep.classList.remove('opacity-50', 'cursor-not-allowed');
-    }
+        ui.sliderSteps.oninput = (e) => {
+            stepsPerFrame = parseInt(e.target.value);
+            updateUI();
+        };
 
-    ui.btnPlay.onclick = () => {
-        isPlaying = !isPlaying;
-        updatePlayButton();
-        if (isPlaying) loop();
-    };
+        ui.sliderF.oninput = (e) => {
+            f = parseFloat(e.target.value);
+            highlightPreset('custom');
+            updateUI();
+        };
 
-    ui.btnStep.onclick = () => {
-        if (isPlaying) return;
-        for (let i = 0; i < stepsPerFrame; i++) step();
-        iteration += stepsPerFrame;
-        updateUI();
-        draw();
-    };
+        ui.sliderK.oninput = (e) => {
+            k = parseFloat(e.target.value);
+            highlightPreset('custom');
+            updateUI();
+        };
 
-    ui.btnReset.onclick = () => {
-        isPlaying = false;
-        updatePlayButton();
-        reset(ui.checkPerturbation.checked);
-    };
+        // Canvas Interaction
+        function handleInput(e) {
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = width / rect.width;
+            const scaleY = height / rect.height;
+            
+            let clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            let clientY = e.touches ? e.touches[0].clientY : e.clientY;
 
-    ui.checkPerturbation.onchange = () => {
-        isPlaying = false;
-        updatePlayButton();
-        reset(ui.checkPerturbation.checked);
-    };
+            const x = Math.floor((clientX - rect.left) * scaleX);
+            const y = Math.floor((clientY - rect.top) * scaleY);
+            
+            addPerturbation(x, y, 8);
+            draw();
+        }
 
-    ui.sliderSteps.oninput = (e) => {
-        stepsPerFrame = parseInt(e.target.value);
-        updateUI();
-    };
+        let isDrawing = false;
+        canvas.addEventListener('mousedown', (e) => { isDrawing = true; handleInput(e); });
+        canvas.addEventListener('mousemove', (e) => { if(isDrawing) handleInput(e); });
+        window.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('touchstart', (e) => { e.preventDefault(); isDrawing = true; handleInput(e); }, {passive: false});
+        canvas.addEventListener('touchmove', (e) => { e.preventDefault(); if(isDrawing) handleInput(e); }, {passive: false});
 
-    ui.sliderF.oninput = (e) => {
-        f = parseFloat(e.target.value);
-        highlightPreset('custom');
-        updateUI();
-    };
-
-    ui.sliderK.oninput = (e) => {
-        k = parseFloat(e.target.value);
-        highlightPreset('custom');
-        updateUI();
-    };
-
-    // Canvas Interaction
-    function handleInput(e) {
-        const rect = canvas.getBoundingClientRect();
-        const scaleX = width / rect.width;
-        const scaleY = height / rect.height;
-        
-        let clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        let clientY = e.touches ? e.touches[0].clientY : e.clientY;
-
-        const x = Math.floor((clientX - rect.left) * scaleX);
-        const y = Math.floor((clientY - rect.top) * scaleY);
-        
-        addPerturbation(x, y, 8);
-        draw();
+        // Init
+        reset(true);
     }
 
-    let isDrawing = false;
-    canvas.addEventListener('mousedown', (e) => { isDrawing = true; handleInput(e); });
-    canvas.addEventListener('mousemove', (e) => { if(isDrawing) handleInput(e); });
-    window.addEventListener('mouseup', () => isDrawing = false);
-    canvas.addEventListener('touchstart', (e) => { e.preventDefault(); isDrawing = true; handleInput(e); }, {passive: false});
-    canvas.addEventListener('touchmove', (e) => { e.preventDefault(); if(isDrawing) handleInput(e); }, {passive: false});
-
-    // Init
-    reset(true);
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initGrayScott);
+    } else {
+        initGrayScott();
+    }
 })();
 </script>
 {% endraw %}
