@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Il disegno intelligente"
+title: Il disegno intelligente
 date: 2026-01-13 10:00:00 +0100
 categories: [complexity, filosofia, math]
 tags: [gray-scott, turing, emergenza, chaos-theory]
@@ -18,7 +18,6 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
 <script src="https://cdn.tailwindcss.com"></script>
 
 <div id="gs-wrapper" class="not-prose my-10 bg-gray-900 text-gray-200 rounded-xl shadow-2xl overflow-hidden font-sans border border-gray-700">
-    
     <div class="p-4 bg-gray-800 border-b border-gray-700 flex justify-between items-center flex-wrap gap-4">
         <div>
             <h3 class="font-bold text-white text-lg m-0 p-0">Gray-Scott Lab</h3>
@@ -29,71 +28,63 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
              <button id="btn-reset" class="bg-red-600 hover:bg-red-500 text-white px-4 py-1 rounded text-sm font-bold transition">Reset</button>
         </div>
     </div>
-
     <div class="flex flex-col md:flex-row">
         <div class="flex-1 p-4 bg-black flex justify-center items-center relative">
             <canvas id="gs-canvas" width="200" height="200" class="border border-gray-800 rounded shadow-lg cursor-crosshair touch-none w-full max-w-[400px] h-auto" style="image-rendering: pixelated;"></canvas>
             <div id="loading-msg" class="absolute text-gray-500 text-xs">Caricamento...</div>
         </div>
-
         <div class="w-full md:w-64 bg-gray-800 p-4 border-l border-gray-700 flex flex-col gap-4">
-            
             <div>
-                <label class="block text-xs uppercase text-gray-500 font-bold mb-2">Scegli un Pattern</label>
+                <label class="block text-xs uppercase text-gray-500 font-bold mb-2">Preset</label>
                 <div class="grid grid-cols-2 gap-2">
-                    <button onclick="setGSPreset('mitosis')" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition">Mitosi</button>
-                    <button onclick="setGSPreset('coral')" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition">Corallo</button>
-                    <button onclick="setGSPreset('maze')" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition">Labirinto</button>
-                    <button onclick="setGSPreset('holes')" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition">Buchi</button>
+                    <button onclick="window.setGSPreset('mitosis')" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition">Mitosi</button>
+                    <button onclick="window.setGSPreset('coral')" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition">Corallo</button>
+                    <button onclick="window.setGSPreset('maze')" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition">Labirinto</button>
+                    <button onclick="window.setGSPreset('holes')" class="bg-gray-700 hover:bg-gray-600 px-2 py-1 rounded text-xs transition">Buchi</button>
                 </div>
             </div>
-
             <div class="bg-gray-900 p-3 rounded border border-gray-700">
                 <p class="text-xs text-gray-400 font-mono">Feed (f): <span id="val-f" class="text-blue-400">0.055</span></p>
                 <p class="text-xs text-gray-400 font-mono">Kill (k): <span id="val-k" class="text-red-400">0.062</span></p>
             </div>
-
-            <p class="text-xs text-gray-500 italic mt-auto">
-                Clicca o trascina sul canvas per aggiungere reagente chimico manualmente.
-            </p>
+            <p class="text-xs text-gray-500 italic mt-auto">Clicca sul canvas per interagire.</p>
         </div>
     </div>
 </div>
 
+{% raw %}
 <script>
-(function() {
-    // Incapsuliamo tutto per non sporcare il blog
+document.addEventListener("DOMContentLoaded", function() {
+    // Verifichiamo che il canvas esista
     const canvas = document.getElementById('gs-canvas');
-    const ctx = canvas.getContext('2d', { alpha: false }); // Ottimizzazione alpha
+    if (!canvas) { console.error("Canvas Gray-Scott non trovato!"); return; }
+
+    const ctx = canvas.getContext('2d', { alpha: false });
     const loadingMsg = document.getElementById('loading-msg');
     
-    // Risoluzione interna (bassa per performance e look retro)
+    // Configurazione
     const w = 200;
     const h = 200;
     
-    // Array Dati (Typed Arrays per velocità massima)
     let u = new Float32Array(w * h);
     let v = new Float32Array(w * h);
     let nextU = new Float32Array(w * h);
     let nextV = new Float32Array(w * h);
     
-    // Parametri
     let params = { f: 0.055, k: 0.062, da: 1.0, db: 0.5, dt: 1.0 };
     let isPlaying = false;
     let animationId;
 
-    // Inizializzazione
     function init() {
         for(let i=0; i<w*h; i++) {
             u[i] = 1.0;
             v[i] = 0.0;
         }
-        perturb(w/2, h/2, 10); // Seme centrale
+        perturb(w/2, h/2, 10);
         draw();
-        loadingMsg.style.display = 'none';
+        if(loadingMsg) loadingMsg.style.display = 'none';
     }
 
-    // Aggiunge "sostanza" in un punto
     function perturb(cx, cy, r) {
         const r2 = r*r;
         const startY = Math.max(0, cy - r);
@@ -112,118 +103,97 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
         }
     }
 
-    // Algoritmo Gray-Scott (Laplacian convolution semplificata)
     function step() {
         for(let y=1; y<h-1; y++) {
             for(let x=1; x<w-1; x++) {
                 const i = y*w + x;
-                
-                // Laplaciano (vicini - 4*centro)
-                // Usiamo un kernel semplice a croce per velocità
                 const lapU = (u[i-1] + u[i+1] + u[i-w] + u[i+w] - 4*u[i]);
                 const lapV = (v[i-1] + v[i+1] + v[i-w] + v[i+w] - 4*v[i]);
-                
                 const uvv = u[i] * v[i] * v[i];
-                
-                // Formule Gray-Scott
                 let du = params.da * lapU - uvv + params.f * (1 - u[i]);
                 let dv = params.db * lapV + uvv - (params.k + params.f) * v[i];
-                
                 nextU[i] = u[i] + du * params.dt;
                 nextV[i] = v[i] + dv * params.dt;
-                
-                // Clamp (manteniamo i valori tra 0 e 1)
                 if(nextU[i] < 0) nextU[i] = 0; else if(nextU[i] > 1) nextU[i] = 1;
                 if(nextV[i] < 0) nextV[i] = 0; else if(nextV[i] > 1) nextV[i] = 1;
             }
         }
-        
-        // Scambio buffer (Swap pointers)
         let temp = u; u = nextU; nextU = temp;
         temp = v; v = nextV; nextV = temp;
     }
 
-    // Rendering Pixel-by-Pixel
     const imgData = ctx.createImageData(w, h);
-    const buf32 = new Uint32Array(imgData.data.buffer); // Hack per scrivere pixel veloci (Little Endian: ABGR)
+    const buf32 = new Uint32Array(imgData.data.buffer);
 
     function draw() {
         for(let i=0; i<w*h; i++) {
             const val = v[i];
-            // Palette "Inferno-ish" calcolata al volo
-            // Mappiamo val (0-1) su colori RGB
-            let r=0, g=0, b=0;
-            
-            // Logica colore semplificata ma efficace
-            const t = Math.min(1, val * 3.5); // Amplifica
-            r = Math.min(255, t * 255 * 2); 
-            g = Math.min(255, t * 255 * 0.8);
-            b = Math.min(255, t * 255 * 0.2 + (val > 0.4 ? (val-0.4)*200 : 0));
-            
-            // Scriviamo nel buffer a 32bit (Alpha | Blue | Green | Red)
+            const t = Math.min(1, val * 3.5); 
+            const r = Math.min(255, t * 255 * 2); 
+            const g = Math.min(255, t * 255 * 0.8);
+            const b = Math.min(255, t * 255 * 0.2 + (val > 0.4 ? (val-0.4)*200 : 0));
             buf32[i] = (255 << 24) | (b << 16) | (g << 8) | r;
         }
         ctx.putImageData(imgData, 0, 0);
     }
 
-    // Loop Animazione
     function loop() {
         if(!isPlaying) return;
-        // Facciamo più step matematici per ogni frame video (velocizza la simulazione)
         for(let k=0; k<12; k++) step(); 
         draw();
         animationId = requestAnimationFrame(loop);
     }
 
-    // --- Gestione Eventi ---
-
     const btnPlay = document.getElementById('btn-play');
-    btnPlay.onclick = () => {
-        isPlaying = !isPlaying;
-        btnPlay.innerText = isPlaying ? "⏸ Pausa" : "▶ Play";
-        btnPlay.classList.toggle('bg-green-600');
-        btnPlay.classList.toggle('bg-yellow-600');
-        if(isPlaying) loop();
-    };
+    if(btnPlay) {
+        btnPlay.onclick = () => {
+            isPlaying = !isPlaying;
+            btnPlay.innerText = isPlaying ? "⏸ Pausa" : "▶ Play";
+            btnPlay.classList.toggle('bg-green-600');
+            btnPlay.classList.toggle('bg-yellow-600');
+            if(isPlaying) loop();
+        };
+    }
 
-    document.getElementById('btn-reset').onclick = () => {
-        isPlaying = false;
-        btnPlay.innerText = "▶ Play";
-        btnPlay.classList.remove('bg-yellow-600');
-        btnPlay.classList.add('bg-green-600');
-        init();
-    };
+    const btnReset = document.getElementById('btn-reset');
+    if(btnReset) {
+        btnReset.onclick = () => {
+            isPlaying = false;
+            btnPlay.innerText = "▶ Play";
+            btnPlay.classList.remove('bg-yellow-600');
+            btnPlay.classList.add('bg-green-600');
+            init();
+        };
+    }
 
-    // Preset Manager Globale (per essere chiamato dall'HTML)
     window.setGSPreset = function(name) {
-        init();
         if(name === 'mitosis') { params.f = 0.055; params.k = 0.062; }
         if(name === 'coral')   { params.f = 0.0545; params.k = 0.062; }
         if(name === 'maze')    { params.f = 0.029; params.k = 0.057; }
         if(name === 'holes')   { params.f = 0.039; params.k = 0.058; }
         
-        // Aggiorna UI
-        document.getElementById('val-f').innerText = params.f.toFixed(3);
-        document.getElementById('val-k').innerText = params.k.toFixed(3);
+        const elF = document.getElementById('val-f');
+        const elK = document.getElementById('val-k');
+        if(elF) elF.innerText = params.f.toFixed(3);
+        if(elK) elK.innerText = params.k.toFixed(3);
         
+        init(); // Resetta la griglia
+        // Piccolo trucco: facciamo avanzare un po' la simulazione per mostrare subito il pattern
+        for(let i=0; i<50; i++) step(); 
         draw();
+        
         // Auto start
-        if(!isPlaying) btnPlay.click();
+        if(!isPlaying && btnPlay) btnPlay.click();
     };
 
-    // Interazione Mouse/Touch
     function handleInput(e) {
         const rect = canvas.getBoundingClientRect();
-        // Calcola coordinate relative al canvas 200x200
         const scaleX = w / rect.width;
         const scaleY = h / rect.height;
-        
         let clientX = e.touches ? e.touches[0].clientX : e.clientX;
         let clientY = e.touches ? e.touches[0].clientY : e.clientY;
-
         const x = Math.floor((clientX - rect.left) * scaleX);
         const y = Math.floor((clientY - rect.top) * scaleY);
-        
         perturb(x, y, 8);
         if(!isPlaying) draw();
     }
@@ -232,15 +202,13 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
     canvas.addEventListener('mousedown', (e) => { isDrawing = true; handleInput(e); });
     canvas.addEventListener('mousemove', (e) => { if(isDrawing) handleInput(e); });
     window.addEventListener('mouseup', () => isDrawing = false);
-    
-    // Touch support
     canvas.addEventListener('touchstart', (e) => { e.preventDefault(); isDrawing = true; handleInput(e); }, {passive: false});
     canvas.addEventListener('touchmove', (e) => { e.preventDefault(); if(isDrawing) handleInput(e); }, {passive: false});
 
-    // Avvio
     init();
-})();
+});
 </script>
+{% endraw %}
 
 Dal nulla emergono macchie, strisce, labirinti, strutture che si dividono come cellule. Pattern che sembrano progettati da un artista, o copiati dalla pelle di un leopardo, dalle conchiglie marine, dalle impronte digitali.
 
