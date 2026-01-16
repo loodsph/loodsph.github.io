@@ -426,20 +426,20 @@ $\dfrac{\partial v}{\partial t} = D_v \nabla^2 v + uv^2 - (F + k)v$ 
 <summary>Variabili</summary>
 
 1. Variabili e Operatori
-Questi simboli descrivono lo stato del sistema e come cambia nello spazio e nel tempo.
-$u$: Concentrazione della prima sostanza chimica (spesso chiamata "substrato" o cibo).
-$v$: Concentrazione della seconda sostanza chimica (spesso chiamata "attivatore" o predatore).
-$t$: Tempo.
-$\dfrac{\partial}{\partial t}$: Derivata parziale rispetto al tempo. Indica la velocità con cui le concentrazioni $u$ e $v$ cambiano in un dato istante.
-$\nabla^2$: Operatore di Laplace (Laplaciano). Rappresenta la diffusione spaziale, ovvero come le sostanze si espandono o si disperdono nello spazio (2D o 3D).
+Questi simboli descrivono lo stato del sistema e come cambia nello spazio e nel tempo.<br>
+$u$: Concentrazione della prima sostanza chimica (spesso chiamata "substrato" o cibo).<br>
+$v$: Concentrazione della seconda sostanza chimica (spesso chiamata "attivatore" o predatore).<br>
+$t$: Tempo.<br>
+$\dfrac{\partial}{\partial t}$: Derivata parziale rispetto al tempo. Indica la velocità con cui le concentrazioni $u$ e $v$ cambiano in un dato istante.<br>
+$\nabla^2$: Operatore di Laplace (Laplaciano). Rappresenta la diffusione spaziale, ovvero come le sostanze si espandono o si disperdono nello spazio (2D o 3D).<br>
 <br>
 <br>
 2. Parametri (Costanti)
-Questi valori determinano il comportamento del sistema e il tipo di pattern che emergerà.
-$D_u$: Coefficiente di diffusione di $u$. Indica quanto velocemente la sostanza $u$ si diffonde nell'ambiente.
-$D_v$: Coefficiente di diffusione di $v$. Indica quanto velocemente la sostanza $v$ si diffonde.
-Nota: In questo modello, solitamente $D_u$ deve essere molto più grande di $D_v$ (ad es. $u$ diffonde due volte più velocemente di $v$) affinché si formino dei pattern.
-$F$: Tasso di alimentazione (Feed rate). Controlla quanto "cibo" ($u$) viene aggiunto al sistema dall'esterno.
+Questi valori determinano il comportamento del sistema e il tipo di pattern che emergerà.<br>
+$D_u$: Coefficiente di diffusione di $u$. Indica quanto velocemente la sostanza $u$ si diffonde nell'ambiente.<br>
+$D_v$: Coefficiente di diffusione di $v$. Indica quanto velocemente la sostanza $v$ si diffonde.<br>
+Nota: In questo modello, solitamente $D_u$ deve essere molto più grande di $D_v$ (ad es. $u$ diffonde due volte più velocemente di $v$) affinché si formino dei pattern.<br>
+$F$: Tasso di alimentazione (Feed rate). Controlla quanto "cibo" ($u$) viene aggiunto al sistema dall'esterno.<br>
 $k$: Tasso di rimozione (Kill rate). Controlla quanto velocemente la sostanza $v$ viene eliminata o decade dal sistema.
 
 
