@@ -432,7 +432,8 @@ $v$: Concentrazione della seconda sostanza chimica (spesso chiamata "attivatore"
 $t$: Tempo.
 $\dfrac{\partial}{\partial t}$: Derivata parziale rispetto al tempo. Indica la velocità con cui le concentrazioni $u$ e $v$ cambiano in un dato istante.
 $\nabla^2$: Operatore di Laplace (Laplaciano). Rappresenta la diffusione spaziale, ovvero come le sostanze si espandono o si disperdono nello spazio (2D o 3D).
-
+<br>
+<br>
 2. Parametri (Costanti)
 Questi valori determinano il comportamento del sistema e il tipo di pattern che emergerà.
 $D_u$: Coefficiente di diffusione di $u$. Indica quanto velocemente la sostanza $u$ si diffonde nell'ambiente.
