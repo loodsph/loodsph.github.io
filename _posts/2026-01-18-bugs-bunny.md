@@ -33,8 +33,5 @@ Quando gli viene suggerita l'idea (tramite la pubblicità falsa), il cervello "i
 Noi siamo vittime inconsapevoli. Il nostro cervello sta sinceramente creando un ricordo falso basato su associazioni logiche (per lui), ma storicamente errate.
 
 Un ricordo non è vero solo perché è vivido.
-
-Siamo tutti suscettibili alla suggestione.
-
-    **La memoria serve a darci un senso di identità coerente, non a fornirci prove documentali per un processo.**
+    La memoria serve a darci un senso di identità coerente, non a fornirci prove documentali per un processo.
 
