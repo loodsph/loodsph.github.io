@@ -40,15 +40,16 @@
   }
 }
 
-// Map SCSS variables to CSS variables
-$text-color:       var(--text-color);
-$background-color: var(--bg-color);
-$brand-color:      var(--brand-color);
+// Define static variables for Minima to prevent Sass compilation errors.
+// Minima uses functions like darken() which fail with CSS variables.
+$text-color:       #222222;
+$background-color: #ffffff;
+$brand-color:      #D94E34;
 
 // Re-assign Minima's color variables to ensure consistency.
-$grey-color:       var(--grey-color);
-$grey-color-light: var(--grey-color-light);
-$grey-color-dark:  var(--grey-color-dark);
+$grey-color:       #828282;
+$grey-color-light: #e8e8e8;
+$grey-color-dark:  #424242;
 
 // Import Minima (after variables are defined)
 @import "minima";
@@ -61,8 +62,8 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   line-height: 1.7;
-  color: $text-color;
-  background-color: $background-color;
+  color: var(--text-color);
+  background-color: var(--bg-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -81,8 +82,8 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 800px;
   // The following overrides Minima's default padding for wider screens.
   // On smaller screens, Minima's @media query will add padding back.
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -92,16 +93,21 @@ h1, h2, h3, h4, h5, h6 {
 
 // Style links with the brand color and a simple underline on hover.
 a {
-  color: $brand-color;
+  color: var(--brand-color);
   text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
 }
 
+// Override Minima's visited link style
+a:visited {
+  color: var(--brand-color);
+}
+
 // Ensure post content links also use the brand color.
 .post-content a {
-  color: $brand-color;
+  color: var(--brand-color);
 }
 
 // 5. Header and Footer
@@ -116,6 +122,11 @@ a {
   .site-title {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
+    color: var(--text-color);
+  }
+
+  .site-nav .page-link {
+    color: var(--text-color);
   }
 }
 
@@ -134,6 +145,16 @@ a {
 
 .post-content li {
   margin-bottom: 0.5em;     // Un po' di aria anche tra i punti dell'elenco
+}
+
+// Override Minima elements to use CSS variables
+.post-meta {
+  color: var(--text-muted);
+}
+
+blockquote {
+  color: var(--text-muted);
+  border-left-color: var(--border-color);
 }
 
 // 6. Cards for Post List
