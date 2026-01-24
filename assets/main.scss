@@ -187,6 +187,21 @@ a:visited {
   }
 }
 
+// 6b. Hero Image
+// =============================================================================
+
+.site-hero {
+  width: 100%;
+  height: 320px;
+  background-image: url('https://lh3.googleusercontent.com/gg-dl/ABS2GSlo35scDN73JChatPy7EOdqVLUPhzdxhncPWP2bw3qwBwyuxd_a-q3j-KatnPANRme3FaWTJ6HmT7T2UHhYEy0htsWrnIg-mni1SdhHAY4zB-K1psANoJCwJnIyZQGnQcEOmJcK_hczVw-DVgLOQfMaqv7nN330rayLcvUWRd5P18jGbQ=s1024-rj');
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
 // 7. Post Content - Generous Whitespace (Swiss Style)
 // =============================================================================
 
