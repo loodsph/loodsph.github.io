@@ -1,167 +1,279 @@
 ---
 ---
 
+// =============================================================================
+// THE STACK TRACE - Swiss Design Restyling
+// =============================================================================
+
 // 1. Typography & Imports
 // =============================================================================
-// Import Google Fonts: Playfair Display (Headings) & Inter (Body)
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+// Swiss Style: Space Grotesk (geometric sans) for headings, Lora (elegant serif) for body
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
 
 // 2. Color System & Dark Mode
 // =============================================================================
 
 :root {
-  --bg-color: #ffffff;
-  --text-color: #222222;
-  --text-muted: #828282;
-  --brand-color: #D94E34; // Terracotta accent
-  --border-color: #e8e8e8;
+  // Swiss minimal palette
+  --bg-color: #fafafa;              // Off-white, riposante
+  --text-color: #222222;            // Grigio scuro, non nero assoluto
+  --text-muted: #6b6b6b;
+  --brand-color: #2D6A4F;           // Verde Foresta - elegante, minimal
+  --brand-color-hover: #1B4332;     // Versione più scura per hover
+  --border-color: #e5e5e5;
   --card-bg: #ffffff;
-  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+  // Code blocks
+  --code-bg: #f0f0f0;
+  --code-text: #1a1a1a;
+  --code-border: #e0e0e0;
+
   // Minima derived colors
-  --grey-color: #828282;
-  --grey-color-light: #e8e8e8;
-  --grey-color-dark: #424242;
+  --grey-color: #6b6b6b;
+  --grey-color-light: #e5e5e5;
+  --grey-color-dark: #333333;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --text-muted: #a0a0a0;
-    --brand-color: #E07A5F; // Lighter Terracotta
-    --border-color: #333333;
-    --card-bg: #1e1e1e;
-    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-    
-    --grey-color: #a0a0a0;
-    --grey-color-light: #333333;
-    --grey-color-dark: #e0e0e0;
+    --bg-color: #0f0f0f;            // Nero profondo ma non assoluto
+    --text-color: #e8e8e8;
+    --text-muted: #999999;
+    --brand-color: #52B788;         // Verde più luminoso per dark mode
+    --brand-color-hover: #74C69D;
+    --border-color: #2a2a2a;
+    --card-bg: #1a1a1a;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    // Code blocks dark
+    --code-bg: #1e1e1e;
+    --code-text: #d4d4d4;
+    --code-border: #333333;
+
+    --grey-color: #999999;
+    --grey-color-light: #2a2a2a;
+    --grey-color-dark: #e8e8e8;
   }
 }
 
-// Define static variables for Minima to prevent Sass compilation errors.
-// Minima uses functions like darken() which fail with CSS variables.
+// Static variables for Minima compatibility
 $text-color:       #222222;
-$background-color: #ffffff;
-$brand-color:      #D94E34;
+$background-color: #fafafa;
+$brand-color:      #2D6A4F;
+$grey-color:       #6b6b6b;
+$grey-color-light: #e5e5e5;
+$grey-color-dark:  #333333;
 
-// Re-assign Minima's color variables to ensure consistency.
-$grey-color:       #828282;
-$grey-color-light: #e8e8e8;
-$grey-color-dark:  #424242;
-
-// Import Minima (after variables are defined)
+// Import Minima (after variables)
 @import "minima";
 
-// 2. Typography
+// 3. Typography - Swiss Style Hierarchy
 // =============================================================================
 
-// Set the base font for the entire site.
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.6;
   color: var(--text-color);
   background-color: var(--bg-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-// Use a clean, system sans-serif for headings to create a nice contrast.
+// Headings: Space Grotesk - geometric, tech, Swiss
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   font-weight: 700;
-  margin-top: 1.5em;
+  letter-spacing: -0.02em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
 }
 
-// 3. Layout
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+// 4. Layout
 // =============================================================================
 
-// Constrain the main content width and center it for a focused reading experience.
 .wrapper {
-  max-width: 800px;
-  // The following overrides Minima's default padding for wider screens.
-  // On smaller screens, Minima's @media query will add padding back.
-  padding-right: 30px;
-  padding-left: 30px;
+  max-width: 720px;   // Leggermente più stretto per leggibilità ottimale
+  padding-right: 24px;
+  padding-left: 24px;
   margin-left: auto;
   margin-right: auto;
 }
 
-// 4. Links and Accents
+// 5. Links - Animated Underline Effect
 // =============================================================================
 
-// Style links with the brand color and a simple underline on hover.
 a {
   color: var(--brand-color);
   text-decoration: none;
+  background-image: linear-gradient(var(--brand-color), var(--brand-color));
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size 0.3s ease, color 0.2s ease;
+
   &:hover {
-    text-decoration: underline;
+    background-size: 100% 2px;
+    color: var(--brand-color-hover);
   }
 }
 
-// Override Minima's visited link style
 a:visited {
   color: var(--brand-color);
 }
 
-// Ensure post content links also use the brand color.
+// Post content links - underline sempre visibile, si ispessisce on hover
 .post-content a {
   color: var(--brand-color);
+  background-size: 100% 1px;
+
+  &:hover {
+    background-size: 100% 2px;
+  }
 }
 
-// 5. Header and Footer
+// 6. Header - Minimal Swiss Style
 // =============================================================================
 
-// Add a brand-colored top border to the header for a touch of personality.
 .site-header {
-  border-top: 5px solid $brand-color;
+  border-top: 3px solid var(--brand-color);  // Più sottile, più elegante
   border-bottom: 1px solid var(--border-color);
   background-color: var(--bg-color);
-  
+
   .site-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
     font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
     color: var(--text-color);
+
+    // Reset link animation for site title
+    background-image: none;
+    &:hover {
+      background-image: none;
+      color: var(--brand-color);
+    }
   }
 
   .site-nav .page-link {
     color: var(--text-color);
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-image: none;
+
+    &:hover {
+      color: var(--brand-color);
+      background-image: none;
+    }
   }
 }
 
-// SPAZIATURA PARAGRAFI "SUBSTACK STYLE"
+// 7. Post Content - Generous Whitespace (Swiss Style)
+// =============================================================================
+
 .post-content p {
-  margin-bottom: 2em;       // Molto spazio sotto ogni blocco (circa 2 righe vuote visive)
+  margin-bottom: 1.75em;
   margin-top: 0;
-  line-height: 1.8;         // Aumentiamo anche l'aria TRA le righe dello stesso paragrafo
+  line-height: 1.7;
 }
 
-// Spaziatura per le liste (per non averle schiacciate)
-.post-content ul, 
+.post-content ul,
 .post-content ol {
-  margin-bottom: 2em;
+  margin-bottom: 1.75em;
+  padding-left: 1.5em;
 }
 
 .post-content li {
-  margin-bottom: 0.5em;     // Un po' di aria anche tra i punti dell'elenco
+  margin-bottom: 0.6em;
+  line-height: 1.6;
 }
 
-// Override Minima elements to use CSS variables
+// Post metadata
 .post-meta {
   color: var(--text-muted);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
 }
 
+// Blockquotes - Elegant, minimal
 blockquote {
   color: var(--text-muted);
-  border-left-color: var(--border-color);
+  border-left: 3px solid var(--brand-color);
+  padding-left: 1.5em;
+  margin-left: 0;
+  font-style: italic;
+
+  p {
+    margin-bottom: 0.5em;
+  }
 }
 
-// 6. Cards for Post List
+// 8. Code Blocks - Warm contrast with rounded corners
 // =============================================================================
+
+code {
+  font-family: 'SF Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+  font-size: 0.85em;
+  background-color: var(--code-bg);
+  color: var(--code-text);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--code-border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 8px;
+  padding: 1.25em 1.5em;
+  overflow-x: auto;
+  line-height: 1.5;
+
+  code {
+    background: none;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: 0.875rem;
+  }
+}
+
+// Syntax highlighting compatibility
+.highlight {
+  background-color: var(--code-bg);
+  border-radius: 8px;
+
+  pre {
+    margin-bottom: 0;
+    border: none;
+  }
+}
+
+// 9. Cards for Post List - Clean Swiss cards
+// =============================================================================
+
 .post-list {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
   list-style: none;
   margin-left: 0;
   padding: 1rem 0;
@@ -169,32 +281,80 @@ blockquote {
   > li {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem;
+    border-radius: 8px;   // Più sottile, più Swiss
+    padding: 1.75rem 2rem;
     box-shadow: var(--card-shadow);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease;
     margin-bottom: 0;
 
     &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
       border-color: var(--brand-color);
     }
 
     h3 {
       margin-top: 0;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      
+      margin-bottom: 0.5em;
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 1.35rem;
+
       a {
         color: var(--text-color);
-        &:hover { color: var(--brand-color); text-decoration: none; }
+        background-image: none;
+
+        &:hover {
+          color: var(--brand-color);
+          background-image: none;
+        }
       }
+    }
+
+    // Post excerpt in cards
+    p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 0;
     }
   }
 }
 
+// 10. Footer - Minimal
+// =============================================================================
+
 .site-footer {
   border-top: 1px solid var(--border-color);
   color: var(--text-muted);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.85rem;
+
+  a {
+    background-image: none;
+    &:hover {
+      background-image: none;
+    }
+  }
+}
+
+// 11. Post Title Page
+// =============================================================================
+
+.post-title {
+  font-size: 2.25rem;
+  letter-spacing: -0.03em;
+  margin-top: 0;
+  line-height: 1.15;
+}
+
+// 12. Selection highlight
+// =============================================================================
+
+::selection {
+  background-color: var(--brand-color);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: var(--brand-color);
+  color: #ffffff;
 }
