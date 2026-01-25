@@ -194,12 +194,12 @@ a:visited {
   width: 100%;
   height: 320px;
   background-image: url('/assets/escher7.png');
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   border-radius: 8px;
   margin-bottom: 3rem;
   box-shadow: var(--card-shadow);
-  border: 1px solid var(--border-color);
 }
 
 // 7. Post Content - Generous Whitespace (Swiss Style)
