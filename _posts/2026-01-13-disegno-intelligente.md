@@ -409,41 +409,50 @@ Nessuno li ha programmati. Sono *emersi*.
 
 ## Il sistema Gray-Scott
 
-Il modello si chiama Gray-Scott, dal nome dei chimici che lo formalizzarono. Le equazioni sono quasi banali. I fattori coinvolti sono veramente pochissimi:
-
-* Due sostanze ($U$ e $V$)
-* Diffusione
-* Una reazione (semplice)
-* Quattro parametri
-<br>
-<br>
+Le equazioni sembrano complesse, ma sono quasi banali:
 
 $\dfrac{\partial u}{\partial t} = D_u \nabla^2 u - uv^2 + F(1-u)$
 
 $\dfrac{\partial v}{\partial t} = D_v \nabla^2 v + uv^2 - (F + k)v$ 
 
-<details>
-<summary>Variabili</summary>
+Matematicamente, il sistema Gray-Scott descrive come due quantità cambiano nel tempo e nello spazio.
 
-1. Variabili e Operatori
-Questi simboli descrivono lo stato del sistema e come cambia nello spazio e nel tempo.<br>
-$u$: Concentrazione della prima sostanza chimica (spesso chiamata "substrato" o cibo).<br>
-$v$: Concentrazione della seconda sostanza chimica (spesso chiamata "attivatore" o predatore).<br>
-$t$: Tempo.<br>
-$\dfrac{\partial}{\partial t}$: Derivata parziale rispetto al tempo. Indica la velocità con cui le concentrazioni $u$ e $v$ cambiano in un dato istante.<br>
-$\nabla^2$: Operatore di Laplace (Laplaciano). Rappresenta la diffusione spaziale, ovvero come le sostanze si espandono o si disperdono nello spazio (2D o 3D).<br>
-<br>
-<br>
-2. Parametri (Costanti)
-Questi valori determinano il comportamento del sistema e il tipo di pattern che emergerà.<br>
-$D_u$: Coefficiente di diffusione di $u$. Indica quanto velocemente la sostanza $u$ si diffonde nell'ambiente.<br>
-$D_v$: Coefficiente di diffusione di $v$. Indica quanto velocemente la sostanza $v$ si diffonde.<br>
-Nota: In questo modello, solitamente $D_u$ deve essere molto più grande di $D_v$ (ad es. $u$ diffonde due volte più velocemente di $v$) affinché si formino dei pattern.<br>
-$F$: Tasso di alimentazione (Feed rate). Controlla quanto "cibo" ($u$) viene aggiunto al sistema dall'esterno.<br>
-$k$: Tasso di rimozione (Kill rate). Controlla quanto velocemente la sostanza $v$ viene eliminata o decade dal sistema.
+# **Il Modello Matematico del Gray-Scott**
 
+Matematicamente, il sistema Gray-Scott descrive come **due quantità cambiano nel tempo e nello spazio**.
 
-</details>
+Immagina due sostanze chimiche, $u$ e $v$, su una griglia (come i pixel di un'immagine). Le equazioni calcolano, per ogni istante $t$, tre azioni principali che avvengono simultaneamente:
+
+### **1\. Diffusione (Il movimento)**
+
+Entrambe le sostanze tendono a spandersi, muovendosi da zone dove sono concentrate a zone dove ce n'è meno (come una goccia di colorante nell'acqua).
+
+* Matematicamente, questo è il **Laplaciano** ($\nabla^2$).  
+* La sostanza $u$ si diffonde più velocemente di $v$. Questa differenza di velocità è cruciale per creare i disegni.
+
+### **2\. Reazione (La trasformazione)**
+
+Qui avviene la "magia". È un processo non lineare dove la sostanza $v$ "mangia" la sostanza $u$ per riprodursi.
+
+* La formula specifica è $uv^2$.  
+* Significa: serve una particella di $u$ e due di $v$ per creare ancora più $v$. Più $v$ c'è, più velocemente consuma $u$.
+
+### **3\. Equilibrio (Feed e Kill)**
+
+Per evitare che la reazione finisca subito, il sistema ha due "rubinetti" di controllo (parametri):
+
+* **Feed (**$f$**):** Aggiunge costantemente nuova sostanza $u$ (cibo).  
+* **Kill (**$k$**):** Rimuove costantemente una parte di $v$ (morte naturale).
+
+### **In sintesi:**
+
+Senza entrare nel calcolo avanzato, la logica è questa:
+
+$$\text{Cambio di } u = (\text{Si diffonde}) - (\text{Viene mangiata da } v) + (\text{Rifornimento } f)$$
+
+$$\text{Cambio di } v = (\text{Si diffonde}) + (\text{Nasce mangiando } u) - (\text{Rimozione } k)$$
+
+Basta cambiare di pochissimo i valori numerici di $f$ (rifornimento) e $k$ (rimozione) per passare matematicamente dal creare macchie (come un ghepardo) a strisce (come una zebra).
 <br>
 <br>
 Eppure, da questo sistema minimale nascono pattern di una varietà stupefacente. Cambiando leggermente i parametri $f$ (feed) e $k$ (kill), ottieni strutture completamente diverse: punti che si moltiplicano come batteri, onde che pulsano, labirinti che si intrecciano, coralli che crescono.
