@@ -12,7 +12,7 @@ Il primo errore che facciamo è pensare al cervello come a un computer o una vid
 La realtà è molto più affascinante: la memoria è **ricostruttiva**. Ogni volta che ricordiamo qualcosa, non stiamo "riproducendo" il passato, lo stiamo ricostruendo nel presente. In questo processo, il cervello inserisce pezzi, modifica dettagli e adatta il ricordo a ciò che sa oggi.
 
 ## [Esperimento](https://www.jstor.org/stable/20182936)
-A un gruppo di persone, che avevano visitato Disneyland da bambini, è stato mostrato del materiale pubblicitario. In queste pubblicità, si vedeva chiaramente Bugs Bunny sorridente che accoglieva i visitatori nel magico mondo Disney.
+A un gruppo di persone, che avevano visitato Disneyland da bambini, è stato mostrato del materiale pubblicitario falsificato. In queste pubblicità, si vedeva chiaramente Bugs Bunny sorridente che accoglieva i visitatori nel magico mondo Disney.
 
 Dopo aver guardato questo materiale, ai partecipanti venne chiesto: "Ti ricordi di aver incontrato Bugs Bunny durante la tua visita a Disneyland?"
 
