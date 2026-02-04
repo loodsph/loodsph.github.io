@@ -16,24 +16,24 @@ Quando si parla di farmaci per il raffreddore si parla di molecole che alleviano
 
 Sono state sintetizzate varie molecole da prendere in compresse, attualmente ne usiamo sostanzialmente due: la pseudoefedrina e la fenilefrina.
 
-Andiamo alla ciccia: che la fenilefrina non funzioni come decongestionante nasale è un [dato abbastanza assodato](https://www.annallergy.org/article/S1081-1206(10)60240-2/abstract).
+Andiamo alla ciccia: che la fenilefrina non funzioni come decongestionante nasale è un [dato abbastanza assodato](https://www.annallergy.org/article/S1081-1206(10)60240-2/abstract). Nel settembre 2023, un comitato consultivo della FDA ha votato [16 a 0](https://pharmacy.ufl.edu/2023/09/26/fda-panel-rules-popular-nasal-decongestant-is-ineffective/) per dichiarare la fenilefrina orale inefficace come decongestionante. Il motivo? Viene [quasi completamente degradata dagli enzimi intestinali](https://pharmacy.ufl.edu/2023/09/26/fda-panel-rules-popular-nasal-decongestant-is-ineffective/) prima di raggiungere il circolo sistemico. A novembre 2024, la FDA ha [proposto di rimuoverla dal mercato](https://www.cnn.com/2024/11/07/health/fda-decongestant-phenylephrine-effectiveness-concerns).
 
 <figure class="w-full md:w-1/2 mx-auto my-6">
-    <img src="/assets/images/Phenylephrine.svg" alt="Struttura chimica della Fenilefrina" class="w-full bg-white p-4 rounded-xl shadow-lg border border-gray-700">
+    <img src="/assets/images/Phenylephrine.svg" alt="Struttura chimica della Fenilefrina" class="w-full bg-white p-4 rounded-xl shadow-lg border border-gray-700" style="background-color: white;">
     <figcaption class="text-center text-xs text-gray-400 mt-2">Fenilefrina</figcaption>
 </figure>
 
 Ma come si è arrivati alla fenilefrina? Partendo da un farmaco che invece funziona: la pseudoefedrina.
 
 <figure class="w-full md:w-1/2 mx-auto my-6">
-    <img src="/assets/images/Pseudoephedrin.svg" alt="Struttura chimica della Pseudoefedrina" class="w-full bg-white p-4 rounded-xl shadow-lg border border-gray-700">
+    <img src="/assets/images/Pseudoephedrin.svg" alt="Struttura chimica della Pseudoefedrina" class="w-full bg-white p-4 rounded-xl shadow-lg border border-gray-700" style="background-color: white;">
     <figcaption class="text-center text-xs text-gray-400 mt-2">Pseudoefedrina</figcaption>
 </figure>
 
 Il problema è che questa è molto simile alla metamfetamina.
 
 <figure class="w-full md:w-1/2 mx-auto my-6">
-    <img src="/assets/images/Meth.png" alt="Struttura chimica della Metamfetamina" class="w-full bg-white p-4 rounded-xl shadow-lg border border-gray-700">
+    <img src="/assets/images/Meth.png" alt="Struttura chimica della Metamfetamina" class="w-full bg-white p-4 rounded-xl shadow-lg border border-gray-700" style="background-color: white;">
     <figcaption class="text-center text-xs text-gray-400 mt-2">Metamfetamina</figcaption>
 </figure>
 
