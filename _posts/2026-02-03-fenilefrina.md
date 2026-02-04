@@ -32,13 +32,15 @@ Ma come si è arrivati alla fenilefrina? Partendo da un farmaco che invece funzi
 
 Il problema è che questa è molto simile alla metamfetamina.
 
-<figure class="w-full md:w-1/2 mx-auto my-6">
+<figure class="w-full md:w-1/3 mx-auto my-6">
     <img src="/assets/images/Meth.png" alt="Struttura chimica della Metamfetamina" class="w-full bg-white p-4 rounded-xl shadow-lg border border-gray-700" style="background-color: white;">
     <figcaption class="text-center text-xs text-gray-400 mt-2">Metamfetamina</figcaption>
 </figure>
 
-Esistono diverse vie sintetiche, alcune delle quali fattibili in un garage o in un camper (!) e i cartelli messicani [si sono messi di impegno](https://www.theatlantic.com/magazine/archive/2021/11/the-new-meth/620174/) per cercare di sfruttare la cosa. Gli USA hanno poi fortemente limitato la circolazione di pseudoefedrina e si è aperto il campo per un rimpiazzo.
+Esistono diverse vie sintetiche, alcune delle quali fattibili in un garage o in un camper (!) e i cartelli messicani [si sono messi di impegno](https://www.theatlantic.com/magazine/archive/2021/11/the-new-meth/620174/) per cercare di sfruttare la cosa. Gli USA hanno poi [fortemente regolamentato](https://www.aafp.org/pubs/afp/afp-community-blog/entry/FDA-advisory-panel-rules-that-oral-phenylephrine-is-ineffective.html) la vendita di pseudoefedrina e si è aperto il campo per un rimpiazzo.
 
 Da noi invece non c’è stata nessuna limitazione, ma evidentemente abbiamo comunque sentito il bisogno di importare il prodotto del malfunzionamento di un altro paese. Un po’ un leitmotiv.
+
+Anche qui si vendono prodotti con fenilefrina orale — come il Tachifludec - credo il più pubblicizzato in Italia. Nel 2022 ne sono state vendute [circa 3,5-4 milioni di confezioni](https://www.ilpost.it/2023/09/18/farmaci-decongestionanti-fenilefrina/).
 
 La fenilefrina resta lì, a ricordarci quanto sia semplice rendere definitiva una soluzione temporanea sbagliata.
