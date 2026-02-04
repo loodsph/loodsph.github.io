@@ -10,6 +10,11 @@
     {%- include google-analytics.html -%}
   {%- endif -%}
 
+  {%- if site.goatcounter and site.goatcounter != "IL-TUO-CODICE" -%}
+  <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  {%- endif -%}
+
   <!-- MathJax for LaTeX rendering -->
   <script>
     window.MathJax = {
