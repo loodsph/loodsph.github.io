@@ -14,9 +14,6 @@ La realtà è molto più affascinante: la memoria è **ricostruttiva**. Ogni vol
 ## [Esperimento](https://www.jstor.org/stable/20182936)
 A un gruppo di persone, che avevano visitato Disneyland da bambini, è stato mostrato del materiale pubblicitario. In queste pubblicità, si vedeva chiaramente Bugs Bunny sorridente che accoglieva i visitatori nel magico mondo Disney.
 
-<!-- Esempio inserimento immagine con stile Tailwind -->
-<img src="/assets/images/bugs-bunny-fake-ad.jpg" alt="Pubblicità falsa con Bugs Bunny" class="w-full md:w-2/3 mx-auto rounded-xl shadow-lg my-6 border border-gray-700">
-
 Dopo aver guardato questo materiale, ai partecipanti venne chiesto: "Ti ricordi di aver incontrato Bugs Bunny durante la tua visita a Disneyland?"
 
 Una percentuale significativa dei partecipanti (in alcuni studi fino al 30-40%) non solo rispose di "Sì", ma fornì dettagli incredibilmente vividi:
