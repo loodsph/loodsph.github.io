@@ -21,7 +21,7 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
     <div class="flex flex-col lg:flex-row">
         <!-- Left: Canvas -->
         <div class="flex-1 p-4 bg-gray-900 flex flex-col items-center justify-center border-b lg:border-b-0 lg:border-r border-gray-700">
-            <canvas id="gs-canvas" width="600" height="600" class="border border-gray-600 rounded shadow-lg cursor-crosshair touch-none w-full max-w-[400px] aspect-square"></canvas>
+            <canvas id="gs-canvas" width="600" height="600" class="rounded shadow-lg cursor-crosshair touch-none w-full max-w-[400px] aspect-square"></canvas>
             <p class="text-sm text-gray-400 mt-2">Clicca per aggiungere perturbazioni</p>
         </div>
 
