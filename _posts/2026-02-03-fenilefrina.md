@@ -32,8 +32,8 @@ Ma come si è arrivati alla fenilefrina? Partendo da un farmaco che invece funzi
 
 Il problema è che questa è molto simile alla metamfetamina.
 
-<figure class="w-full md:w-1/3 mx-auto my-6">
-    <img src="/assets/images/Meth.png" alt="Struttura chimica della Metamfetamina" class="w-full bg-white p-4 rounded-xl shadow-lg border border-gray-700" style="background-color: white;">
+<figure class="w-full md:w-1/2 mx-auto my-6">
+    <img src="/assets/images/Metamphetamine.svg" alt="Struttura chimica della Metamfetamina" class="w-full bg-white p-4 rounded-xl shadow-lg border border-gray-700" style="background-color: white;">
     <figcaption class="text-center text-xs text-gray-400 mt-2">Metamfetamina</figcaption>
 </figure>
 
