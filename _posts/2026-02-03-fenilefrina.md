@@ -18,23 +18,23 @@ Andiamo alla ciccia: che la fenilefrina non funzioni come decongestionante nasal
 
 Pare che il problema sia anche che il fegato la ["rompa"](https://pmc.ncbi.nlm.nih.gov/articles/PMC2000711/) prima che entri nel sangue (metabolismo di primo passaggio epatico).
 
-<figure class="w-full md:w-1/2 mx-auto my-6">
-    <img src="/assets/images/Phenylephrine.svg" alt="Struttura chimica della Fenilefrina" class="w-full bg-white p-4 rounded-xl shadow-lg border border-gray-700" style="background-color: white;">
-    <figcaption class="text-center text-xs text-gray-400 mt-2">Fenilefrina</figcaption>
+<figure>
+    <img src="/assets/images/Phenylephrine.svg" alt="Struttura chimica della Fenilefrina">
+    <figcaption>Fenilefrina</figcaption>
 </figure>
 
 Ma come si è arrivati alla fenilefrina? Partendo da un farmaco che invece funziona: la **pseudoefedrina**.
 
-<figure class="w-full md:w-1/2 mx-auto my-6">
-    <img src="/assets/images/Pseudoephedrin.svg" alt="Struttura chimica della Pseudoefedrina" class="w-full bg-white p-4 rounded-xl shadow-lg border border-gray-700" style="background-color: white;">
-    <figcaption class="text-center text-xs text-gray-400 mt-2">Pseudoefedrina</figcaption>
+<figure>
+    <img src="/assets/images/Pseudoephedrin.svg" alt="Struttura chimica della Pseudoefedrina">
+    <figcaption>Pseudoefedrina</figcaption>
 </figure>
 
 Il problema è che questa è molto simile alla metamfetamina (basta togliere quell' -OH).
 
-<figure class="w-full md:w-1/2 mx-auto my-6">
-    <img src="/assets/images/Metamphetamine.svg" alt="Struttura chimica della Metamfetamina" class="w-full bg-white p-4 rounded-xl shadow-lg border border-gray-700" style="background-color: white;">
-    <figcaption class="text-center text-xs text-gray-400 mt-2">Metamfetamina</figcaption>
+<figure>
+    <img src="/assets/images/Metamphetamine.svg" alt="Struttura chimica della Metamfetamina">
+    <figcaption>Metamfetamina</figcaption>
 </figure>
 
 Esistono diverse vie sintetiche (eg. riduzione di Birch, Litio o Sodio in ammoniaca anidra), alcune delle quali fattibili in un garage o in un camper (!) e i cartelli messicani [si sono messi di impegno](https://www.theatlantic.com/magazine/archive/2021/11/the-new-meth/620174/) per cercare di sfruttare la cosa. Gli USA hanno poi [fortemente regolamentato](https://www.aafp.org/pubs/afp/afp-community-blog/entry/FDA-advisory-panel-rules-that-oral-phenylephrine-is-ineffective.html) la vendita di pseudoefedrina e si è aperto il campo per un rimpiazzo.

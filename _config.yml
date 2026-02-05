@@ -1,6 +1,8 @@
 title: The Stack Trace
 description: >-
   feed your brain
+lang: it
+author: Ludovico
 theme: minima
 plugins:
   - jekyll-seo-tag

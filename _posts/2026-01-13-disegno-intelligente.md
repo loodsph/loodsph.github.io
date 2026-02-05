@@ -15,7 +15,7 @@ Prendi due sostanze virtuali, chiamale **U** e **V**. Dai loro due regole sempli
 
 Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
 
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/assets/css/widgets.css">
 
 <div id="gs-wrapper" class="not-prose my-10 bg-gray-900 text-gray-200 rounded-xl shadow-2xl overflow-hidden font-sans border border-gray-700">
     <div class="flex flex-col lg:flex-row">

@@ -22,7 +22,7 @@ Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che l
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"
         integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ"
         crossorigin="anonymous"></script>
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/assets/css/widgets.css">
 
 <div id="chart-container-wrapper" class="not-prose my-8 bg-gray-900 text-gray-100 rounded-xl overflow-hidden shadow-2xl border border-gray-700 font-sans">
     

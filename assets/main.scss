@@ -36,26 +36,33 @@
   --grey-color-dark: #333333;
 }
 
+@mixin dark-theme {
+  --bg-color: #0f0f0f;
+  --text-color: #e8e8e8;
+  --text-muted: #999999;
+  --brand-color: #F3967D;
+  --brand-color-hover: #F5A892;
+  --border-color: #2a2a2a;
+  --card-bg: #1a1a1a;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --code-bg: #1e1e1e;
+  --code-text: #d4d4d4;
+  --code-border: #333333;
+  --grey-color: #999999;
+  --grey-color-light: #2a2a2a;
+  --grey-color-dark: #e8e8e8;
+}
+
+// System dark preference (when no explicit user override)
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #0f0f0f;            // Nero profondo ma non assoluto
-    --text-color: #e8e8e8;
-    --text-muted: #999999;
-    --brand-color: #F3967D;         // Terracotta più luminoso per dark mode
-    --brand-color-hover: #F5A892;
-    --border-color: #2a2a2a;
-    --card-bg: #1a1a1a;
-    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-
-    // Code blocks dark
-    --code-bg: #1e1e1e;
-    --code-text: #d4d4d4;
-    --code-border: #333333;
-
-    --grey-color: #999999;
-    --grey-color-light: #2a2a2a;
-    --grey-color-dark: #e8e8e8;
+  :root:not([data-theme="light"]) {
+    @include dark-theme;
   }
+}
+
+// Explicit dark mode override
+:root[data-theme="dark"] {
+  @include dark-theme;
 }
 
 // Static variables for Minima compatibility
@@ -373,4 +380,76 @@ pre {
 ::-moz-selection {
   background-color: var(--brand-color);
   color: #ffffff;
+}
+
+// 13. Theme Toggle
+// =============================================================================
+
+.theme-toggle {
+  float: right;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0 4px;
+  transition: color 0.2s ease;
+  background-image: none;
+
+  &:hover {
+    color: var(--brand-color);
+    background-image: none;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .theme-toggle {
+    margin-right: 40px;
+  }
+}
+
+// Theme icon visibility: moon in light, sun in dark
+.theme-icon-sun { display: none; }
+.theme-icon-moon { display: block; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-icon-sun { display: block; }
+  :root:not([data-theme="light"]) .theme-icon-moon { display: none; }
+}
+:root[data-theme="dark"] .theme-icon-sun { display: block; }
+:root[data-theme="dark"] .theme-icon-moon { display: none; }
+
+// 14. Post Figures (chemical structures, diagrams, etc.)
+// =============================================================================
+
+.post-content figure {
+  width: 100%;
+  margin: 1.5rem auto;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+
+  img {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border: 1px solid var(--border-color);
+  }
+
+  figcaption {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+  }
 }
