@@ -4,6 +4,7 @@ description: >-
 theme: minima
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Analytics - Goatcounter (cambia con il tuo codice)
 goatcounter: the-stack-trace
