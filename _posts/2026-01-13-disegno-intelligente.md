@@ -516,9 +516,3 @@ C’è qualcosa di profondamente umiliante — e al tempo stesso liberatorio —
 **Liberatorio**, perché ci mostra che l’universo è più ricco di quanto la dicotomia caso/progetto suggerisca. Non siamo costretti a scegliere tra il nichilismo del caos e il comfort di un progettista benevolo. Esiste una terza opzione: un universo dove la struttura emerge spontaneamente, dove la complessità è una proprietà naturale della materia organizzata.
 
 E, a mio parere, questa opzione è più meravigliosa di entrambe le alternative.
-
-### Cosa significa tutto questo?
-
-Non sto dicendo che la scienza abbia “dimostrato” l’inesistenza di un creatore. Questa non è una questione scientifica, ma filosofica e personale.
-
-Quello che sto dicendo è più modesto: l’argomento della complessità irriducibile non regge. Non è vero che la complessità richieda necessariamente un progettista. Esistono meccanismi ben compresi — reazione-diffusione, selezione naturale, auto-organizzazione — che producono complessità a partire da regole semplici.
