@@ -6,7 +6,7 @@ categories: [economia, coding]
 tags: [immobiliare, inflazione, dataviz, javascript]
 ---
 
-Cerco di entrare in punta di piedi in questo argomento. In Italia, la proprietà immobiliare è quasi una religione.
+Cerco di entrare in punta di piedi in questo argomento. In Italia, la proprietà immobiliare è quasi una religione. Un credo è dogmatico per definizione e analizzare i dogmi è uno degli obiettivi qui.
 <br>
 <br>
 Non capisco quest'idea per la quale la casa sia una cosa fondamentale, un obiettivo di vita, perché con l'affitto si "regalano soldi". Ci sono mille risorse anche molto divulgative che smontano questo mito (ad esempio **Ben Felix** ha fatto vari [video](https://www.youtube.com/watch?v=lBG-g1CKfgs) e articoli a riguardo). Era una cosa abbastanza vera negli anni '80. Quel mondo non esiste più.

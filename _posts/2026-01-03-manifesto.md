@@ -20,7 +20,7 @@ Fuori, però, sembra che abbiamo smesso di farci i conti. Questo "attaccamento a
 
 Smartphone e social? Senza dubbio. Non aiuta avere “contro” le più grandi aziende del mondo, che hanno fatto del tenerci incollati passivamente a uno schermo il loro modello di business. Ma non è solo un problema di capacità analitica, è una questione di penalizzazione della diversità. E questo non è un bene: in termini darwiniani, la diversità è la strategia di adattamento (e quindi di sopravvivenza) più efficace, oltre a essere l'unica cosa intellettualmente stimolante. Nei fatti, stiamo misurando il valore di un'idea in base a quanto rispecchia i gusti della massa: cosa potevamo aspettarci se non un [mondo di mediocrità](https://www.alexmurrell.co.uk/articles/the-age-of-average)?
 
-Eppure, non credo che questo racconti tutta la storia e non ho nessuna simpatia per gli elogi dei “bei tempi andati”. Anzi, trovo abbastanza ingenua la nostalgia per un tempo che, di fatto, si è vissuto solo per interposta persona. Un distillato, inevitabilmente “falso”, di ricordi altrui. La critica ai “giovani di oggi” si passa da generazione in generazione dai tempi di Socrate. I social hanno solo amplificato una tendenza che già esisteva. Qua ci siamo dentro tutti, e con tutte le scarpe.
+I social hanno solo amplificato un [problema già esistente](https://loodsph.github.io/complexity/filosofia/psychology/2026/01/13/bugs-bunny.html).
 
 Questo blog è il mio tentativo di pensare in pubblico, [lentamente](https://ofdollarsanddata.com/theres-always-room-for-quality/), su cose che mi interessano. Non è un progetto editoriale, non ha un piano, non ha un target. Non cerca lettori: li filtra.
 
