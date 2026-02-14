@@ -17,6 +17,10 @@
         </label>
 
         <div class="trigger">
+          {%- assign manifesto = site.posts | where: "title", "Manifesto" | first -%}
+          {%- if manifesto -%}
+          <a class="page-link" href="{{ manifesto.url | relative_url }}">Manifesto</a>
+          {%- endif -%}
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- if my_page.title -%}

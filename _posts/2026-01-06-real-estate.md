@@ -6,7 +6,7 @@ categories: [economia, coding]
 tags: [immobiliare, inflazione, dataviz, javascript]
 ---
 
-Non saprei quantificare quante volte ho sentito dare questa frase con il tono tronfio di chi ha capito tutto: _"il mattone è l'unico investimento sicuro"_. In Italia, la proprietà immobiliare è quasi una religione.
+Cerco di entrare in punta di piedi in questo argomento. In Italia, la proprietà immobiliare è quasi una religione.
 <br>
 <br>
 Non capisco quest'idea per la quale la casa sia una cosa fondamentale, un obiettivo di vita, perché con l'affitto si "regalano soldi". Ci sono mille risorse anche molto divulgative che smontano questo mito (ad esempio **Ben Felix** ha fatto vari [video](https://www.youtube.com/watch?v=lBG-g1CKfgs) e articoli a riguardo). Era una cosa abbastanza vera negli anni '80. Quel mondo non esiste più.
