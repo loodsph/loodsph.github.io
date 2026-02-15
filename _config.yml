@@ -3,6 +3,7 @@ description: >-
   feed your brain
 lang: it
 author: Ludovico
+email: epinephrine04@gmail.com
 theme: minima
 plugins:
   - jekyll-seo-tag
