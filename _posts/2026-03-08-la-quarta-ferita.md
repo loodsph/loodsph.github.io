@@ -14,7 +14,7 @@ Tre ferite narcisistiche — cosmologica, biologica, psicologica — e ora una q
 ---
 <br>
 Ma se dico "una rete neurale impara", cosa sta succedendo davvero? Per rispondere dovremmo prima definire cosa significhi imparare o pensare. Un compito decisamente oltre la mia portata.
-Però vorrei almeno capire che cosa succedesse a livello base, fisico, hardware, di una AI.
+Però vorrei almeno capire che cosa ci sia a livello base, pratico, di una AI.
 Da quanto ho capito nient'altro che moltiplicazioni, somme, e una regola per aggiustarsi. Questa semplicità è incredibilmente affascinante alla luce di tutto quello che abbiamo visto prima e dei risultati prodotti.
 
 ## Simulazione
@@ -473,7 +473,7 @@ Una rete neurale che impara a sparare un proiettile verso un bersaglio.
 })();
 </script>
 
-*Clicca sul pannello destro per spostare il bersaglio. In modalità mini-batch, il click diventa un "probe" — la rete continua ad allenarsi su target casuali e puoi testare in tempo reale quanto ha generalizzato.*
+*Clicca sul pannello destro per spostare il bersaglio. In modalità mini-batch, il click diventa un "test" — la rete continua ad allenarsi su target casuali e puoi testare in tempo reale quanto ha generalizzato.*
 
 ## Balistica
 
@@ -509,6 +509,12 @@ Nessun calcolo, nessuna direzione. Solo generazione casuale e selezione. È esat
 
 Il secondo metodo è la vera backpropagation, l'algoritmo che ha reso possibile il deep learning moderno. L'idea è concettualmente elegante: invece di andare alla cieca, **calcola in che direzione aggiustare ogni peso per ridurre l'errore**.
 
+C'è un dettaglio tecnico significativo nella nostra simulazione. La rete neurale in sé è differenziabile — possiamo calcolare analiticamente come una piccola variazione di un peso influenzi l'output. Ma la simulazione fisica (il proiettile che vola, rimbalza, e la cui distanza minima dal target viene misurata) non lo è. È un sistema discreto con un `min()` dentro.
+
+La soluzione è un approccio ibrido: usiamo **differenze numeriche** per capire come i due output della rete (angolo e forza grezzi) influenzano la distanza dal bersaglio — perturbiamo ogni output di una quantità microscopica ε e misuriamo come cambia l'errore. Una volta ottenuti questi gradienti "esterni", li propaghiamo all'indietro **analiticamente** attraverso la rete usando la regola della catena e la derivata della tangente iperbolica: `tanh'(z) = 1 - tanh²(z)`.
+
+Il risultato è che ogni singolo peso riceve un'istruzione precisa: "spostati di tanto in questa direzione". Non è un tentativo — è una discesa calcolata lungo la superficie dell'errore.
+
 ## Dal singolo al generale: il mini-batch
 
 C'è un problema fondamentale con l'approccio "un bersaglio alla volta". La rete non sta veramente *imparando* — sta *memorizzando*. Trova i pesi che risolvono un singolo esercizio, e quando cambi target quei pesi non servono più.
@@ -525,7 +531,7 @@ Il punto chiave: quel singolo aggiornamento deve accontentare *tutti* i bersagli
 
 Torniamo al punto di partenza. Cosa c'è dentro questa rete che "impara a sparare"? Moltiplicazioni di numeri decimali, somme, tangenti iperboliche, e una regola ricorsiva per aggiustare i coefficienti. Niente di più. Eppure il sistema *generalizza*: impara la balistica senza che nessuno gli abbia spiegato la gravità.
 
-Ora, i vari modelli AI fanno la stessa cosa — solo che invece di 20 pesi ne hanno miliardi, invece di due input ne hanno migliaia, e invece della balistica hanno imparato a predire la prossima parola in un testo. La differenza è quantitativa, non qualitativa.
+Da quanto ho capito, i vari modelli AI hanno alla base la stessa cosa — solo che invece di 20 pesi ne hanno miliardi, invece di due input ne hanno migliaia, e invece della balistica hanno imparato a predire la prossima parola in un testo.
 
 E quando quel meccanismo, scalato, produce qualcosa che non sappiamo più distinguere dal pensiero umano, la domanda non è "come è possibile che una macchina pensi?" ma piuttosto: "cos'è davvero il pensiero, se bastano moltiplicazioni e somme?"
 
