@@ -10,6 +10,3 @@ plugins:
   - jekyll-sitemap
 
 show_excerpts: true
-
-# Analytics - Goatcounter (cambia con il tuo codice)
-goatcounter: the-stack-trace

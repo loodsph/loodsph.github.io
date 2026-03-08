@@ -7,14 +7,6 @@
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
   {%- feed_meta -%}
-  {%- if jekyll.environment == 'production' and site.google_analytics -%}
-    {%- include google-analytics.html -%}
-  {%- endif -%}
-
-  {%- if site.goatcounter and site.goatcounter != "IL-TUO-CODICE" -%}
-  <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
-  {%- endif -%}
 
   <!-- MathJax for LaTeX rendering -->
   <script>
