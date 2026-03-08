@@ -22,6 +22,6 @@ Smartphone e social? Senza dubbio. Non aiuta avere “contro” le più grandi a
 
 I social hanno solo amplificato un [problema già esistente](https://loodsph.github.io/complexity/filosofia/psychology/2026/01/13/bugs-bunny.html).
 
-Questo blog è il mio tentativo di pensare in pubblico, [lentamente](https://ofdollarsanddata.com/theres-always-room-for-quality/), su cose che mi interessano, sapendo benissimo che i pensieri sono sempre in divenire. Non scrivo per mettere un punto, ma per avere una direzione. Quello che mi interessa profondamente è il metodo, di cui ho già parlato. Questo blog non è un progetto editoriale, non ha un piano, non ha un target. Non cerca lettori: li filtra.
+Questo blog è il mio tentativo di pensare in pubblico, [lentamente](https://ofdollarsanddata.com/theres-always-room-for-quality/), su cose che mi interessano, sapendo benissimo che i pensieri sono sempre in divenire. Non scrivo per mettere un punto, ma per avere una direzione. Quello che mi interessa profondamente è il metodo. Questo blog non è un progetto editoriale, non ha un piano, non ha un target. Non cerca lettori: li filtra.
 
 Se un post non mi ha insegnato qualcosa mentre lo scrivevo, non lo pubblico.
