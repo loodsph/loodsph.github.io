@@ -20,10 +20,10 @@ layout: default
 
   {%- if posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
+    <ul class="post-list" id="post-list">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
-      <li>
+      <li data-post-index="{{ forloop.index0 }}" {% if forloop.index0 >= 4 %}style="display:none"{% endif %}>
         {%- assign words = post.content | strip_html | number_of_words -%}
         {%- assign reading_time = words | divided_by: 200 -%}
         {%- if reading_time == 0 %}{% assign reading_time = 1 %}{% endif -%}
@@ -40,22 +40,24 @@ layout: default
       {%- endfor -%}
     </ul>
 
-    {% if site.paginate %}
-      <div class="pager">
-        <ul class="pagination">
-        {%- if paginator.previous_page %}
-          <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-          <li><div class="current-page">{{ paginator.page }}</div></li>
-        {%- if paginator.next_page %}
-          <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-        {%- else %}
-          <li><div class="pager-edge">•</div></li>
-        {%- endif %}
-        </ul>
-      </div>
-    {%- endif %}
+    {% if posts.size > 4 %}
+    <div class="post-pagination" id="post-pagination">
+      <button id="load-more-posts" onclick="loadMorePosts()">Altri post</button>
+    </div>
+    <script>
+      var postsShown = 4;
+      function loadMorePosts() {
+        var items = document.querySelectorAll('#post-list li');
+        var end = postsShown + 4;
+        for (var i = postsShown; i < end && i < items.length; i++) {
+          items[i].style.display = '';
+        }
+        postsShown = end;
+        if (postsShown >= items.length) {
+          document.getElementById('load-more-posts').style.display = 'none';
+        }
+      }
+    </script>
+    {% endif %}
   {%- endif -%}
 </div>

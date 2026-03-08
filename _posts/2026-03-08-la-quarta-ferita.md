@@ -11,17 +11,15 @@ Ora tocca all'AI spiegarci che la capacità di pensare non ha nulla di mistico, 
 
 Tre ferite narcisistiche — cosmologica, biologica, psicologica — e ora una quarta: **quella cognitiva**.
 
+---
+<br>
 Ma se dico "una rete neurale impara", cosa sta succedendo davvero? Per rispondere dovremmo prima definire cosa significhi imparare o pensare. Un compito decisamente oltre la mia portata.
 Però vorrei almeno capire che cosa succedesse a livello base, fisico, hardware, di una AI.
 Da quanto ho capito nient'altro che moltiplicazioni, somme, e una regola per aggiustarsi. Questa semplicità è incredibilmente affascinante alla luce di tutto quello che abbiamo visto prima e dei risultati prodotti.
 
-Simulazione: una rete neurale che impara a sparare un proiettile verso un bersaglio.
+## Simulazione
 
----
-
-## Prova tu stesso
-
-Clicca sul pannello di destra per posizionare il bersaglio. Confronta evoluzione e backpropagation, attiva il mini-batch, aggiungi livelli nascosti. Non servono conoscenze pregresse — solo curiosità e qualche click.
+Una rete neurale che impara a sparare un proiettile verso un bersaglio.
 
 <style>
     #nn-sim {
@@ -227,7 +225,6 @@ Clicca sul pannello di destra per posizionare il bersaglio. Confronta evoluzione
     }
     #nn-sim .nn-btn-reset:hover { background: rgba(255,107,107,0.15); transform: scale(1.03); }
 </style>
-
 <div id="nn-sim">
     <div class="nn-main-container">
         <div class="nn-panel nn-panel-left">
@@ -281,7 +278,6 @@ Clicca sul pannello di destra per posizionare il bersaglio. Confronta evoluzione
         <button class="nn-btn-reset" id="nnResetBtn">&#x27F2; Reset</button>
     </div>
 </div>
-
 <script>
 (function() {
     const WIDTH = 400, HEIGHT = 400;
@@ -467,7 +463,7 @@ Clicca sul pannello di destra per posizionare il bersaglio. Confronta evoluzione
         const res=calcTraj(fp.angle,fp.force,target.x,target.y);
         drawNet(brain);drawScene(res.path,fp.angle);
         lossText.innerHTML=useBatch?`PROBE: ${curLoss.toFixed(1)}<br>BATCH: ${batchLoss.toFixed(1)}`:`ERROR: ${curLoss.toFixed(1)}`;
-        epochText.innerText=`epoch: ${epoch}`;
+        epochText.innerText=useBatch?`step: ${epoch}`:`epoch: ${epoch}`;
         requestAnimationFrame(loop);
     }
 
@@ -513,16 +509,6 @@ Nessun calcolo, nessuna direzione. Solo generazione casuale e selezione. È esat
 
 Il secondo metodo è la vera backpropagation, l'algoritmo che ha reso possibile il deep learning moderno. L'idea è concettualmente elegante: invece di andare alla cieca, **calcola in che direzione aggiustare ogni peso per ridurre l'errore**.
 
-## La landscape e i minimi locali
-
-Questa è più una curiosità che ho trovato smanettando:
-
-provate a far convergere la rete su un bersaglio in alto a sinistra, poi spostatelo in basso a destra. Noterete qualcosa di strano: il proiettile tende a colpire il secondo bersaglio nella parte *discendente* della parabola. Ma se resettate la rete e puntate direttamente in basso a destra, la soluzione preferita è un tiro diretto, in *salita*.
-
-Entrambe le soluzioni sono corrette — entrambe hanno errore vicino a zero. Ma vivono in "valli" diverse della **loss landscape**, lo spazio multidimensionale che mappa ogni possibile configurazione di pesi al suo errore corrispondente. Il gradient descent, per sua natura, segue la pendenza locale. Non ha una visione dall'alto. I pesi di partenza determinano in quale valle cadi, e da lì non esci più.
-
-È lo stesso principio della sensibilità alle condizioni iniziali nei sistemi caotici — solo che qui non è il sistema dinamico ad essere caotico, è la geometria dello spazio delle soluzioni ad avere una struttura complessa con molteplici valli.
-
 ## Dal singolo al generale: il mini-batch
 
 C'è un problema fondamentale con l'approccio "un bersaglio alla volta". La rete non sta veramente *imparando* — sta *memorizzando*. Trova i pesi che risolvono un singolo esercizio, e quando cambi target quei pesi non servono più.
@@ -544,7 +530,3 @@ Ora, i vari modelli AI fanno la stessa cosa — solo che invece di 20 pesi ne ha
 E quando quel meccanismo, scalato, produce qualcosa che non sappiamo più distinguere dal pensiero umano, la domanda non è "come è possibile che una macchina pensi?" ma piuttosto: "cos'è davvero il pensiero, se bastano moltiplicazioni e somme?"
 
 La quarta ferita narcisistica non è che le macchine ci superano. È che ci mostrano la meccanica di ciò che credevamo fosse magia.
-
----
-
-
