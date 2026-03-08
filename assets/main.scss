@@ -495,3 +495,15 @@ pre {
     margin-top: 0.5rem;
   }
 }
+
+// 16. Footer tagline
+// =============================================================================
+
+.footer-tagline {
+  text-align: left;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  margin-bottom: 0;
+  letter-spacing: 0.05em;
+}
