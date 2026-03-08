@@ -2,5 +2,6 @@
 layout: home
 title: Home
 ---
+# The Stack Trace
 
-## Esperimenti, idee, codice.
+*Sbagliare, ragionare, riprovare.*
