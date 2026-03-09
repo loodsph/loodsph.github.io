@@ -25,3 +25,5 @@ I social hanno solo amplificato un [problema già esistente](https://loodsph.git
 Questo blog è il mio tentativo di pensare in pubblico, [lentamente](https://ofdollarsanddata.com/theres-always-room-for-quality/), su cose che mi interessano, sapendo benissimo che i pensieri sono sempre in divenire. Non scrivo per mettere un punto, ma per avere una direzione. Quello che mi interessa profondamente è il metodo. Questo blog non è un progetto editoriale, non ha un piano, non ha un target. Non cerca lettori: li filtra.
 
 Se un post non mi ha insegnato qualcosa mentre lo scrivevo, non lo pubblico.
+
+La politica di base è: Zero cookie, zero tracciamento, nessun algoritmo. Non tengo traccia di niente, neppure del numero di visite. Se sto parlando al vuoto cosmico, pace.

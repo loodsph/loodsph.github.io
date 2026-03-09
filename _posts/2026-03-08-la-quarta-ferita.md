@@ -475,6 +475,8 @@ Una rete neurale che impara a sparare un proiettile verso un bersaglio.
 
 *Clicca sul pannello destro per spostare il bersaglio. In modalità mini-batch, il click diventa un "test" — la rete continua ad allenarsi su target casuali e puoi testare in tempo reale quanto ha generalizzato.*
 
+*Rallenta la velocità a 0.25x per vedere come cambiano i pesi e lo spessore delle linee nel corso della simulazione. Lo trovo affascinante.*
+
 ## Balistica
 
 Immaginate un cannone piazzato nell'angolo in basso a sinistra di uno schermo. Da qualche parte sul canvas c'è un bersaglio. La rete neurale deve scoprire due numeri — un angolo e una forza — tali che il proiettile, seguendo una banale parabola gravitazionale, passi il più vicino possibile al centro del target.
