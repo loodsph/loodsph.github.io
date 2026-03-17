@@ -499,3 +499,38 @@ pre {
   margin-bottom: 0;
   letter-spacing: 0.05em;
 }
+
+// 17. Details / Summary (Spoiler blocks)
+// =============================================================================
+
+details {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  box-shadow: var(--card-shadow);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &[open] {
+    border-color: var(--brand-color);
+    
+    summary {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+  }
+
+  summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.2s ease;
+    user-select: none;
+
+    &:hover {
+      color: var(--brand-color);
+    }
+  }
+}
