@@ -4,6 +4,7 @@ title: Come non buttare i soldi nei farmaci per il raffreddore
 date: 2026-02-03 10:00:00 +0100
 categories: [science, health]
 tags: [chemistry, medicine, phenylephrine, pseudoephedrine]
+description: "Cosa funziona e cosa no."
 ---
 
 >“Il raffreddore passa in una settimana senza farmaci e in sette giorni con i farmaci.”
