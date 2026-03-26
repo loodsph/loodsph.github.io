@@ -4,6 +4,7 @@ title: Quel giorno a Disneyland
 date: 2026-01-13 10:00:00 +0100
 categories: [complexity, filosofia, psychology]
 tags: [neuroscience, cognitive-bias, false-memories, elizabeth-loftus]
+description: "Ricordi?"
 ---
 ## La Memoria non è un Hard Disk
 

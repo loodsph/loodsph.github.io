@@ -4,11 +4,8 @@ title: Manifesto
 date: 2026-01-03 10:00:00 +0100
 categories: [blogging, philosophy]
 tags: [ai, manifesto, writing]
+description: "**Ha senso un blog oggi? No.** *“And yet, here we are.”*"
 ---
-
-**Ha senso un blog oggi? No.** *“And yet, here we are.”*
-
-- - -
 
 Uno *stack trace* è quello che leggi quando qualcosa si rompe: ti dice la sequenza di chiamate che ha portato all'errore. Ti costringe a risalire la catena causale, logica, passo dopo passo, fino a trovare dove le cose sono andate storte.
 
