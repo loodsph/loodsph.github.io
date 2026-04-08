@@ -227,7 +227,7 @@ Una rete neurale che impara a sparare un proiettile verso un bersaglio.
     #nn-sim .nn-btn-reset:hover { background: rgba(255,107,107,0.15); transform: scale(1.03); }
 
     @media (max-width: 860px) {
-        #nn-sim .nn-main-container { flex-direction: column; }
+        #nn-sim .nn-main-container { flex-direction: column; width: 100%; }
         #nn-sim .nn-panel { width: 100%; height: auto; aspect-ratio: 1; }
         #nn-sim .nn-panel-left { border-right: none; border-bottom: 1px solid #333; }
         #nn-sim canvas { width: 100%; height: 100%; }

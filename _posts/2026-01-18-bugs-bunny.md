@@ -36,7 +36,5 @@ Noi siamo vittime inconsapevoli. Il nostro cervello sta sinceramente creando un 
 
 Ecco perché trovo tutta la narrazione sui dei “bei tempi andati” abastanza ingenua. La nostalgia per un tempo che, di fatto, si è vissuto solo per interposta persona. Un distillato, inevitabilmente “falso”, di ricordi altrui. La critica ai “giovani di oggi” che si passa da generazione in generazione dai tempi di Socrate.
 
-Ogni
-
 >Un ricordo non è vero solo perché è vivido.
  La memoria serve a darci un senso di identità coerente, non a fornirci prove documentali per un processo.

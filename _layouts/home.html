@@ -2,6 +2,29 @@
 layout: default
 ---
 
+<style>
+  .post-item-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .pixel-icon-wrapper {
+    flex-shrink: 0;
+    border-radius: 0.75em;
+    width: 5.5em;
+    height: 5.5em;
+    min-width: 5.5em;
+    min-height: 5.5em;
+    object-fit: contain;
+    object-position: center;
+    background-color: #ffffff;
+  }
+  .post-item-content {
+    flex: 1;
+    min-width: 0;
+  }
+</style>
+
 <div class="site-hero-wrapper">
   <div class="site-hero"></div>
   <span class="site-hero-credit">Inspired by M.C. Escher</span>
@@ -27,15 +50,19 @@ layout: default
         {%- assign words = post.content | strip_html | number_of_words -%}
         {%- assign reading_time = words | divided_by: 200 -%}
         {%- if reading_time == 0 %}{% assign reading_time = 1 %}{% endif -%}
-        <span class="post-meta">{{ post.date | date: date_format }} &middot; {{ reading_time }} min</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if post.description -%}
-          <p class="post-excerpt">{{ post.description }}</p>
-        {%- endif -%}
+        <div class="post-item-wrapper">
+          {% if post.pixel_icon %}
+            {% assign icon_url = '/assets/pixel_art/' | append: post.pixel_icon | relative_url %}
+            <img class="pixel-icon-wrapper" src="{{ icon_url }}?v={{ site.time | date: '%s' }}" alt="Icona" {% unless post.smooth_image %}style="image-rendering: pixelated;"{% endunless %}>
+          {% endif %}
+          <div class="post-item-content">
+            <span class="post-meta">{{ post.date | date: date_format }} &middot; {{ reading_time }} min</span>
+            <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+            {%- if post.description -%}
+              <p class="post-excerpt">{{ post.description }}</p>
+            {%- endif -%}
+          </div>
+        </div>
       </li>
       {%- endfor -%}
     </ul>
