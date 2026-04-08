@@ -5,7 +5,7 @@ date: 2026-01-13 10:00:00 +0100
 categories: [complexity, filosofia, math]
 tags: [gray-scott, turing, emergenza, chaos-theory]
 description: "Tutto è troppo perfetto, o forse no"
-pixel_icon: "disegno_intelligente2.png"
+pixel_icon: "disegno_intelligente.png"
 smooth_image: true
 ---
 
