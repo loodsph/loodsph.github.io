@@ -4,6 +4,8 @@ date: 2026-03-08
 layout: post
 tags: [AI, reti neurali, filosofia, complessità]
 description: "Da Galileo all'AI"
+pixel_icon: "neural_network.png"
+smooth_image: true
 ---
 
 In principio fu Galileo, a spiegarci che l'universo non ruota intorno a noi. Poi venne Darwin, a spiegarci che non siamo creature speciali, a immagine e somiglianza di un essere superiore — abbiamo solo casualmente preso un ramo evolutivo diverso. Poi toccò a Freud spiegarci che abbiamo un inconscio molto ingombrante e che non siamo padroni a casa nostra.

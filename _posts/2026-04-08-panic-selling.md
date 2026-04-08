@@ -1,12 +1,13 @@
 ---
 layout: post
-title: "Mai prendere decisioni nei momenti di crisi"
+title: "Decisioni nei momenti di crisi"
 seo_title: "Il costo del market timing e perché non vendere durante i crolli"
 date: 2026-04-08
 categories: [finanza]
 tags: [finanza comportamentale, investimenti, s&p500, panic selling, market timing]
-description: "Quindi cosa fare quando le cose vanno male?"
+description: "Cosa fare quando le cose vanno male"
 pixel_icon: "panic.png"
+smooth_image: true
 ---
 
 La mia strategia per i momenti di crisi l'ho imparata dalla finanza (forse un po' troppo oversharing qui).

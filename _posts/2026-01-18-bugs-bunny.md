@@ -5,6 +5,8 @@ date: 2026-01-13 10:00:00 +0100
 categories: [complexity, filosofia, psychology]
 tags: [neuroscience, cognitive-bias, false-memories, elizabeth-loftus]
 description: "Ricordi?"
+pixel_icon: "bugs_bunny.png"
+smooth_image: true
 ---
 ## La Memoria non è un Hard Disk
 

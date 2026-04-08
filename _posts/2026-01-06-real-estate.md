@@ -5,6 +5,8 @@ date: 2026-01-11 22:00:00 +0100
 categories: [economia, coding]
 tags: [immobiliare, inflazione, dataviz, javascript]
 description: "Rompo il mattone."
+pixel_icon: "mario.png"
+smooth_image: true
 ---
 
 Cerco di entrare in punta di piedi in questo argomento. In Italia, la proprietà immobiliare è quasi una religione. Un credo è dogmatico per definizione e analizzare i dogmi è uno degli obiettivi qui.
