@@ -401,8 +401,28 @@ pre {
 // 13. Theme Toggle
 // =============================================================================
 
+// Desktop: flex layout so links and toggle sit on the same line
+@media (min-width: 601px) {
+  .site-nav {
+    display: flex;
+    align-items: center;
+    line-height: normal;
+
+    .trigger {
+      display: flex !important;
+      align-items: center;
+      order: 1;
+    }
+
+    .theme-toggle {
+      order: 2;
+      margin-left: 8px;
+    }
+  }
+}
+
 .theme-toggle {
-  float: right;
+  float: none;
   height: 56px;
   display: flex;
   align-items: center;
@@ -427,6 +447,7 @@ pre {
 
 @media (max-width: 600px) {
   .theme-toggle {
+    float: right;
     margin-right: 40px;
   }
 }
