@@ -1,12 +1,14 @@
 title: The Stack Trace
 description: >-
-  feed your brain
+  Un blog su scienza, finanza e pensiero critico. Analisi approfondite di chimica, farmacologia, economia e complessità — con visualizzazioni interattive.
 lang: it
 author: Ludovico
 email: epinephrine04@gmail.com
+url: "https://loodsph.github.io"
 theme: minima
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-feed
 
 show_excerpts: true

@@ -4,6 +4,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
   {%- seo -%}
+
+  {%- if page.pixel_icon -%}
+  <meta property="og:image" content="{{ site.url }}/assets/pixel_art/{{ page.pixel_icon }}">
+  <meta name="twitter:image" content="{{ site.url }}/assets/pixel_art/{{ page.pixel_icon }}">
+  <meta name="twitter:card" content="summary">
+  {%- elsif page.layout == 'home' or page.url == '/' -%}
+  <meta property="og:image" content="{{ site.url }}/assets/escher.webp">
+  <meta name="twitter:image" content="{{ site.url }}/assets/escher.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  {%- endif -%}
+
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
   {%- feed_meta -%}

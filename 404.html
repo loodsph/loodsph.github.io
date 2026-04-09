@@ -1,0 +1,42 @@
+---
+layout: default
+title: "Pagina non trovata"
+permalink: /404.html
+---
+
+<style>
+  .error-container {
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+  .error-code {
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--brand-color);
+    margin: 0;
+    line-height: 1;
+  }
+  .error-message {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    margin: 1rem 0 2rem;
+  }
+  .error-link {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    border: 1.5px solid var(--brand-color);
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .error-link:hover {
+    background-color: var(--brand-color);
+    color: #ffffff;
+  }
+</style>
+
+<div class="error-container">
+  <h1 class="error-code">404</h1>
+  <p class="error-message">Questa pagina non esiste.</p>
+  <a href="{{ '/' | relative_url }}" class="error-link">Torna alla home</a>
+</div>

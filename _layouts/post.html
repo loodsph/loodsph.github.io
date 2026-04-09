@@ -31,5 +31,58 @@ layout: default
     {{ content }}
   </div>
 
+  <nav class="post-navigation" aria-label="Navigazione articoli">
+    {%- assign sorted_posts = site.posts | sort: 'date' -%}
+    {%- assign post_index = nil -%}
+    {%- for post in sorted_posts -%}
+      {%- if post.url == page.url -%}
+        {%- assign post_index = forloop.index0 -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if post_index -%}
+      {%- assign prev_index = post_index | minus: 1 -%}
+      {%- assign next_index = post_index | plus: 1 -%}
+
+      <div class="nav-links">
+        {%- if prev_index >= 0 -%}
+          {%- assign prev_post = sorted_posts[prev_index] -%}
+          <a href="{{ prev_post.url | relative_url }}" class="nav-previous" rel="prev">
+            <span class="nav-label">← Precedente</span>
+            <span class="nav-title">{{ prev_post.title }}</span>
+          </a>
+        {%- else -%}
+          <span class="nav-placeholder"></span>
+        {%- endif -%}
+
+        {%- if next_index < sorted_posts.size -%}
+          {%- assign next_post = sorted_posts[next_index] -%}
+          <a href="{{ next_post.url | relative_url }}" class="nav-next" rel="next">
+            <span class="nav-label">Successivo →</span>
+            <span class="nav-title">{{ next_post.title }}</span>
+          </a>
+        {%- else -%}
+          <span class="nav-placeholder"></span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </nav>
+
+  {%- if site.related_posts.size > 0 -%}
+  <aside class="related-posts">
+    <h3>Potrebbe interessarti</h3>
+    <ul>
+      {%- for post in site.related_posts limit:3 -%}
+        {%- unless post.url == page.url -%}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        </li>
+        {%- endunless -%}
+      {%- endfor -%}
+    </ul>
+  </aside>
+  {%- endif -%}
+
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
