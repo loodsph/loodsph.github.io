@@ -12,3 +12,5 @@ plugins:
   - jekyll-feed
 
 show_excerpts: true
+
+header_pages: []
