@@ -17,7 +17,7 @@ La mia strategia per i momenti di crisi l'ho imparata dalla finanza (forse un po
 
 ## Cos'è il Panic Selling e perché evitarlo
 
-Il panic selling consiste nel vendere compulsivamente i propri asset quando le cose vanno male sui mercati finanziari. Il panico è un'emozione normale, dopotutto siamo umani, ma cedere alla paura e smantellare il proprio portafoglio di investimenti per "salvare il salvabile" è l'errore più costoso che un investitore possa fare. Tenere la barra dritta durante un crollo è la vera sfida della finanza comportamentale.
+Il panic selling consiste nel vendere compulsivamente i propri asset quando le cose vanno male sui mercati finanziari. Il panico è un'emozione normale, dopotutto siamo umani, ma cedere alla paura e smantellare il proprio portafoglio di investimenti per "salvare il salvabile" è l'errore più costoso che un investitore possa fare. Tenere la barra dritta durante un crollo è la vera sfida della finanza comportamentale (e non solo).
 
 ## Il vero costo del Market Timing: Backtest sull'S&P 500
 

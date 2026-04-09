@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Come non buttare i soldi nei farmaci per il raffreddore
+title: Farmaci e raffreddore
 date: 2026-02-03 10:00:00 +0100
 categories: [science, health]
 tags: [chemistry, medicine, phenylephrine, pseudoephedrine]
