@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Farmaci e raffreddore
+seo_title: "Fenilefrina e Pseudoefedrina: i farmaci per il raffreddore che funzionano davvero"
 date: 2026-02-03 10:00:00 +0100
 categories: [science, health]
 tags: [chemistry, medicine, phenylephrine, pseudoephedrine]

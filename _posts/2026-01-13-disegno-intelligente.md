@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Il disegno intelligente
+seo_title: "Modello Gray-Scott e morfogenesi: la matematica dell'emergenza"
 date: 2026-01-13 10:00:00 +0100
 categories: [complexity, filosofia, math]
 tags: [gray-scott, turing, emergenza, chaos-theory]

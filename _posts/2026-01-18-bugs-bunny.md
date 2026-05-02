@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Quel giorno a Disneyland
+seo_title: "Falsi ricordi e memoria ricostruttiva: l'esperimento di Bugs Bunny"
 date: 2026-01-13 10:00:00 +0100
 categories: [complexity, filosofia, psychology]
 tags: [neuroscience, cognitive-bias, false-memories, elizabeth-loftus]

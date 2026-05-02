@@ -191,9 +191,23 @@ a:visited {
   }
 
   @media (max-width: 600px) {
+    .site-nav {
+      background-color: var(--bg-color);
+      border-color: var(--border-color);
+
+      .menu-icon > svg {
+        fill: var(--text-color);
+      }
+
+      label[for="nav-trigger"] {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
     .site-nav .trigger {
       background-color: var(--bg-color);
-      border: 1px solid var(--border-color);
+      border: none;
     }
   }
 }

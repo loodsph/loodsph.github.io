@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Manifesto
+seo_title: "Manifesto del blog: pensiero, metodo e realtà"
 date: 2026-01-03 10:00:00 +0100
 categories: [blogging, philosophy]
 tags: [ai, manifesto, writing]

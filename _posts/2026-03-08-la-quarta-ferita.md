@@ -1,7 +1,9 @@
 ---
-title: "La quarta ferita narcisistica"
-date: 2026-03-08
 layout: post
+title: "La quarta ferita narcisistica"
+seo_title: "Reti neurali e pensiero: la quarta ferita narcisistica spiegata"
+date: 2026-03-08
+categories: [filosofia, coding]
 tags: [AI, reti neurali, filosofia, complessità]
 description: "Da Galileo all'AI"
 pixel_icon: "neural_network.png"

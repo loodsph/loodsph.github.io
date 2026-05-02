@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "L'unico investimento sicuro (?)"
+seo_title: "Investire nel mattone: conviene comprare casa? Analisi dati ISTAT"
 date: 2026-01-11 22:00:00 +0100
 categories: [economia, coding]
 tags: [immobiliare, inflazione, dataviz, javascript]
