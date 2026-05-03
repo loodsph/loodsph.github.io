@@ -32,7 +32,7 @@ Già le sento le critiche: *"Non servono i farmaci per risolvere i problemi, è 
 
 Datemi il beneficio del dubbio:
 
-I farmaci, come visto in [post precedenti](https://loodsph.github.io/farmacologia/2026/03/31/cytisine.html), agiscono legando i recettori. Il **Propranololo** è un farmaco che riduce la frequenza cardiaca in chi lo assume, bloccando alcuni recettori stimolati dall'adrenalina. Ma sappiamo che l'adrenalina (nelle sue varie forme) non agisce solo sul cuore, ma anche sul cervello. Tutti abbiamo sperimentato la "scarica di adrenalina". Il Propranololo ha l'interessante capacità (per via della sua lipofilia) di arrivare nel cervello e legare questi recettori.
+I farmaci, come visto in [post precedenti](https://loodsph.github.io/farmacologia/2026/03/31/cytisine.html), agiscono legando i recettori. Il **Propranololo** è un farmaco che riduce la frequenza cardiaca in chi lo assume, bloccando alcuni recettori stimolati dall'adrenalina (in particolare blocca i recettori β-adrenergici). Questi recettori sono presenti anche nel cervello. Tutti abbiamo sperimentato la "scarica di adrenalina" (non è realmente adrenalina, ma facciamo a capirci). Il Propranololo ha l'interessante capacità (per via della sua lipofilia) di arrivare nel cervello e legare questi recettori.
 
 A seguito di un evento traumatico, un lutto, ma anche una delusione d'amore (ironico che un farmaco per il cuore aiuti anche nei "cuori spezzati") vengono rilasciate massicce dosi di neurotrasmettitori.
 
@@ -40,11 +40,11 @@ Un ricordo è una [cosa complessa](https://loodsph.github.io/complexity/filosofi
 
 Il trauma ha un senso. Ci fa scappare quando ci troviamo in una situazione già vissuta che sappiamo essere pericolosa. È una cosa importante: evitare a ogni costo i traumi moderati è un problema. Vivere sotto una campana di vetro non è una buona idea. Può però accadere che la risposta sia sproporzionata, e io non credo che soffrire inutilmente serva a qualcosa.
 
-Quando richiamiamo un ricordo si attiva l'amigdala mandando tutti quei segnali di pericolo tramite l'adrenalina. Questa attiva tutta una serie di meccanismi che causano la creazione di nuove comunicazioni tra neuroni. Questi causano il pensiero e il [consolidamento della memoria](https://istss.org/student-perspectives-the-effect-of-beta-blockers-on-traumatic-memory-consolidation-and-reconsolidation-tara-frem-ba/). Il Propranololo teoricamente impedisce la creazione di questi ponti.
+Quando richiamiamo un ricordo si attiva l'amigdala mandando tutti quei segnali di pericolo tramite l'adrenalina. Questa attiva tutta una serie di meccanismi che causano la creazione di nuove comunicazioni tra neuroni. Questi causano il pensiero e il [consolidamento della memoria](https://istss.org/student-perspectives-the-effect-of-beta-blockers-on-traumatic-memory-consolidation-and-reconsolidation-tara-frem-ba/). Il Propranololo teoricamente diminuisce la possibilità di creazione di questi ponti.
 
 ## I tre tempi del propranololo
 
-[Hanno provato](https://pubmed.ncbi.nlm.nih.gov/26454715/) somministrando il farmaco subito dopo un trauma, ma non ha avuto nessun effetto. Forse perché la scarica in quel momento è troppo forte.
+[Hanno provato](https://pubmed.ncbi.nlm.nih.gov/26454715/) somministrando il farmaco subito dopo un trauma, ma non ha prodotto evidenze inconsistenti. Forse perché la scarica in quel momento è troppo forte.
 
 Poi si è provato a somministrarlo dopo, quando si richiama il ricordo rileggendo un testo scritto o in una seduta psicologica breve (10-15 minuti). In alcuni casi, i risultati sono stati straordinari: la maggior parte dei partecipanti ha perso i criteri diagnostici clinici per il **PTSD** (sindrome da stress post-traumatico). Nel complesso, però, la letteratura è ancora contrastante e non c'è consenso.
 
