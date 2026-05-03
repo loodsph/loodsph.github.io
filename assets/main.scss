@@ -194,14 +194,15 @@ a:visited {
     .site-nav {
       background-color: var(--bg-color);
       border-color: var(--border-color);
+      line-height: 1;
 
       .menu-icon > svg {
         fill: var(--text-color);
       }
 
       label[for="nav-trigger"] {
-        width: 28px;
-        height: 28px;
+        width: 36px;
+        height: 36px;
       }
     }
 
@@ -463,8 +464,9 @@ pre {
   .theme-toggle {
     float: right;
     height: 36px;
+    line-height: 36px;
     margin-right: 36px;
-    padding: 0 2px;
+    padding: 0 4px;
   }
 }
 
