@@ -27,12 +27,6 @@ layout: default
   /* Mostra post aggiuntivi caricati con JS */
   #post-list li.js-visible { display: block !important; }
 
-  /* Gestione istantanea opacità bottoni lingua */
-  html:not([data-active-lang="en"]) #lang-btn-it { opacity: 1; }
-  html:not([data-active-lang="en"]) #lang-btn-en { opacity: 0.5; }
-  html[data-active-lang="en"] #lang-btn-en { opacity: 1; }
-  html[data-active-lang="en"] #lang-btn-it { opacity: 0.5; }
-
   /* Testo del bottone "Load More" gestito via CSS */
   html:not([data-active-lang="en"]) .lm-it { display: inline; }
   html:not([data-active-lang="en"]) .lm-en { display: none; }
@@ -67,15 +61,6 @@ layout: default
 </div>
 
 <div class="home">
-
-  <div class="lang-switch" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 2.5rem;">
-    <button onclick="filterPostsByLang('it')" id="lang-btn-it" style="padding: 6px 16px; border-radius: 20px; border: 1px solid var(--border-color, #e5e5e5); background: var(--bg-color, #ffffff); cursor: pointer; transition: opacity 0.2s; font-weight: 500;">
-      🇮🇹 Italiano
-    </button>
-    <button onclick="filterPostsByLang('en')" id="lang-btn-en" style="padding: 6px 16px; border-radius: 20px; border: 1px solid var(--border-color, #e5e5e5); background: var(--bg-color, #ffffff); cursor: pointer; transition: opacity 0.2s; font-weight: 500;">
-      🇬🇧 English
-    </button>
-  </div>
 
   {{ content }}
 

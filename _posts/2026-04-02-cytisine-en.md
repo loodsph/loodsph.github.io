@@ -36,7 +36,7 @@ Irritability, anxiety, difficulty concentrating, an obsessive and uncontrollable
 
 ## Don't have willpower?
 How much I hate this Americanized rhetoric of "if you want it, you can do it", damn you Tony Robbins.
-**Willpower alone is overrated**. In fact, it often turns into a real trap. It's not that you lack willpower: nicotine has literally **hijacked** your mesolimbic system, making the brain believe that smoking is an action linked to survival.
+**Willpower alone is overrated** — it often turns into a real trap. It's not that you lack willpower: nicotine has literally **hijacked** your mesolimbic system, making the brain believe that smoking is an action linked to survival.
 
 From a neurobiological point of view, what we call "willpower" (inhibitory control and the ability to delay gratification) resides mainly in our prefrontal cortex. It's the most evolved part of our brain, responsible for reasoning, long-term planning, and impulse control.
 

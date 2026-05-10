@@ -18,7 +18,7 @@ For me, that trigger has the shape and texture of gnocchi.
 
 And when I want to do something, I do the only thing I know how to do: I break it down into its fundamental chemical-physical components.
 
-(disclaimer: this post will contain several mentions of potatoes, if you are under 8 years old you might find it hilarious)
+(disclaimer: this post will contain several mentions of potatoes, if you are under 8 years old you might find it amusing)
 
 ---
 <br>
@@ -38,7 +38,7 @@ Raw starch is organized into compact, crystalline granules (amylose and amylopec
 
 Here lies the trick with gnocchi: **we need water to gelatinize the starch, but we want the absolute bare minimum**.
 
-I've always seen potatoes boiled in water (not that it doesn't make sense in **other** preparations), a recipe dating back to when cooking methods could be counted on the fingers of one hand. I remember the somewhat uncomposed reactions when I questioned this sacred dogma.
+I've always seen potatoes boiled in water (though it works just fine in **other** preparations), a recipe dating back to when cooking methods could be counted on the fingers of one hand. I remember the somewhat uncomposed reactions when I questioned this sacred dogma.
 
 If we boil potatoes in water, the starch granules become saturated, explode, and create a watery glue. You will have to add tons of flour to dry the dough, resulting in rubber bullets.
 The *endogenous* water (the one naturally contained inside the potato) is thermodynamically perfect and sufficient to gelatinize the starch to the right point, provided no additional water enters from the outside. That's why the microwave is the answer.
@@ -131,7 +131,7 @@ If we want to be precise, what bypassed his defenses was not a miracle of love f
 
 Rigor, method, and physics are not sad ends in themselves: they are the only reliable tool we have to hack and reproduce an emotion on command.
 
-Cooking with a method means stopping hoping that things go well and starting to understand why they work.
+Methodical cooking means replacing hope with understanding.
 
 ---
 
