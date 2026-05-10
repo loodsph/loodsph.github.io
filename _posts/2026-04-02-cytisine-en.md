@@ -1,72 +1,72 @@
 ---
 layout: post
-title: "Citisina"
-seo_title: "Citisina per smettere di fumare: come funziona, efficacia e rimborsabilità SSN 2026"
+title: "Cytisine"
+seo_title: "Cytisine to quit smoking: how it works, efficacy and NHS reimbursement 2026"
 date: 2026-03-31
 categories: [farmacologia]
 tags: [citisina, farmacologia, tabagismo, recettori, dipendenza]
-description: "Come funzionano (davvero) i farmaci per smettere di fumare, con simulazioni visive e i nuovi dati AIFA sulla rimborsabilità."
+description: "How smoking cessation drugs (really) work, with visual simulations and the latest data on reimbursement."
 pixel_icon: "cytisine.png"
 smooth_image: true
-lang: it
+lang: en
 ref: cytisine
 ---
 
-## Premessa
-Non sono uno psicologo, ma parlando di dipendenze qualcosa la vorrei dire.
+## Premise
+I'm not a psychologist, but speaking of addictions, I'd like to say a few things.
 
-Spesso si pensa al fumo come a un semplice "brutto vizio", ma dal punto di vista medico e psichiatrico stiamo parlando di una vera e propria tossicodipendenza, classificata come tale anche nel manuale diagnostico (il DSM-5).
+Smoking is often thought of as just a "bad habit," but from a medical and psychiatric point of view, we are talking about a true addiction, classified as such even in the diagnostic manual (the DSM-5).
 
-Ma cosa succede esattamente nel nostro cervello quando accendiamo una sigaretta?
+But what exactly happens in our brain when we light a cigarette?
 
-### Velocità
-La nicotina impiega meno di 10 secondi per arrivare dai polmoni direttamente al cervello. È una velocità di somministrazione pazzesca, superiore persino a quella di molte droghe iniettate per via endovenosa.
+### Speed
+Nicotine takes less than 10 seconds to travel from the lungs directly to the brain. It's an insanely fast delivery speed, even faster than many drugs injected intravenously.
 
-Una volta arrivata nel cervello, la nicotina si lega a dei recettori specifici chiamati recettori nicotinici dell'acetilcolina. E qui scatta la vera e propria trappola neurobiologica.
+Once it arrives in the brain, nicotine binds to specific receptors called nicotinic acetylcholine receptors. And here is where the real neurobiological trap is sprung.
 
-L'attivazione di questi recettori provoca il rilascio di vari neurotrasmettitori, ma il vero protagonista di questa storia è la dopamina. La nicotina stimola il rilascio di dopamina nel nucleus accumbens, l'area del nostro cervello che gestisce il circuito del piacere e della ricompensa.
+The activation of these receptors causes the release of various neurotransmitters, but the real star of this story is dopamine. Nicotine stimulates the release of dopamine in the nucleus accumbens, the area of our brain that manages the pleasure and reward circuitry.
 
-Questo rilascio innaturale di dopamina ci fa sentire temporaneamente più concentrati, più rilassati, o semplicemente "bene". Il cervello registra questa azione (fumare) come qualcosa di vitale, di estremamente positivo, e ci spinge a ripeterla.
+This unnatural release of dopamine makes us feel temporarily more focused, more relaxed, or simply "good." The brain registers this action (smoking) as something vital, something extremely positive, and pushes us to repeat it.
 
-### Tolleranza e Astinenza: il cane che si morde la coda
-Se fumiamo regolarmente, il nostro cervello si difende da questa stimolazione continua attuando una neuroadattamento. Aumenta il numero dei recettori e ne riduce la sensibilità (fenomeno della tolleranza). Significa che avremo bisogno di sempre più nicotina per ottenere lo stesso effetto.
+### Tolerance and Withdrawal: the snake biting its tail
+If we smoke regularly, our brain defends itself against this continuous stimulation by implementing a neuroadaptation. It increases the number of receptors and reduces their sensitivity (the phenomenon of tolerance). This means we'll need more and more nicotine to get the same effect.
 
-Ma il vero problema sorge quando il livello di nicotina nel sangue inizia a scendere (e scende molto in fretta, nell'arco di un'ora o due). A quel punto, il cervello va in allarme e scatta la sindrome di astinenza:
-Irritabilità, ansia, difficoltà di concentrazione, un desiderio ossessivo e incontrollabile di fumare (il craving).
+But the real problem arises when the nicotine level in the blood starts to drop (and it drops very quickly, within an hour or two). At that point, the brain goes into alarm mode and the withdrawal syndrome kicks in:
+Irritability, anxiety, difficulty concentrating, an obsessive and uncontrollable desire to smoke (craving).
 
-## Non hai forza di volontà?
-Quanto mi sta sulle ~~palle~~ scatole questa retorica un po' americaneggiante del "se vuoi, puoi", maledetto Tony Robbins.
-**La forza di volontà, da sola, è sopravvalutata**. Anzi, spesso si trasforma in una vera e propria trappola. Non è che ti manca la forza di volontà: la nicotina ha letteralmente **dirottato** il tuo sistema mesolimbico, facendo credere al cervello che fumare sia un'azione legata alla sopravvivenza.
+## Don't have willpower?
+How much I hate this Americanized rhetoric of "if you want it, you can do it", damn you Tony Robbins.
+**Willpower alone is overrated**. In fact, it often turns into a real trap. It's not that you lack willpower: nicotine has literally **hijacked** your mesolimbic system, making the brain believe that smoking is an action linked to survival.
 
-Dal punto di vista neurobiologico, quella che noi chiamiamo "forza di volontà" (il controllo inibitorio e la capacità di posticipare una gratificazione) risiede principalmente nella nostra corteccia prefrontale. È la parte più evoluta del nostro cervello, deputata al ragionamento, alla pianificazione a lungo termine e al controllo degli impulsi.
+From a neurobiological point of view, what we call "willpower" (inhibitory control and the ability to delay gratification) resides mainly in our prefrontal cortex. It's the most evolved part of our brain, responsible for reasoning, long-term planning, and impulse control.
 
-Il problema è che questa funzione cognitiva consuma tantissima energia metabolica. Potete immaginarla come la batteria del vostro smartphone: al mattino, dopo una bella dormita, è carica al 100%. Ma durante la giornata, ogni volta che prendiamo una decisione, che sopprimiamo un'emozione negativa al lavoro, o che resistiamo a una tentazione, consumiamo "tacca" dopo "tacca".
+The problem is that this cognitive function consumes a ton of metabolic energy. You can think of it as your smartphone's battery: in the morning, after a good night's sleep, it's 100% charged. But throughout the day, every time we make a decision, suppress a negative emotion at work, or resist a temptation, we consume "bars" of battery.
 
-Anche se il modello dell'ego depletion di Baumeister (esaurimento dell'io) è stato ridimensionato dalla crisi di replicabilità in psicologia, l'osservazione clinica che le ricadute avvengano prevalentemente a fine giornata o sotto stress resta però solida e ben documentata, indipendentemente dal framework teorico con cui la si spiega. Alla sera la batteria è scarica. La nostra corteccia prefrontale si "spegne" e prendono inevitabilmente il sopravvento le aree più antiche del cervello (come il sistema limbico), che sono guidate dall'abitudine, dall'emotività e dalla ricerca immediata del piacere o del sollievo. Ecco perché le abbuffate di cibo o le "scivolate" nelle dipendenze avvengono quasi sempre a fine giornata o nei periodi di forte stress.
+Although Baumeister's ego depletion model has been downsized by the replication crisis in psychology, the clinical observation that relapses occur mostly at the end of the day or under stress remains solid and well-documented, regardless of the theoretical framework used to explain it. By evening, the battery is dead. Our prefrontal cortex "shuts down" and the older areas of the brain (like the limbic system) inevitably take over, guided by habit, emotion, and the immediate search for pleasure or relief. This is why food binges or "slips" into addictions almost always happen at the end of the day or during periods of high stress.
 
-A un certo punto della vita di un fumatore, non si fuma più per provare piacere, ma per spegnere l'astinenza. Si fuma semplicemente per tornare a sentirsi "normali", come si sente un non fumatore tutto il giorno.
+At a certain point in a smoker's life, you no longer smoke to experience pleasure, but to turn off the withdrawal. You simply smoke to feel "normal" again, the way a non-smoker feels all day long.
 
-## Come funziona (quasi) tutto quello che agisce sul cervello
+## How (almost) everything that acts on the brain works
 
-Iniziamo col dire che la maggior parte delle molecole che agiscono a livello del Sistema Nervoso Centrale (molto, molto barbaramente: su quello che nel linguaggio comune è il Cervello) si legano ("attivano") almeno un recettore.
+Let's start by saying that most molecules acting on the Central Nervous System (very, very roughly: what in common parlance is the Brain) bind ("activate") at least one receptor.
 
-Ovviamente "si legano ad un recettore" si intende *un tipo* di recettore. Come in un campo di fiori, ci sono vari tipi di fiori — la Margherita (*Leucanthemum vulgare*), il Fiordaliso (*Centaurea cyanus*) — e ci sono tante Margherite e tanti Fiordalisi. Se un parassita (nella nostra analogia: la molecola agonista) attacca la margherita (il recettore), non attacca una sola margherita, le attacca tutte. "Si lega" a tutti i fiori dello stesso tipo.
+Obviously "they bind to a receptor" means *a type* of receptor. Like in a field of flowers, there are various types of flowers — the Daisy (*Leucanthemum vulgare*), the Cornflower (*Centaurea cyanus*) — and there are many Daisies and many Cornflowers. If a parasite (in our analogy: the agonist molecule) attacks the daisy (the receptor), it doesn't attack just one daisy, it attacks them all. It "binds" to all flowers of the same type.
 
-Generalmente all'attivazione di questo recettore vengono rilasciate altre molecole che attivano altri meccanismi complessi a cascata, spesso anche in altre regioni del cervello.
+Generally, upon the activation of this receptor, other molecules are released which activate other complex cascading mechanisms, often also in other regions of the brain.
 
-### Come funziona un recettore in breve
+### How a receptor works, in short
 
-*aka la parte di cui sono più fiero e di cui legittimamente non frega nulla a nessuno*
+*aka the part I'm most proud of and which legitimately nobody cares about*
 
-Ricordate il classico "Mamma, ho perso l'aereo"? Tutto il sistema di trappole che escogita Kevin per proteggersi dai ladri? Ogni volta che uno dei due malcapitati apre una porta, con un complicato sistema di carrucole, si attiva un meccanismo che fa scattare la trappola. Ora immaginate che non ci sia una sola trappola collegata ad una porta, ma più trappole. Più si apre la porta, più trappole scattano.
+Remember the classic "Home Alone"? All the booby traps Kevin sets up to protect himself from the burglars? Every time one of the two unfortunate thieves opens a door, a complicated system of pulleys triggers the trap. Now imagine there's not just one trap connected to a door, but multiple traps. The wider the door opens, the more traps spring.
 
-Ecco, tradotto in farmacologia:
+Well, translated into pharmacology:
 
-1. Una molecola **agonista** è come una chiave: serve per aprire la porta. Trappole a volontà.
-2. Un **antagonista** è invece una chiave che riesce ad inserirsi nella serratura, ma non la apre e resta incastrata, impedendo alla chiave giusta di entrare. Nessuna trappola.
-3. Un **agonista parziale** è la cosa interessante: riesce ad aprire la serratura, ma non la catenina legata al chiavistello dietro la porta — fa scattare qualche trappola, ma non tutte. Quelle poche sono tali da *non* essere "abbastanza"
+1. An **agonist** molecule is like a key: it serves to open the door. Traps galore.
+2. An **antagonist**, on the other hand, is a key that manages to fit into the lock but doesn't open it and gets stuck, preventing the right key from entering. No traps.
+3. A **partial agonist** is the interesting one: it manages to open the lock, but not the chain attached behind the door — it springs some traps, but not all of them. Those few are such that they are *not* "enough".
 
-*Per i più precisi: pare che i recettori oscillino tra uno stato attivo e uno inattivo, e l'agonista parziale si leghi ai recettori bloccandoli in quell'istante. Quelli che in quel momento sono attivi restano bloccati in modalità attiva, gli altri restano bloccati in modalità inattiva.*
+*For the pedantic ones: it seems that receptors oscillate between an active and an inactive state, and the partial agonist binds to the receptors locking them in that instant. Those that are active at that moment remain locked in active mode, the others remain locked in inactive mode.*
 
 <div id="ligand-receptor-sim" style="max-width: 700px; margin: 2rem auto;">
 <style>
@@ -175,10 +175,10 @@ Ecco, tradotto in farmacologia:
 </style>
 
 <div class="lr2-buttons" role="group" aria-label="Seleziona il ligando da simulare">
-  <button class="lr2-btn sel-no" onclick="lr2Set('none')" id="lr2b-none" aria-controls="lr2-desc">Nessun ligando</button>
-  <button class="lr2-btn" onclick="lr2Set('agonist')" id="lr2b-agonist" aria-controls="lr2-desc">Agonista (Nicotina)</button>
-  <button class="lr2-btn" onclick="lr2Set('antagonist')" id="lr2b-antagonist" aria-controls="lr2-desc">Antagonista</button>
-  <button class="lr2-btn" onclick="lr2Set('partial')" id="lr2b-partial" aria-controls="lr2-desc">Agonista parziale (Citisina)</button>
+  <button class="lr2-btn sel-no" onclick="lr2Set('none')" id="lr2b-none" aria-controls="lr2-desc">No ligand</button>
+  <button class="lr2-btn" onclick="lr2Set('agonist')" id="lr2b-agonist" aria-controls="lr2-desc">Agonist (Nicotine)</button>
+  <button class="lr2-btn" onclick="lr2Set('antagonist')" id="lr2b-antagonist" aria-controls="lr2-desc">Antagonist</button>
+  <button class="lr2-btn" onclick="lr2Set('partial')" id="lr2b-partial" aria-controls="lr2-desc">Partial agonist (Cytisine)</button>
 </div>
 
 <svg id="lr2svg" width="100%" viewBox="0 0 680 440" role="img" aria-label="Simulazione visiva interattiva dei recettori nicotinici sulla membrana cellulare. Mostra i canali recettoriali che si aprono o rimangono chiusi a seconda del ligando.">
@@ -212,14 +212,14 @@ Ecco, tradotto in farmacologia:
       </g>
     </defs>
 
-    <text x="340" y="20" text-anchor="middle" class="lr2-label" style="font-size:10px;letter-spacing:1px;font-weight:600;">SPAZIO EXTRACELLULARE</text>
+    <text x="340" y="20" text-anchor="middle" class="lr2-label" style="font-size:10px;letter-spacing:1px;font-weight:600;">EXTRACELLULAR SPACE</text>
     <rect x="0" y="180" width="680" height="80" fill="url(#lr2mem-bg)"/>
     <rect x="0" y="180" width="680" height="80" fill="url(#lipid)"/>
     <line x1="0" y1="180" x2="680" y2="180" style="stroke:var(--c-membrana); stroke-opacity:0.4; stroke-width:1"/>
     <line x1="0" y1="260" x2="680" y2="260" style="stroke:var(--c-membrana); stroke-opacity:0.4; stroke-width:1"/>
     
-    <text x="35" y="224" text-anchor="middle" class="lr2-label" style="font-size:11px;">Membrana</text>
-    <text x="340" y="426" text-anchor="middle" class="lr2-label" style="font-size:10px;letter-spacing:1px;font-weight:600;">SPAZIO INTRACELLULARE</text>
+    <text x="35" y="224" text-anchor="middle" class="lr2-label" style="font-size:11px;">Membrane</text>
+    <text x="340" y="426" text-anchor="middle" class="lr2-label" style="font-size:10px;letter-spacing:1px;font-weight:600;">INTRACELLULAR SPACE</text>
 
     <g id="lr2-ion-pool"></g> 
 
@@ -253,34 +253,34 @@ Ecco, tradotto in farmacologia:
     <g id="lr2-nic-pool"></g>
     <g id="lr2-dopa-pool"></g>
 
-    <text x="600" y="178" class="lr2-label" style="font-size:11px;">Tasca di</text>
-    <text x="600" y="192" class="lr2-label" style="font-size:11px;">legame</text>
+    <text x="600" y="178" class="lr2-label" style="font-size:11px;">Binding</text>
+    <text x="600" y="192" class="lr2-label" style="font-size:11px;">pocket</text>
     <line x1="550" y1="175" x2="595" y2="175" style="stroke:var(--blog-border)" stroke-width=".5" stroke-dasharray="3 3"/>
     <circle cx="550" cy="175" r="1.5" style="fill:var(--blog-text-muted)"/>
 
-    <text x="600" y="230" class="lr2-label" style="font-size:11px;">Stato canali</text>
-    <text id="lr2-gate-label" x="600" y="244" class="lr2-label lr2-label-bold" style="font-size:11px;">Chiusi</text>
+    <text x="600" y="230" class="lr2-label" style="font-size:11px;">Channel state</text>
+    <text id="lr2-gate-label" x="600" y="244" class="lr2-label lr2-label-bold" style="font-size:11px;">Closed</text>
     <line x1="535" y1="227" x2="595" y2="227" style="stroke:var(--blog-border)" stroke-width=".5" stroke-dasharray="3 3"/>
     <circle cx="535" cy="227" r="1.5" style="fill:var(--blog-text-muted)"/>
 
     <g transform="translate(15,300)">
       <rect x="-8" y="-15" width="185" height="135" rx="6" fill="var(--blog-card-bg)" opacity="0.85" />
-      <text x="0" y="0" class="lr2-label" style="font-size:11px;">Legenda forme molecolari:</text>
+      <text x="0" y="0" class="lr2-label" style="font-size:11px;">Molecular forms legend:</text>
       <path d="M10,18 L22,12 L30,18 L26,26 L14,26 Z" style="fill:var(--c-nicotina); stroke:var(--blog-border)" opacity=".7" stroke-width=".5"/>
-      <text x="38" y="23" class="lr2-label" style="font-size:11px;">Nicotina</text>
+      <text x="38" y="23" class="lr2-label" style="font-size:11px;">Nicotine</text>
       <rect x="8" y="34" width="24" height="16" rx="2" style="fill:var(--c-antagonista); stroke:var(--blog-border)" opacity=".7" stroke-width=".5"/>
-      <text x="38" y="47" class="lr2-label" style="font-size:11px;">Antagonista</text>
+      <text x="38" y="47" class="lr2-label" style="font-size:11px;">Antagonist</text>
       <path d="M10,58 C10,54 14,52 20,52 C26,52 30,54 30,58 L28,66 C28,68 26,70 20,70 C14,70 12,68 12,66 Z" style="fill:var(--c-citisina); stroke:var(--blog-border)" opacity=".7" stroke-width=".5"/>
-      <text x="38" y="67" class="lr2-label" style="font-size:11px;">Citisina</text>
+      <text x="38" y="67" class="lr2-label" style="font-size:11px;">Cytisine</text>
       <circle cx="20" cy="85" r="3.5" style="fill:var(--c-ion)"/>
-      <text x="38" y="88" class="lr2-label" style="font-size:11px;">Ioni / Cariche (Na+ / Ca2+)</text>
+      <text x="38" y="88" class="lr2-label" style="font-size:11px;">Ions / Charges (Na+ / Ca2+)</text>
       <circle cx="20" cy="105" r="3.5" style="fill:var(--c-dopamina)"/>
-      <text x="38" y="108" class="lr2-label" style="font-size:11px;">Dopamina rilasciata</text>
+      <text x="38" y="108" class="lr2-label" style="font-size:11px;">Released dopamine</text>
     </g>
   </g>
 </svg>
 
-<div class="lr2-desc" id="lr2-desc" aria-live="polite">Seleziona un ligando per osservare la dinamica sulla popolazione recettoriale.</div>
+<div class="lr2-desc" id="lr2-desc" aria-live="polite">Select a ligand to observe the dynamics on the receptor population.</div>
 </div>
 
 <script>
@@ -296,10 +296,10 @@ Ecco, tradotto in farmacologia:
   var recStates = [0, 0, 0, 0];
 
   var DESC = {
-    none: 'I recettori sono a riposo. Nessun ligando è legato, i canali sono <strong>chiusi</strong> (nessun ione passa), nessuna dopamina rilasciata.',
-    agonist: 'Le molecole di <strong>Nicotina</strong> si legano dinamicamente ai 4 recettori. I canali si aprono: <strong>le cariche fluiscono all\'interno</strong> causando un massiccio rilascio di dopamina.',
-    antagonist: 'L\'<strong>antagonista</strong> blocca stabilmente tutti e 4 i recettori. La Nicotina rimbalza e i canali rimangono chiusi: <strong>nessun passaggio di ioni</strong>.',
-    partial: 'La <strong>Citisina</strong> si lega a tutti i recettori, ma non ha la forza di aprirli tutti. <strong>3 si aprono debolmente, 1 rimane chiuso</strong> nonostante sia occupato. Meno ioni passano = meno dopamina.'
+    none: 'Receptors are at rest. No ligand bound, channels are <strong>closed</strong> (no ions pass), no dopamine released.',
+    agonist: '<strong>Nicotine</strong> molecules dynamically bind to the 4 receptors. Channels open: <strong>charges flow inward</strong> causing a massive release of dopamine.',
+    antagonist: 'The <strong>antagonist</strong> stably blocks all 4 receptors. Nicotine bounces off and channels remain closed: <strong>no ion passage</strong>.',
+    partial: '<strong>Cytisine</strong> binds to all receptors, but lacks the strength to open them all. <strong>3 open weakly, 1 remains closed</strong> despite being occupied. Fewer ions pass = less dopamine.'
   };
 
   function nicPath(cx,cy,s){s=s||1;return'M'+(cx-10*s)+','+cy+' L'+(cx-2*s)+','+(cy-8*s)+' L'+(cx+8*s)+','+(cy-2*s)+' L'+(cx+10*s)+','+(cy+4*s)+' L'+(cx+2*s)+','+(cy+10*s)+' L'+(cx-6*s)+','+(cy+8*s)+' Z';}
@@ -349,9 +349,9 @@ Ecco, tradotto in farmacologia:
 
   function updateGateLabel() {
     var lbl = document.getElementById('lr2-gate-label');
-    if (S === 'agonist') lbl.textContent = 'Tutti aperti';
-    else if (S === 'partial') lbl.textContent = '3 aperti, 1 chiuso';
-    else lbl.textContent = 'Tutti chiusi';
+    if (S === 'agonist') lbl.textContent = 'All open';
+    else if (S === 'partial') lbl.textContent = '3 open, 1 closed';
+    else lbl.textContent = 'All closed';
   }
 
   function animMove(el, startX, startY, endX, endY, dur, cb){
@@ -591,47 +591,47 @@ Ecco, tradotto in farmacologia:
 })();
 </script>
 
-Nella simulazione si vede che non tutti i recettori rispondono allo stesso modo quando è legata la citisina — è questo che rende "parziale" l'agonismo: sulla popolazione recettoriale, l'attivazione complessiva è ridotta.
+In the simulation, you can see that not all receptors respond in the same way when cytisine is bound — this is what makes its agonism "partial": on the receptor population, the overall activation is reduced.
 
-## Il meccanismo della dipendenza da nicotina
+## The mechanism of nicotine addiction
 
-La nicotina fa la stessa cosa: si lega ai recettori nicotinici dell'acetilcolina (nAChR, sottotipo α4β2 bla bla) e rilascia, tra le altre cose, **dopamina**. Nello script si vede bene come la nicotina abbia un legame "dinamico" con il recettore. Proprio questo attacca-stacca è il problema principale. Semplificando molto, questo è quello che genera la dipendenza: la ricerca costante del benessere della dopamina.
+Nicotine does the same thing: it binds to nicotinic acetylcholine receptors (nAChR, subtype α4β2 bla bla) and releases, among other things, **dopamine**. In the script you can see well how nicotine has a "dynamic" bond with the receptor. It is exactly this attach-detach action that is the main problem. Simplifying greatly, this is what generates addiction: the constant search for dopamine's well-being.
 
-Se vi pare che questo "benessere" sia desiderabile è perché confondiamo il piacere edonistico con la felicità. Ma questa è un'altra storia.
+If you think this "well-being" is desirable, it's because we confuse hedonistic pleasure with happiness. But that's another story.
 
-## Come si "hackera" la dipendenza
+## How to 'hack' addiction
 
-Per spezzare questo circolo vizioso si usano vari metodi:
+To break this vicious circle, various methods are used:
 
-1. **Terapia sostitutiva con nicotina (NRT)** — il più famoso. Cerotti a lento rilascio, spray nasali, inalatori, gomme. L'idea è semplice: una caratteristica delle dipendenze è il rilascio *rapido* di dopamina. Se fornisci nicotina lentamente, riduci l'effetto rinforzo senza mandare il paziente in astinenza totale. ~~È come metadone, ma socialmente accettabile.~~
+1. **Nicotine Replacement Therapy (NRT)** — the most famous. Slow-release patches, nasal sprays, inhalers, gums. The idea is simple: a characteristic of addictions is the *rapid* release of dopamine. If you provide nicotine slowly, you reduce the reinforcement effect without sending the patient into total withdrawal. ~~It's like methadone, but socially acceptable.~~
 
-2. **Bupropione** — un antidepressivo che agisce sia aumentando di per sé la presenza di dopamina sia inibendo il rilascio di dopamina stimolato dalla nicotina (più altre cose sui recettori muscarinici, ma non complichiamo troppo). Ha il difetto di portarsi dietro il profilo di effetti collaterali degli antidepressivi, il che non è esattamente un punto a favore. In Italia, Zyban (l'unica formulazione con indicazione specifica per la cessazione del fumo) non è più in commercio, anche se a volte il principio attivo viene prescritto *off-label* tramite altri marchi nati come antidepressivi (es. Wellbutrin).
+2. **Bupropion** — an antidepressant that works both by increasing the presence of dopamine on its own and by inhibiting the release of dopamine stimulated by nicotine (plus some other things on muscarinic receptors, but let's not overcomplicate it). It has the flaw of bringing along the side effect profile of antidepressants, which is not exactly a plus. In Italy, Zyban (the only formulation with a specific indication for smoking cessation) is no longer on the market, although the active ingredient is sometimes prescribed *off-label* via other brands born as antidepressants (e.g., Wellbutrin).
 
-3. **Agonisti parziali: Vareniclina e Citisina** — ed è qui che la cosa si fa interessante.
+3. **Partial agonists: Varenicline and Cytisine** — and here is where things get interesting.
 
-## Citisina: l'agonista parziale dal maggiociondolo
+## Cytisine: the partial agonist from the laburnum tree
 
-Siamo arrivati, la citisina è un alcaloide naturale estratto dal *Cytisus laburnum* (il maggiociondolo — quello con i bei fiori gialli a grappolo che probabilmente avete visto mille volte senza sapere cosa fosse). Viene usata nell'Europa dell'Est da più di sessant'anni. Sessant'anni. E noi la scopriamo adesso. Perché? Boh, sinceramente non lo so.
+We've arrived: cytisine is a natural alkaloid extracted from *Cytisus laburnum* (the golden chain tree — the one with beautiful yellow clusters of flowers you've probably seen a thousand times without knowing what it was). It has been used in Eastern Europe for over sixty years. Sixty years. And we are only discovering it now. Why? Honestly, I don't know.
 
-Vareniclina e citisina funzionano da **agonisti parziali** dei recettori nicotinici α4β2 — le stesse serrature su cui agisce la nicotina. Il risultato è un duplice meccanismo:
+Varenicline and cytisine work as **partial agonists** of the α4β2 nicotinic receptors — the same locks nicotine acts upon. The result is a twofold mechanism:
 
-- **Effetto agonista** (calmante): stimolano parzialmente i recettori, alleviando il desiderio e i sintomi di astinenza. Qualche trappola di Kevin scatta, abbastanza da non farti impazzire.
-- **Effetto antagonista** (bloccante): occupano i recettori impedendo alla nicotina di legarsi. Se fumi una sigaretta durante il trattamento, l'effetto piacevole è ridotto o addirittura sgradevole. La porta è già "occupata".
+- **Agonist effect** (calming): they partially stimulate the receptors, relieving craving and withdrawal symptoms. Some of Kevin's traps spring, enough to keep you from going crazy.
+- **Antagonist effect** (blocking): they occupy the receptors preventing nicotine from binding. If you smoke a cigarette during treatment, the pleasant effect is reduced or even unpleasant. The door is already "occupied".
 
-Le due molecole sono abbastanza simili da legare lo stesso recettore, ma abbastanza diverse da legarlo in maniera differente. (vedi script sopra)
+The two molecules are similar enough to bind the same receptor, but different enough to bind it in a different way. (see script above)
 
-### Lo schema terapeutico ed effetti collaterali
+### Therapeutic regimen and side effects
 
-Tutto è già spiegato molto meglio di come potrei fare io nella <a href="https://medicinali.aifa.gov.it/it/#/it/dettaglio/0000059172" aria-label="Scheda tecnica della Citisina sul sito dell'Agenzia Italiana del Farmaco (AIFA)">scheda tecnica AIFA della Citisina</a>. 
+Everything is already explained much better than I ever could in the <a href="https://medicinali.aifa.gov.it/it/#/it/dettaglio/0000059172" aria-label="Technical data sheet of Cytisine on the Italian Medicines Agency (AIFA) website">AIFA technical data sheet for Cytisine</a>. 
 
-Inoltre, elemento fondamentale, non presenta interazioni farmacologiche note.
+Moreover, a fundamental element, it has no known pharmacological interactions.
 
-### I numeri
+### The numbers
 
-I dati sono piuttosto solidi. Lo studio West et al. (NEJM 2011) ha mostrato che la citisina ha più che triplicato le probabilità di successo rispetto al placebo a 12 mesi:
+The data are quite solid. The West et al. study (NEJM 2011) showed that cytisine more than tripled the chances of success compared to placebo at 12 months:
 
 <div style="max-width: 500px; margin: 2rem auto;">
-  <svg viewBox="0 0 400 240" width="100%" style="font-family: inherit;" role="img" aria-label="Grafico a barre che mostra il tasso di successo per smettere di fumare a 12 mesi: Placebo 2.4%, Citisina 8.4%">
+  <svg viewBox="0 0 400 240" width="100%" style="font-family: inherit;" role="img" aria-label="Bar chart showing the success rate for quitting smoking at 12 months: Placebo 2.4%, Cytisine 8.4%">
     <g aria-hidden="true">
       <line x1="80" y1="20" x2="80" y2="190" stroke="var(--blog-border, #d1d5db)" stroke-width="0.5"/>
       <text x="72" y="190" text-anchor="end" style="font-size:11px; fill:var(--blog-text-muted, #6b7280)">0</text>
@@ -656,40 +656,40 @@ I dati sono piuttosto solidi. Lo studio West et al. (NEJM 2011) ha mostrato che 
       <text x="155" y="208" text-anchor="middle" style="font-size:12px; fill:var(--blog-text, #3d3d3a)">Placebo</text>
       <rect x="230" y="106" width="70" height="84" rx="3" fill="rgba(90, 125, 124, 0.6)" stroke="rgba(90, 125, 124, 1)" stroke-width="0.8"/>
       <text x="265" y="100" text-anchor="middle" style="font-size:12px; font-weight:600; fill:var(--blog-text, #3d3d3a)">8.4%</text>
-      <text x="265" y="208" text-anchor="middle" style="font-size:12px; fill:var(--blog-text, #3d3d3a)">Citisina</text>
-      <text x="15" y="120" text-anchor="middle" transform="rotate(-90, 15, 120)" style="font-size:10px; fill:var(--blog-text-muted, #6b7280)">Tasso di Successo (%)</text>
+      <text x="265" y="208" text-anchor="middle" style="font-size:12px; fill:var(--blog-text, #3d3d3a)">Cytisine</text>
+      <text x="15" y="120" text-anchor="middle" transform="rotate(-90, 15, 120)" style="font-size:10px; fill:var(--blog-text-muted, #6b7280)">Success Rate (%)</text>
     </g>
   </svg>
 </div>
 
-## Confronto interattivo delle terapie
+## Interactive therapy comparison
 
-Selezionate due farmaci per confrontarli su efficacia, durata e costo:
+Select two drugs to compare their efficacy, duration, and cost:
 
 <div id="cmp-widget" style="max-width: 750px; margin: 1.5rem auto; padding: 1.5rem; background: var(--card-bg, #ffffff); border: 1px solid var(--border-color, #e5e5e5); border-radius: 8px; box-shadow: var(--card-shadow, 0 2px 8px rgba(0,0,0,0.04)); color: var(--text-color, #222222);">
   <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-    <select id="drug1" onchange="cmpUpdate()" aria-label="Seleziona il primo farmaco da confrontare" style="padding: 0.5rem 1rem; border: 1px solid var(--border-color, #e5e5e5); border-radius: 6px; background: var(--bg-color, #fafafa); color: var(--text-color, #222222); font-family: inherit;">
-      <option value="citisina">Citisina</option>
-      <option value="vareniclina">Vareniclina</option>
-      <option value="nrt">NRT Combinata</option>
-      <option value="bupropione">Bupropione</option>
+    <select id="drug1" onchange="cmpUpdate()" aria-label="Select the first drug to compare" style="padding: 0.5rem 1rem; border: 1px solid var(--border-color, #e5e5e5); border-radius: 6px; background: var(--bg-color, #fafafa); color: var(--text-color, #222222); font-family: inherit;">
+      <option value="citisina">Cytisine</option>
+      <option value="vareniclina">Varenicline</option>
+      <option value="nrt">Combined NRT</option>
+      <option value="bupropione">Bupropion</option>
     </select>
     <strong style="font-size: 1.2rem;" aria-hidden="true">VS</strong>
-    <select id="drug2" onchange="cmpUpdate()" aria-label="Seleziona il secondo farmaco da confrontare" style="padding: 0.5rem 1rem; border: 1px solid var(--border-color, #e5e5e5); border-radius: 6px; background: var(--bg-color, #fafafa); color: var(--text-color, #222222); font-family: inherit;">
-      <option value="citisina">Citisina</option>
-      <option value="vareniclina">Vareniclina</option>
-      <option value="nrt" selected>NRT Combinata</option>
-      <option value="bupropione">Bupropione</option>
+    <select id="drug2" onchange="cmpUpdate()" aria-label="Select the second drug to compare" style="padding: 0.5rem 1rem; border: 1px solid var(--border-color, #e5e5e5); border-radius: 6px; background: var(--bg-color, #fafafa); color: var(--text-color, #222222); font-family: inherit;">
+      <option value="citisina">Cytisine</option>
+      <option value="vareniclina">Varenicline</option>
+      <option value="nrt" selected>Combined NRT</option>
+      <option value="bupropione">Bupropion</option>
     </select>
   </div>
   <div style="max-width: 620px; margin: 0 auto;">
-    <svg id="cmp-svg" viewBox="0 0 580 310" width="100%" style="font-family: inherit;" role="img" aria-label="Grafico a barre di confronto dinamico tra le due terapie selezionate, visualizza: Efficacia, Durata, Costo e Tasso di abbandono."></svg>
+    <svg id="cmp-svg" viewBox="0 0 580 310" width="100%" style="font-family: inherit;" role="img" aria-label="Dynamic comparison bar chart between the two selected therapies, showing: Efficacy, Duration, Cost, and Dropout rate."></svg>
   </div>
   <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:16px; margin-top:10px; font-size:12px;" aria-hidden="true">
-    <span><span style="display:inline-block;width:12px;height:12px;border-radius:2px;background:rgba(90,125,124,0.7);vertical-align:middle;margin-right:4px;"></span>Efficacia (%)</span>
-    <span><span style="display:inline-block;width:12px;height:12px;border-radius:2px;background:rgba(23,107,135,0.7);vertical-align:middle;margin-right:4px;"></span>Durata (giorni)</span>
-    <span><span style="display:inline-block;width:12px;height:12px;border-radius:2px;background:rgba(244,162,97,0.7);vertical-align:middle;margin-right:4px;"></span>Costo (€)</span>
-    <span><span style="display:inline-block;width:12px;height:12px;border-radius:2px;background:rgba(227,62,62,0.7);vertical-align:middle;margin-right:4px;"></span>Abbandono eff. coll. (%)</span>
+    <span><span style="display:inline-block;width:12px;height:12px;border-radius:2px;background:rgba(90,125,124,0.7);vertical-align:middle;margin-right:4px;"></span>Efficacy (%)</span>
+    <span><span style="display:inline-block;width:12px;height:12px;border-radius:2px;background:rgba(23,107,135,0.7);vertical-align:middle;margin-right:4px;"></span>Duration (days)</span>
+    <span><span style="display:inline-block;width:12px;height:12px;border-radius:2px;background:rgba(244,162,97,0.7);vertical-align:middle;margin-right:4px;"></span>Cost (€)</span>
+    <span><span style="display:inline-block;width:12px;height:12px;border-radius:2px;background:rgba(227,62,62,0.7);vertical-align:middle;margin-right:4px;"></span>Drop-out side eff. (%)</span>
   </div>
   <div id="cmp-text" aria-live="polite" style="margin-top: 1rem; color: var(--text-muted, #6b6b6b); font-size: 0.95rem; line-height: 1.6;"></div>
 </div>
@@ -697,14 +697,14 @@ Selezionate due farmaci per confrontarli su efficacia, durata e costo:
 <script>
 (function(){
   var DD = {
-    citisina:    { name:"Citisina",      efficacy:16, duration:25, cost:50,  dropout:5,  desc:"<strong>Citisina:</strong> Efficacia alta, trattamento brevissimo (25 giorni) e costo estremamente basso. Profilo di tollerabilità eccellente: pochissimi abbandoni." },
-    vareniclina: { name:"Vareniclina",   efficacy:18, duration:84, cost:300, dropout:14, desc:"<strong>Vareniclina:</strong> Efficacia altissima (gold standard teorico), ma trattamento lungo e costo superiore. Alto tasso di abbandono a causa di nausea e sogni vividi." },
-    nrt:         { name:"NRT Combinata", efficacy:12, duration:70, cost:250, dropout:6,  desc:"<strong>NRT Combinata:</strong> Cerotto + gomme/spray. Efficacia moderata, inferiore alla citisina. Buona tollerabilità ma trattamento lungo e costo elevato." },
-    bupropione:  { name:"Bupropione",    efficacy:9,  duration:63, cost:100, dropout:11, desc:"<strong>Bupropione:</strong> Efficacia inferiore. Tasso di abbandono rilevante per effetti collaterali sistemici e controindicazioni specifiche (rischio convulsioni)." }
+    citisina:    { name:"Cytisine",      efficacy:16, duration:25, cost:50,  dropout:5,  desc:"<strong>Cytisine:</strong> High efficacy, very short treatment (25 days) and extremely low cost. Excellent tolerability profile: very few dropouts." },
+    vareniclina: { name:"Varenicline",   efficacy:18, duration:84, cost:300, dropout:14, desc:"<strong>Varenicline:</strong> Very high efficacy (theoretical gold standard), but long treatment and higher cost. High dropout rate due to nausea and vivid dreams." },
+    nrt:         { name:"Combined NRT", efficacy:12, duration:70, cost:250, dropout:6,  desc:"<strong>Combined NRT:</strong> Patch + gums/spray. Moderate efficacy, lower than cytisine. Good tolerability but long treatment and high cost." },
+    bupropione:  { name:"Bupropion",    efficacy:9,  duration:63, cost:100, dropout:11, desc:"<strong>Bupropion:</strong> Lower efficacy. Significant dropout rate due to systemic side effects and specific contraindications (seizure risk)." }
   };
   var COLORS  = ['rgba(90,125,124,0.7)', 'rgba(23,107,135,0.7)', 'rgba(244,162,97,0.7)', 'rgba(227,62,62,0.7)'];
   var STROKES = ['rgba(90,125,124,1)',   'rgba(23,107,135,1)',   'rgba(244,162,97,1)',   'rgba(227,62,62,1)'];
-  var LABELS  = ['Efficacia', 'Durata', 'Costo', 'Abbandono'];
+  var LABELS  = ['Efficacy', 'Duration', 'Cost', 'Drop-out'];
   var NS = 'http://www.w3.org/2000/svg';
 
   function el(tag, attrs) {
@@ -777,36 +777,36 @@ Selezionate due farmaci per confrontarli su efficacia, durata e costo:
 })();
 </script>
 
-*Giocando con lo script potrete notare la differenza di tempi tra Varenciclina e Citisina. La citisina ha un'emivita breve e un legame recettoriale meno "invadente", il che permette una desensibilizzazione rapida dei recettori nicotinici senza saturare il sistema nervoso centrale.*
+*By playing with the script, you can notice the difference in timing between Varenicline and Cytisine. Cytisine has a short half-life and a less "invasive" receptor binding, allowing rapid desensitization of nicotinic receptors without saturating the central nervous system.*
 
-## La situazione in Italia (aggiornamento 2026)
+## The situation in Italy (2026 update)
 
-A dicembre 2025, l'<a href="https://www.aifa.gov.it/" aria-label="Sito Ufficiale Agenzia Italiana del Farmaco">AIFA ha approvato la rimborsabilità</a> del Recigar® (citisina industriale) da parte del SSN. Da marzo 2026, il primo ciclo è gratuito per chi intraprende un percorso strutturato presso un centro antifumo, con piano terapeutico e supporto comportamentale. Per tutti gli altri, un ciclo costa circa 90€ — comunque un decimo rispetto alla vareniclina.
+In December 2025, the <a href="https://www.aifa.gov.it/" aria-label="Official Website of the Italian Medicines Agency">AIFA approved the reimbursement</a> of Recigar® (industrial cytisine) by the NHS (SSN). From March 2026, the first cycle is free for those undergoing a structured program at an anti-smoking center, complete with a therapeutic plan and behavioral support. For everyone else, a cycle costs about €90 — still a tenth of the price of varenicline.
 
-La citisina è disponibile anche come **preparazione galenica** (cioè preparata dal farmacista nel laboratorio della farmacia) a circa la metà del prezzo — cosa che conosco piuttosto bene per ovvi motivi — oppure come Defucitan®, un altro farmaco industriale a base di citisina disponibile dal 2023.
+Cytisine is also available as a **compounded preparation** (prepared by the pharmacist in the pharmacy's lab) at about half the price — something I know quite well for obvious reasons — or as Defucitan®, another industrial cytisine-based drug available since 2023.
 
-## Le cose non farmacologiche che fanno la differenza
+## Non-pharmacological things that make a difference
 
-Suggerite dall'NHS. Potrebbero sembrare banalità, ma non sono assolutamente da sottovalutare e vanno fatte tutte come prescritte (sì, anche quella di prendere carta e penna e mettere nero su bianco le cose):
+Suggested by the NHS. They might seem trivial, but they shouldn't be underestimated and must be done exactly as prescribed (yes, even taking pen and paper and writing things down):
 
-1. Fai una lista dei motivi per cui smetti di fumare.
-2. Dì alle persone che stai smettendo.
-3. Se ci sei già riuscito per un certo tempo, ricordati cosa ha funzionato.
-4. Usa gli aiuti per smettere di fumare.
-5. Prepara un piano su cosa fare quando sarai tentato.
-6. Fai una lista di quello che ti fa venire voglia di fumare, ed evitalo.
-7. Tieni la dipendenza a freno tenendoti occupato.
-8. Fai esercizio fisico per allontanare l'astinenza.
+1. Make a list of the reasons why you are quitting smoking.
+2. Tell people you are quitting.
+3. If you have already managed to quit for some time before, remember what worked.
+4. Use smoking cessation aids.
+5. Have a plan for what to do when you are tempted.
+6. Make a list of what makes you want to smoke, and avoid it.
+7. Keep the addiction in check by keeping yourself busy.
+8. Exercise to ward off cravings.
 
-Tutti i farmaci menzionati sono disponibili solo su prescrizione medica. Sarà il medico ad indicarvi il modo d'uso nel vostro caso e a darvi tutte le indicazioni necessarie.
+All the drugs mentioned are available by medical prescription only. Your doctor will indicate how to use them in your case and give you all the necessary instructions.
 
-La dipendenza, qualsiasi essa sia, da Nicotina, Cannabis, Cocaina, Eroina e anche quella affettiva sono brutte bestie. Cercare tutto l'aiuto possibile non è segno di debolezza, ma, imho, è una grande dimostrazione di forza e intelligenza.
+Addiction, whatever it may be, whether to Nicotine, Cannabis, Cocaine, Heroin or even emotional addiction, is a nasty beast. Seeking all the help possible is not a sign of weakness but, imho, a great demonstration of strength and intelligence.
 
-*La citisina la preparo nel mio laboratorio galenico da anni — è una di quelle cose di cui parli col paziente e vedi che non ne ha mai sentito parlare. Ora forse qualcosa cambia.*
+*I have been preparing cytisine in my compounding lab for years — it's one of those things you talk about with the patient and realize they've never heard of it. Now maybe something changes.*
 
-## Fonti
+## Sources
 
-- West, R., et al. (2011). <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa1102035" aria-label="Studio esterno del New England Journal of Medicine sull'efficacia della Citisina">Placebo-Controlled Trial of Cytisine for Smoking Cessation.</a> *New England Journal of Medicine*, 365(13), 1193–1200.
-- Cahill, K., et al. (2013). <a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD009329.pub2/full" aria-label="Studio della Cochrane Library sugli interventi farmacologici per smettere di fumare">Pharmacological interventions for smoking cessation.</a> *Cochrane Database of Systematic Reviews*, (5).
-- Public Health England. (2015). <a href="https://www.gov.uk/government/publications/e-cigarettes-an-evidence-update" aria-label="Documento del Public Health England sulle sigarette elettroniche">E-cigarettes: an evidence update.</a>
-- <a href="https://www.iss.it/fumo" aria-label="Linee guida ufficiali sul tabagismo dell'Istituto Superiore di Sanità">Linee guida ISS sul tabagismo.</a>
+- West, R., et al. (2011). <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa1102035" aria-label="External study from the New England Journal of Medicine on Cytisine efficacy">Placebo-Controlled Trial of Cytisine for Smoking Cessation.</a> *New England Journal of Medicine*, 365(13), 1193–1200.
+- Cahill, K., et al. (2013). <a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD009329.pub2/full" aria-label="Cochrane Library study on pharmacological interventions for smoking cessation">Pharmacological interventions for smoking cessation.</a> *Cochrane Database of Systematic Reviews*, (5).
+- Public Health England. (2015). <a href="https://www.gov.uk/government/publications/e-cigarettes-an-evidence-update" aria-label="Public Health England document on e-cigarettes">E-cigarettes: an evidence update.</a>
+- <a href="https://www.iss.it/fumo" aria-label="Official guidelines on smoking by the Italian National Institute of Health">ISS guidelines on smoking.</a>

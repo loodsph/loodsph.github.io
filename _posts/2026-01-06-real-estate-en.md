@@ -1,29 +1,29 @@
 ---
 layout: post
-title: "L'unico investimento sicuro (?)"
-seo_title: "Investire nel mattone: conviene comprare casa? Analisi dati ISTAT"
+title: "The only safe investment (?)"
+seo_title: "Investing in real estate: is buying a house worth it? ISTAT data analysis"
 date: 2026-01-11 22:00:00 +0100
 categories: [economia, coding]
 tags: [immobiliare, inflazione, dataviz, javascript]
-description: "Rompo il mattone."
+description: "I'm demolishing the property myth."
 pixel_icon: "mario.png"
 smooth_image: true
-lang: it
+lang: en
 ref: real-estate
 ---
 
-Cerco di entrare in punta di piedi in questo argomento. In Italia, la proprietà immobiliare è quasi una religione. Un credo è dogmatico per definizione e analizzare i dogmi è uno degli obiettivi qui.
+I'll try to tread carefully on this topic. In Italy, property ownership is almost a religion. A creed is dogmatic by definition, and analysing dogmas is one of the objectives here.
 <br>
 <br>
-Non capisco quest'idea per la quale la casa sia una cosa fondamentale, un obiettivo di vita, perché con l'affitto si "regalano soldi". Ci sono mille risorse anche molto divulgative che smontano questo mito (ad esempio **Ben Felix** ha fatto vari [video](https://www.youtube.com/watch?v=lBG-g1CKfgs) e articoli a riguardo). Era una cosa abbastanza vera negli anni '80. Quel mondo non esiste più.
+I don't understand this idea that a house is a fundamental thing, a life goal, because with renting you're "throwing money away." There are a thousand resources, even quite accessible ones, that debunk this myth (for example **Ben Felix** has made various [videos](https://www.youtube.com/watch?v=lBG-g1CKfgs) and articles on the subject). It was pretty true in the '80s. That world no longer exists.
 <br>
 <br>
-Allora ho voluto fare i conti con dati ufficiali alla mano e ne ho tirato fuori un tool interattivo.
+So I wanted to run the numbers with official data in hand and built an interactive tool out of it.
 
-### L'Osservatorio Interattivo
+### The Interactive Observatory
 
-Qui sotto ho integrato lo script che ho scritto.
-Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che leggi sull'assegno) e il **Valore Reale** (quello che conta davvero, pulito dall'inflazione).
+Below I've embedded the script I wrote.
+The chart shows the brutal difference between **Nominal Value** (what you read on the cheque) and **Real Value** (what actually matters, stripped of inflation).
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"
         integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ"
@@ -34,30 +34,30 @@ Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che l
     
     <div class="p-6 md:p-8">
         <div class="text-center mb-6">
-            <h3 class="text-2xl font-bold text-white mb-1">Simulatore Mercato</h3>
-            <p class="text-gray-400 text-sm">Nominale vs Reale (Fonte dati: ISTAT)</p>
+            <h3 class="text-2xl font-bold text-white mb-1">Market Simulator</h3>
+            <p class="text-gray-400 text-sm">Nominal vs Real (Data source: ISTAT)</p>
         </div>
 
         <div class="bg-gray-800 rounded-xl border border-gray-700 p-5 mb-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-end">
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Area Geografica</label>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Geographic Area</label>
                     <div class="relative text-gray-900">
                         <select id="areaSelect" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white focus:ring-2 focus:ring-blue-500"></select>
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Tipologia</label>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Type</label>
                     <div class="relative text-gray-900">
                         <select id="typeSelect" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white focus:ring-2 focus:ring-blue-500">
-                            <option value="Totale">Totale Abitazioni</option>
-                            <option value="Nuove">Abitazioni Nuove</option>
-                            <option value="Esistenti">Abitazioni Esistenti</option>
+                            <option value="Totale">Total Dwellings</option>
+                            <option value="Nuove">New Dwellings</option>
+                            <option value="Esistenti">Existing Dwellings</option>
                         </select>
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold uppercase tracking-wider text-blue-400 mb-2">Anno Base</label>
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-blue-400 mb-2">Base Year</label>
                     <div class="relative text-gray-900">
                         <select id="baseYearSelect" class="w-full p-2 bg-gray-700 border border-blue-500/50 rounded text-white focus:ring-2 focus:ring-blue-500">
                             <option value="2010">2010 (Standard)</option>
@@ -76,7 +76,7 @@ Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che l
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
             <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
-                <h4 class="font-bold text-blue-400 mb-1">Convergenza</h4>
+                <h4 class="font-bold text-blue-400 mb-1">Convergence</h4>
                 <p class="text-gray-400 text-xs" id="convergenceText">Loading...</p>
             </div>
             <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
@@ -88,7 +88,7 @@ Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che l
 </div>
 
 <script>
-    // Configurazione Chart.js
+    // Chart.js configuration
     Chart.defaults.color = '#9ca3af'; 
     Chart.defaults.borderColor = '#374151';
 
@@ -115,7 +115,6 @@ Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che l
 
     let myChart = null;
     
-    // Inizializza non appena il DOM è pronto (o subito se iniettato post-caricamento)
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initApp);
     } else {
@@ -128,7 +127,6 @@ Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che l
         const baseYearSelect = document.getElementById('baseYearSelect');
         if(!areaSelect) return; 
 
-        // Popola menu aree
         const areas = [...new Set(rawData.map(item => item.area))];
         areaSelect.innerHTML = '';
         areas.forEach(area => {
@@ -168,7 +166,7 @@ Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che l
 
         if (filteredData.length === 0) {
             if(myChart) { myChart.destroy(); myChart = null; }
-            document.getElementById('trendText').innerText = "Dati non disponibili.";
+            document.getElementById('trendText').innerText = "Data not available.";
             return;
         }
 
@@ -177,8 +175,8 @@ Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che l
         const nominalData = rebasedData.map(d => d.nominale);
         const realData = rebasedData.map(d => d.reale);
 
-        document.getElementById('trendText').innerHTML = `Inflazione cumulativa visibile come gap tra le linee a partire dal ${selectedBaseYear}.`;
-        document.getElementById('convergenceText').innerHTML = `Anno base: ${selectedBaseYear}. Punto di contatto forzato a 100.`;
+        document.getElementById('trendText').innerHTML = `Cumulative inflation visible as gap between the lines starting from ${selectedBaseYear}.`;
+        document.getElementById('convergenceText').innerHTML = `Base year: ${selectedBaseYear}. Forced contact point at 100.`;
 
         const ctx = document.getElementById('myChart');
         const context = ctx.getContext('2d');
@@ -190,13 +188,13 @@ Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che l
                 labels: labels,
                 datasets: [
                     {
-                        label: `Nominale`,
+                        label: `Nominal`,
                         data: nominalData,
                         borderColor: '#3b82f6', backgroundColor: 'rgba(59, 130, 246, 0.2)', borderWidth: 3,
                         pointBackgroundColor: '#1f2937', tension: 0.3, fill: false
                     },
                     {
-                        label: `Reale`,
+                        label: `Real`,
                         data: realData,
                         borderColor: '#ef4444', backgroundColor: 'rgba(239, 68, 68, 0.2)', borderWidth: 3, borderDash: [5, 5],
                         pointBackgroundColor: '#1f2937', tension: 0.3, fill: false
@@ -211,66 +209,62 @@ Il grafico mostra la differenza brutale tra il **Valore Nominale** (quello che l
             }
         });
     }
-// --- FUNZIONE PER I BOTTONI NEL TESTO ---
     window.setChartParams = function(area, year) {
         const areaSelect = document.getElementById('areaSelect');
         const yearSelect = document.getElementById('baseYearSelect');
         
-        // 1. Cambia i valori delle select (se passati)
         if (area) areaSelect.value = area;
         if (year) yearSelect.value = year;
 
-        // 2. Simula l'evento "change" per far scattare l'aggiornamento del grafico
         areaSelect.dispatchEvent(new Event('change'));
 
-        // 3. (Opzionale) Scorre la pagina dolcemente fino al grafico per farlo vedere
         document.getElementById('chart-container-wrapper').scrollIntoView({ 
             behavior: 'smooth', 
             block: 'center' 
         });
     };
 </script>
-### Come leggere i dati
+### How to read the data
 
-1.  **La Linea Blu (Valore Nominale):** È il prezzo "da vetrina". È la cifra che scrivi sull'assegno. Se hai comprato casa nel 2010 a 200.000€ e oggi vale 210.000€, la linea blu ti dice che hai guadagnato. Evviva!
-2.  **La Linea Rossa (Valore Reale):** Questa è la linea che conta davvero. È il valore della casa depurato dall'inflazione.
+1.  **The Blue Line (Nominal Value):** It's the "sticker price." It's the figure you write on the cheque. If you bought a house in 2010 for €200,000 and today it's worth €210,000, the blue line tells you that you've made a profit. Hooray!
+2.  **The Red Line (Real Value):** This is the line that really matters. It's the value of the house stripped of inflation.
 <br>
 <br>
-Vediamo un numero più alto e pensiamo di essere ricchi. Ma se nel frattempo il costo del pane, della benzina e delle bollette è raddoppiato...
+We see a higher number and think we're rich. But if in the meantime the cost of bread, petrol, and utility bills has doubled...
 <br>
 <br>
-In molte zone d'Italia, il valore reale degli immobili è **crollato di oltre 20-30 punti percentuali** rispetto al 2010. Significa che, in termini di potere d'acquisto, chi ha tenuto i soldi "nel mattone" è diventato più povero, non più ricco.
+In many parts of Italy, the real value of property has **dropped by more than 20–30 percentage points** compared to 2010. This means that, in terms of purchasing power, those who kept their money "in bricks and mortar" have become poorer, not richer.
 <br>
 <br>
-### "Eh, ma Milano..."
+### "Yeah, but Milan..."
 <button onclick="setChartParams('Milano', '2023')" class="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ml-2 transition-all">
-    👉 Vedi grafico Milano
+    👉 See Milan chart
 </button>
 <br>
-Se guardiamo il grafico su Milano, la linea blu schizza verso l'alto. Chi ha comprato ha fatto un affare, giusto? Sì, ma molto meno di quanto sembri. Anche nel mercato più caldo d'Italia, l'inflazione (specialmente quella post-2021) ha "mangiato" una fetta enorme di quel profitto. Il guadagno *reale* è drasticamente inferiore al guadagno *nominale* che si legge sui giornali.
+If we look at the Milan chart, the blue line shoots upward. Those who bought got a great deal, right? Yes, but much less than it appears. Even in Italy's hottest market, inflation (especially post-2021) has "eaten" a huge chunk of that profit. The *real* gain is drastically lower than the *nominal* gain you read about in the papers.
 <br>
 <br>
-Senza considerare che un investimento si vede almeno a vent'anni di distanza. Come si fa a prevedere il mercato immobiliare di un posto, anzi di un quartiere, a vent'anni di distanza?
+Without even considering that an investment plays out over at least twenty years. How do you predict the property market of a place — indeed, of a neighbourhood — twenty years ahead?
 <br>
 <br>
-E se usciamo da Milano e guardiamo a Roma o al Sud? La situazione è drammatica: prezzi nominali fermi o in calo e prezzi reali che sprofondano.
+And if we leave Milan and look at Rome or the South? The situation is dramatic: nominal prices flat or declining, and real prices plummeting.
 <button onclick="setChartParams('Roma', '2023')" class="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 ml-2 transition-all">
-    📉 Vedi Roma
+    📉 See Rome
 </button>
 <br>
 <br>
 ---
 
-### Conclusioni
+### Conclusions
 
-Non sto dicendo che non si debba comprare casa o che non ci siano situazioni, di portafoglio o di vita, in cui sia economicamente sensato. Avere un tetto sopra la testa è una sicurezza emotiva e una bella comodità, ma non è automaticamente un "grande investimento". Anzi, *imho* non è proprio da considerarsi come un investimento: **è una spesa**.
+I'm not saying you shouldn't buy a house or that there aren't situations — financial or personal — where it makes economic sense. Having a roof over your head is emotional security and a real convenience, but it's not automatically a "great investment." In fact, *imho*, it shouldn't really be considered an investment at all: **it's an expense**.
 <br>
 <br>
-La prossima volta che qualcuno vi dice "Ho venduto casa allo stesso prezzo a cui l'ho comprata 10 anni fa, almeno non ci ho perso niente", fategli vedere la linea rossa. In realtà, l'inflazione si è mangiata un quarto dei suoi risparmi senza che se ne accorgesse. Questo senza considerare le tasse e la perdita di valore dell'immobile nel tempo (dopo 30 anni, lo vogliamo rifare questo tetto?).
+The next time someone tells you "I sold my house for the same price I bought it for 10 years ago, at least I didn't lose anything," show them the red line. In reality, inflation ate a quarter of their savings without them noticing. And that's without accounting for taxes and the property's loss of value over time (after 30 years, do we want to redo this roof?).
 <br>
 <br>
-_Poi ci sarebbero altre mille considerazioni da fare: l'utilità delle serie storiche per la previsione del futuro, l'idea di legarsi mani e piedi ad un solo asset..._
+_There'd be a thousand other considerations to make: the usefulness of historical series for predicting the future, the idea of tying yourself hand and foot to a single asset..._
 
-#### Fonti
-* **Prezzi delle Abitazioni (IPAB):** Dati ISTAT relativi all'Indice dei prezzi delle abitazioni acquistate dalle famiglie.
-* **Inflazione:** Dati ISTAT relativi all'Indice nazionale dei prezzi al consumo (NIC).
+#### Sources
+* **House Prices (IPAB):** ISTAT data on the House Price Index for dwellings purchased by households.
+* **Inflation:** ISTAT data on the national consumer price index (NIC).

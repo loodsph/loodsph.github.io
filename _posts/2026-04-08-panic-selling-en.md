@@ -1,37 +1,37 @@
 ---
 layout: post
-title: "Decisioni nei momenti di crisi"
-seo_title: "Il costo del market timing e perché non vendere durante i crolli"
+title: "Decisions in times of crisis"
+seo_title: "The cost of market timing and why you shouldn't sell during crashes"
 date: 2026-04-08
 categories: [finanza]
-tags: [finanza comportamentale, investimenti, s&p500, panic selling, market timing]
-description: "Cosa fare quando le cose vanno male"
+tags: [behavioral finance, investing, s&p500, panic selling, market timing]
+description: "What to do when things go wrong"
 pixel_icon: "panic.png"
 smooth_image: true
-lang: it
+lang: en
 ref: panic-selling
 ---
 
-La mia strategia per i momenti di crisi l'ho imparata dalla finanza (forse un po' troppo oversharing qui).
+I learned my strategy for moments of crisis from finance (maybe oversharing a bit here).
 
->“Time in the market beats timing the market.”
-(Restare nel mercato è meglio che cercare di fare la gincana dei crolli)
+> “Time in the market beats timing the market.”
+(Staying in the market is better than trying to slalom through crashes)
 
-## Cos'è il Panic Selling e perché evitarlo
+## What is Panic Selling and why to avoid it
 
-Il panic selling consiste nel vendere compulsivamente i propri asset quando le cose vanno male sui mercati finanziari. Il panico è un'emozione normale, dopotutto siamo umani, ma cedere alla paura e smantellare il proprio portafoglio di investimenti per "salvare il salvabile" è l'errore più costoso che un investitore possa fare. Tenere la barra dritta durante un crollo è la vera sfida della finanza comportamentale (e non solo).
+Panic selling consists of compulsively selling your assets when things go wrong in the financial markets. Panic is a normal emotion, after all we are human, but giving in to fear and dismantling your investment portfolio to "salvage what you can" is the most expensive mistake an investor can make. Keeping a steady course during a crash is the real challenge of behavioral finance (and not only that).
 
-## Il vero costo del Market Timing: Backtest sull'S&P 500
+## The real cost of Market Timing: S&P 500 Backtest
 
-Di seguito trovi un backtest interattivo sugli ultimi 31 anni dell’S&P 500 (l'indice di riferimento globale, con i dati più comodi e tutti in dollari). Parliamo di un orizzonte temporale di circa 11.700 giorni di mercato.
+Below you will find an interactive backtest on the last 31 years of the S&P 500 (the global benchmark index, with the most convenient data, all in dollars). We are talking about a time horizon of roughly 11,700 market days.
 
-Un dato su tutti dovrebbe farti riflettere: la quasi totalità dei 10 giorni migliori (appena lo 0,09% arrotondato per eccesso, praticamente la probabilità di trovare un uovo con due tuorli) in borsa è avvenuta durante una crisi di mercato.
+One piece of data above all should make you think: almost all of the 10 best days (just 0.09% rounded up, practically the probability of finding a double-yolk egg) in the stock market occurred during a market crisis.
 
-Certo è vero anche il contrario, ma la strategia di prevedere l'imprevedibile in questo gioco non funziona. E se sbagli nei giorni buoni sono ~~cazzi amari~~ dolori. C'è un solo dato storico solidissimo: alla lunga il mercato sale. Ed è per questo che è più probabile uscire al momento sbagliato che a quello giusto.
+Sure, the opposite is also true, but the strategy of predicting the unpredictable in this game simply does not work. And if you make a mistake on the good days, you're in ~~deep shit~~ big trouble. There is only one very solid historical fact: in the long run, the market goes up. And this is why you are more likely to exit at the wrong time than at the right time.
 
-Cosa sarebbe successo ai tuoi investimenti cercando di fare market timing, finendo per perdere i 5, 10, o anche 20 giorni migliori per colpa della paura? E cosa sarebbe successo vendendo nel bel mezzo di un crash finanziario?
+What would have happened to your investments if you tried to time the market, ending up missing the 5, 10, or even 20 best days because of fear? And what would have happened if you sold right in the middle of a financial crash?
 
-Gioca con i bottoni nel grafico interattivo qui sotto e guarda tu stesso i numeri, parlano da soli:
+Play with the buttons in the interactive chart below and look at the numbers yourself, they speak volumes:
 
 <div id="market-timing-widget">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -92,7 +92,7 @@ Gioca con i bottoni nel grafico interattivo qui sotto e guarda tu stesso i numer
   border-radius: 12px; 
   padding: 24px 12px 16px; 
   height: 400px; 
-  touch-action: pan-y; /* Permette lo scroll verticale nativo su mobile */
+  touch-action: pan-y;
 }
 
 .mtw-section { max-width: 920px; margin: 0 auto 32px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 20px; }
@@ -112,7 +112,6 @@ Gioca con i bottoni nel grafico interattivo qui sotto e guarda tu stesso i numer
 
 .mtw-footer { max-width: 920px; margin: 0 auto; text-align: center; font-size: 10px; color: rgba(255,255,255,0.2); font-family: 'DM Mono', monospace; letter-spacing: 1px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.04); }
 
-/* --- OTTIMIZZAZIONI MOBILE --- */
 @media (max-width: 600px) {
   #market-timing-widget {
     padding: 24px 16px;
@@ -150,16 +149,16 @@ Gioca con i bottoni nel grafico interattivo qui sotto e guarda tu stesso i numer
 
 <div class="mtw-header">
 <div class="mtw-eyebrow">Behavioral Finance Backtest · 1995–2025</div>
-<h3 class="mtw-title" style="margin-bottom:0;">Il costo del market timing</h3>
+<h3 class="mtw-title" style="margin-bottom:0;">The cost of market timing</h3>
 <p class="mtw-desc" style="margin-top:10px;">
-S&P 500 Total Return, 1995–2025 (31 anni). Investimento iniziale: <span style="color:var(--c-green)" class="mtw-mono">$10,000</span>.
-Include il Crollo dei Dazi di aprile 2025 e il rally storico del 9 aprile (+9.52%, terzo più grande dal dopoguerra).
+S&P 500 Total Return, 1995–2025 (31 years). Initial investment: <span style="color:var(--c-green)" class="mtw-mono">$10,000</span>.
+Includes the April 2025 Tariff Crash and the historic April 9 rally (+9.52%, third largest post-war).
 </p>
 </div>
 
 <div class="mtw-controls">
 <div class="mtw-control-group">
-<div class="mtw-control-label">Giorni migliori persi</div>
+<div class="mtw-control-label">Best days missed</div>
 <div class="mtw-btn-group" id="mtw-missed-btns">
 <button class="mtw-btn active-orange" data-val="5">5</button>
 <button class="mtw-btn" data-val="10">10</button>
@@ -168,7 +167,7 @@ Include il Crollo dei Dazi di aprile 2025 e il rally storico del 9 aprile (+9.52
 </div>
 </div>
 <div class="mtw-control-group">
-<div class="mtw-control-label">Scenario panic sell</div>
+<div class="mtw-control-label">Panic sell scenario</div>
 <div class="mtw-btn-group" id="mtw-panic-btns">
 </div>
 </div>
@@ -183,46 +182,46 @@ Include il Crollo dei Dazi di aprile 2025 e il rally storico del 9 aprile (+9.52
 
 <div class="mtw-section">
 <div class="mtw-section-header">
-<div class="mtw-control-label" id="mtw-days-title" style="margin:0; color:rgba(255,255,255,0.35);">I giorni migliori saltati</div>
+<div class="mtw-control-label" id="mtw-days-title" style="margin:0; color:rgba(255,255,255,0.35);">The best days missed</div>
 <div class="mtw-mono" id="mtw-days-pct" style="font-size:12px; color:var(--c-orange);"></div>
 </div>
 <div class="mtw-days-grid" id="mtw-days-grid">
 </div>
 <div class="mtw-insight">
-<span style="color:var(--c-orange); font-weight:600;">Pattern confermato anche nel 2025:</span> Il 9 aprile 2025 l'S&P 500 ha registrato un +9.52% — il terzo rally giornaliero più grande dal dopoguerra — il giorno esatto della pausa sui dazi. Solo 48 ore prima, il mercato era ai minimi annuali con un drawdown del -19%. Chi ha venduto il 7 aprile ha perso il rimbalzo più esplosivo degli ultimi 17 anni.
+<span style="color:var(--c-orange); font-weight:600;">Pattern confirmed in 2025 too:</span> On April 9, 2025, the S&P 500 recorded a +9.52% — the third largest daily rally since the post-war period — the exact day of the tariff pause. Just 48 hours earlier, the market was at annual lows with a -19% drawdown. Whoever sold on April 7 missed the most explosive rebound of the last 17 years.
 </div>
 </div>
 
 <div class="mtw-section">
-<div class="mtw-control-label">Spotlight: Crollo dei Dazi 2025</div>
+<div class="mtw-control-label">Spotlight: 2025 Tariff Crash</div>
 <div class="mtw-spotlight-grid">
 <div class="mtw-spot-card">
-<div class="mtw-control-label" style="font-size:10px; margin-bottom:4px">Drawdown max</div>
+<div class="mtw-control-label" style="font-size:10px; margin-bottom:4px">Max drawdown</div>
 <div class="mtw-mono" style="font-size:22px; font-weight:700; color:var(--c-red)">-18.9%</div>
 </div>
 <div class="mtw-spot-card">
-<div class="mtw-control-label" style="font-size:10px; margin-bottom:4px">Rally 9 Apr</div>
+<div class="mtw-control-label" style="font-size:10px; margin-bottom:4px">Apr 9 Rally</div>
 <div class="mtw-mono" style="font-size:22px; font-weight:700; color:var(--c-green)">+9.52%</div>
 </div>
 <div class="mtw-spot-card">
-<div class="mtw-control-label" style="font-size:10px; margin-bottom:4px">Rally 12 Mag</div>
+<div class="mtw-control-label" style="font-size:10px; margin-bottom:4px">May 12 Rally</div>
 <div class="mtw-mono" style="font-size:22px; font-weight:700; color:var(--c-green)">+3.26%</div>
 </div>
 <div class="mtw-spot-card">
-<div class="mtw-control-label" style="font-size:10px; margin-bottom:4px">Recupero dal low</div>
+<div class="mtw-control-label" style="font-size:10px; margin-bottom:4px">Recovery from low</div>
 <div class="mtw-mono" style="font-size:22px; font-weight:700; color:var(--c-green)">+39%</div>
 </div>
 <div class="mtw-spot-card">
-<div class="mtw-control-label" style="font-size:10px; margin-bottom:4px">Total Ret 2025</div>
+<div class="mtw-control-label" style="font-size:10px; margin-bottom:4px">2025 Total Ret</div>
 <div class="mtw-mono" style="font-size:22px; font-weight:700; color:var(--c-blue)">+17.9%</div>
 </div>
 <div class="mtw-spot-card">
-<div class="mtw-control-label" style="font-size:10px; margin-bottom:4px">Nuovo ATH</div>
-<div class="mtw-mono" style="font-size:22px; font-weight:700; color:var(--c-blue)">27 Giu</div>
+<div class="mtw-control-label" style="font-size:10px; margin-bottom:4px">New ATH</div>
+<div class="mtw-mono" style="font-size:22px; font-weight:700; color:var(--c-blue)">Jun 27</div>
 </div>
 </div>
 <p style="margin-top:16px; font-size:13px; color:rgba(255,255,255,0.45); line-height:1.65; margin-bottom:0;">
-Il 2025 è il caso studio perfetto: un drawdown del -19% causato dai dazi del "Liberation Day" (2 aprile), seguito da un rally del +39% dal minimo al nuovo massimo storico il 27 giugno. Il mercato ha poi chiuso l'anno con un total return del +17.9%, il terzo anno consecutivo a doppia cifra. Chi ha venduto al bottom di aprile ha perso l'intero rimbalzo.
+2025 is the perfect case study: a -19% drawdown caused by the "Liberation Day" tariffs (April 2), followed by a +39% rally from the bottom to a new all-time high on June 27. The market then closed the year with a +17.9% total return, the third consecutive double-digit year. Whoever sold at the April bottom lost the entire rebound.
 </p>
 </div>
 
@@ -230,12 +229,11 @@ Il 2025 è il caso studio perfetto: un drawdown del -19% causato dai dazi del "L
 </div>
 
 <div class="mtw-footer">
-Dati basati su rendimenti storici S&P 500 Total Return 1995–2025. Simulazione a scopo illustrativo, non è consulenza finanziaria.
+Data based on historical S&P 500 Total Return 1995–2025. Simulation for illustrative purposes only, not financial advice.
 </div>
 
 <script>
 (function() {
-// Dati S&P 500
 const SP500_YEARLY = [
 { year: 1995, ret: 0.3743 }, { year: 1996, ret: 0.2296 }, { year: 1997, ret: 0.3336 },
 { year: 1998, ret: 0.2858 }, { year: 1999, ret: 0.2104 }, { year: 2000, ret: -0.0910 },
@@ -280,11 +278,9 @@ const SP500_YEARLY = [
   const INITIAL_INVESTMENT = 10000;
   const CRISIS_YEARS = new Set([2000, 2001, 2002, 2008, 2009, 2020, 2022, 2025]);
 
-  // Stato
   let state = { missedDays: 5, panicIdx: 1 };
   let myChart = null;
 
-  // Utility
   function formatCurrency(v) {
     if (v >= 1000000) return `$${(v / 1000000).toFixed(1)}M`;
     if (v >= 1000) return `$${(v / 1000).toFixed(1)}K`;
@@ -295,7 +291,6 @@ const SP500_YEARLY = [
     return (Math.pow(end / start, 1 / years) - 1) * 100;
   }
 
-  // Motore Logico
   function computeScenarios() {
     const data = [];
     let invested = INITIAL_INVESTMENT, missedBest = INITIAL_INVESTMENT, panicSeller = INITIAL_INVESTMENT;
@@ -329,7 +324,6 @@ const SP500_YEARLY = [
         panicSeller *= (1 + ret);
         panicReentered = true;
       } else if (panicSold && !panicReentered) {
-        // cash
       } else {
         panicSeller *= (1 + ret);
       }
@@ -339,7 +333,6 @@ const SP500_YEARLY = [
     return { data, bestDaysSorted };
   }
 
-  // Inizializza Pulsanti
   function initButtons() {
     const pCont = document.getElementById('mtw-panic-btns');
     CRASH_BOTTOMS.forEach((c, i) => {
@@ -358,9 +351,7 @@ const SP500_YEARLY = [
     });
   }
 
-  // Aggiorna UI
   function updateAll(changedBy = 'init') {
-    // Aggiorna classi bottoni
     document.querySelectorAll('#mtw-missed-btns .mtw-btn').forEach(b => {
       b.className = `mtw-btn ${parseInt(b.dataset.val) === state.missedDays ? 'active-orange' : ''}`;
     });
@@ -374,11 +365,10 @@ const SP500_YEARLY = [
     const crisisDaysCount = bestDaysSorted.filter(d => CRISIS_YEARS.has(d.year)).length;
     const crisisPct = bestDaysSorted.length ? Math.round((crisisDaysCount / bestDaysSorted.length) * 100) : 0;
 
-    // Scorecards
     const cardsData = [
       { key: "invested", label: "Buy & Hold", color: "#00E676", value: finalRow.invested },
-      { key: "missedBest", label: `Senza i migliori ${state.missedDays} gg`, color: "#FF6D00", value: finalRow.missedBest },
-      { key: "panicSeller", label: `Venduto al bottom (${CRASH_BOTTOMS[state.panicIdx].name.split(' ')[0]})`, color: "#FF1744", value: finalRow.panicSeller },
+      { key: "missedBest", label: `Without top ${state.missedDays} days`, color: "#FF6D00", value: finalRow.missedBest },
+      { key: "panicSeller", label: `Sold at bottom (${CRASH_BOTTOMS[state.panicIdx].name.split(' ')[0]})`, color: "#FF1744", value: finalRow.panicSeller },
     ];
 
     document.getElementById('mtw-scorecards').innerHTML = cardsData.map(s => {
@@ -400,9 +390,8 @@ const SP500_YEARLY = [
       `;
     }).join('');
 
-    // Lista giorni
-    document.getElementById('mtw-days-title').textContent = `I ${state.missedDays} giorni migliori che avresti saltato`;
-    document.getElementById('mtw-days-pct').textContent = `${crisisPct}% cadono durante crisi`;
+    document.getElementById('mtw-days-title').textContent = `The best ${state.missedDays} days you would have missed`;
+    document.getElementById('mtw-days-pct').textContent = `${crisisPct}% fall during crises`;
     document.getElementById('mtw-days-grid').innerHTML = bestDaysSorted.map(d => {
       const isCrisis = CRISIS_YEARS.has(d.year);
       const badge = d.date === "2025-04-09" ? `<span class="mtw-badge-new">NEW</span>` : '';
@@ -415,20 +404,18 @@ const SP500_YEARLY = [
       `;
     }).join('');
 
-    // Takeaway
     document.getElementById('mtw-takeaway-text').innerHTML = `
       <span style="color:#00E676; font-weight:600; font-size:15px;">Takeaway:</span> 
-      Perdere i migliori <span style="color:#FF6D00; font-weight:600">${state.missedDays} giorni</span> su ${years} anni 
-      trasforma <span class="mtw-mono" style="color:#fff">$10,000</span> in 
-      <span class="mtw-mono" style="color:#FF6D00">${formatCurrency(finalRow.missedBest)}</span> invece 
-      di <span class="mtw-mono" style="color:#00E676">${formatCurrency(finalRow.invested)}</span>.
-      Il panic selling durante il crash ${CRASH_BOTTOMS[state.panicIdx].name.split(' ')[0]} porta il totale 
-      a <span class="mtw-mono" style="color:#FF1744">${formatCurrency(finalRow.panicSeller)}</span>.
-      <span style="color:rgba(255,255,255,0.7)">Il ${crisisPct}% dei giorni migliori cade durante le crisi peggiori</span> — 
-      il mercato premia chi resta, non chi azzecca il timing.
+      Missing the best <span style="color:#FF6D00; font-weight:600">${state.missedDays} days</span> out of ${years} years 
+      turns <span class="mtw-mono" style="color:#fff">$10,000</span> into 
+      <span class="mtw-mono" style="color:#FF6D00">${formatCurrency(finalRow.missedBest)}</span> instead 
+      of <span class="mtw-mono" style="color:#00E676">${formatCurrency(finalRow.invested)}</span>.
+      Panic selling during the ${CRASH_BOTTOMS[state.panicIdx].name.split(' ')[0]} crash brings the total 
+      to <span class="mtw-mono" style="color:#FF1744">${formatCurrency(finalRow.panicSeller)}</span>.
+      <span style="color:rgba(255,255,255,0.7)">${crisisPct}% of the best days fall during the worst crises</span> — 
+      the market rewards those who stay, not those who guess the timing.
     `;
 
-    // Aggiorna Grafico
     updateChart(data, changedBy);
   }
 
@@ -438,7 +425,7 @@ const SP500_YEARLY = [
     if (myChart) {
       if (changedBy === 'missed') {
         myChart.data.datasets[1].data = data.map(d => d.missedBest);
-        myChart.data.datasets[1].label = `Senza top ${state.missedDays} gg`;
+        myChart.data.datasets[1].label = `Without top ${state.missedDays} days`;
       } else if (changedBy === 'panic') {
         myChart.data.datasets[2].data = data.map(d => d.panicSeller);
       } else {
@@ -450,7 +437,6 @@ const SP500_YEARLY = [
       return;
     }
 
-    // Prima inizializzazione
     const labels = data.map(d => d.year);
     let gradGreen = ctx.createLinearGradient(0, 0, 0, 400);
     gradGreen.addColorStop(0, 'rgba(0, 230, 118, 0.2)'); gradGreen.addColorStop(1, 'rgba(0, 230, 118, 0)');
@@ -461,12 +447,11 @@ const SP500_YEARLY = [
 
     const datasets = [
       { label: 'Buy & Hold', data: data.map(d => d.invested), borderColor: '#00E676', backgroundColor: gradGreen, borderWidth: 2, fill: true, pointRadius: 0, pointHoverRadius: 5, tension: 0.4 },
-      { label: `Senza top ${state.missedDays} gg`, data: data.map(d => d.missedBest), borderColor: '#FF6D00', backgroundColor: gradOrange, borderWidth: 2, borderDash: [6, 4], fill: true, pointRadius: 0, pointHoverRadius: 5, tension: 0.4 },
+      { label: `Without top ${state.missedDays} days`, data: data.map(d => d.missedBest), borderColor: '#FF6D00', backgroundColor: gradOrange, borderWidth: 2, borderDash: [6, 4], fill: true, pointRadius: 0, pointHoverRadius: 5, tension: 0.4 },
       { label: 'Panic Seller', data: data.map(d => d.panicSeller), borderColor: '#FF1744', backgroundColor: gradRed, borderWidth: 2, borderDash: [2, 4], fill: true, pointRadius: 0, pointHoverRadius: 5, tension: 0.4 }
     ];
 
     {
-      // Inizializza Chart.js se non esiste
       Chart.defaults.color = 'rgba(255, 255, 255, 0.4)';
       Chart.defaults.font.family = "'DM Mono', monospace";
       
@@ -481,7 +466,7 @@ const SP500_YEARLY = [
             tooltip: {
               backgroundColor: 'rgba(15,15,20,0.95)', titleColor: 'rgba(255,255,255,0.5)', bodyColor: '#fff',
               borderColor: 'rgba(255,255,255,0.08)', borderWidth: 1, padding: 12, boxPadding: 6,
-              caretPadding: 10, intersect: false, /* Fix Mobile */
+              caretPadding: 10, intersect: false, 
               callbacks: { label: function(context) { return context.dataset.label + ': ' + formatCurrency(context.parsed.y); } }
             }
           },
@@ -495,33 +480,28 @@ const SP500_YEARLY = [
     }
   }
 
-  // Start
-  // Wait for chart.js to load just in case
   window.addEventListener('load', function() {
     initButtons();
     updateAll();
   });
 
 })();
-
-
 </script>
-
 </div>
 
-## Quindi, cosa fare durante un crollo finanziario?
+## So, what to do during a financial crash?
 
-**Niente.**
+**Nothing.**
 
-Risposta controintuitiva, ma statisticamente dimostrata. In finanza si chiama *buy and hold*.
+A counterintuitive answer, but statistically proven. In finance it's called *buy and hold*.
 
-Oh, siamo tutti umani, tutti partiamo per la tangente anche nei momenti buoni, figuriamoci nelle crisi. Pure a me piacerebbe avere una strategia di [stop loss](https://it.wikipedia.org/wiki/Stop_loss) che funzioni, una formula magica per i momenti di crisi, ma *non c'è*. Possiamo solo soffrire in silenzio vedendo il conto sgonfiarsi (al massimo ribilanciare, ma questa è un po' una finezza).
+Oh, we are all human, we all go off on a tangent even in good times, let alone in crises. I would also love to have a stop loss strategy that works, a magic formula for moments of crisis, but *there isn't one*. We can only suffer in silence watching our account deflate (at most rebalance, but that's a bit of a refinement).
 
-I portafogli di investimento vengono costruiti con obiettivi e orizzonti temporali precisi quando le cose vanno bene (in "tempo di pace"). E sai già che, prima o poi, le cose andranno male: il ciclo economico funziona così. I crolli dei mercati sono fisiologici, non si scappa.
+Investment portfolios are built with precise goals and time horizons when things are going well (in "peacetime"). And you already know that, sooner or later, things will go wrong: the economic cycle works like this. Market crashes are physiological, there's no escaping them.
 
-## Resilienza
-Se c'è un concetto che proprio mi sta sulle ~~palle~~ scatole è proprio la Resilienza. Quindi, quando ho elaborato la mia strategia di "crisis management" questa è la prima obiezione che mi sono fatto: se il mondo ti "suggerisce" in tutti i modi che stai sbagliando, forse, incredibilmente, stai sbagliando. È la realtà che detta le regole. L'idea che andiamo bene così come siamo non mi appartiene. Se una cosa *non funziona*, allora non funziona. Qual è la differenza? Il momento. Nei momenti di crisi la resilienza serve. Non dico che l'allocazione che hai deciso con logica e criterio, in tempi di pace, sia necessariamente corretta. Dico che i momenti di crisi **non** sono i momenti adatti per rivedere la strategia. Stai andando verso il basso, sapevi che sarebbe successo. È inevitabile. Le cose andranno statisticamente meglio. È a quel punto che potrai fare un'analisi a ritroso e cambiare, eventualmente.
+## Resilience
+If there is a concept that gets on my ~~balls~~ nerves it's exactly Resilience. So, when I developed my "crisis management" strategy this was the first objection I raised to myself: if the world "suggests" to you in every way that you are doing it wrong, maybe, incredibly, you are doing it wrong. Reality dictates the rules. The idea that we are fine just the way we are doesn't belong to me. If something *doesn't work*, then it doesn't work. What's the difference? Timing. In moments of crisis, resilience is needed. I'm not saying that the allocation you logically and carefully decided upon in peacetime is necessarily correct. I'm saying that moments of crisis are **not** the right times to review your strategy. You're going down, you knew it would happen. It's inevitable. Things will statistically get better. It's at that point that you can do a backward analysis and eventually change it.
 
-Restare sui binari quando i grafici sono rossi vuol dire fare bene. Se la tua strategia di investimento era strutturata correttamente, nella crisi reggerà il colpo (e getterà le basi per i rendimenti futuri). Se era fatta male, il bel mezzo di un crollo finanziario non è assolutamente il momento adatto per prendere decisioni ~~a cazzo di cane~~ mossi dall'emotività.
+Staying on the tracks when the charts are red means doing well. If your investment strategy was properly structured, it will withstand the blow during the crisis (and lay the foundations for future returns). If it was poorly made, the middle of a financial crash is absolutely not the right time to make emotionally-driven decisions ~~half-assed~~.
 
-Ogni eventuale analogia con la vita è lasciata al lettore.
+Any possible analogy with life is left to the reader.

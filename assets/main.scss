@@ -481,7 +481,82 @@ pre {
 :root[data-theme="dark"] .theme-icon-sun { display: block; }
 :root[data-theme="dark"] .theme-icon-moon { display: none; }
 
-// 14. Post Pagination Button
+// 14. Language Toggle
+// =============================================================================
+
+.lang-toggle {
+  float: none;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: 0.06em;
+  background-image: none;
+
+  &:hover { background-image: none; }
+
+  .lang-it, .lang-en {
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition: color 0.2s, background-color 0.2s;
+    color: var(--text-muted);
+  }
+
+  .lang-sep {
+    color: var(--border-color);
+    margin: 0 1px;
+  }
+}
+
+:root[data-lang="it"] .lang-toggle .lang-it,
+:root:not([data-lang]) .lang-toggle .lang-it {
+  color: var(--brand-color);
+  background-color: rgba(224, 122, 95, 0.12);
+}
+
+:root[data-lang="en"] .lang-toggle .lang-en {
+  color: var(--brand-color);
+  background-color: rgba(224, 122, 95, 0.12);
+}
+
+@media (max-width: 600px) {
+  .lang-toggle {
+    float: right;
+    height: 36px;
+    line-height: 36px;
+    margin-right: 80px;
+  }
+}
+
+// Translation link on posts
+.translation-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin-left: 12px;
+  transition: color 0.2s, border-color 0.2s;
+  background-image: none;
+
+  &:hover {
+    color: var(--brand-color);
+    border-color: var(--brand-color);
+    background-image: none;
+  }
+}
+
+// 15. Post Pagination Button
 // =============================================================================
 
 .post-pagination {

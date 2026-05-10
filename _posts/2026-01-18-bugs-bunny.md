@@ -8,6 +8,8 @@ tags: [neuroscience, cognitive-bias, false-memories, elizabeth-loftus]
 description: "Ricordi?"
 pixel_icon: "bugs_bunny.png"
 smooth_image: true
+lang: it
+ref: bugs-bunny
 ---
 ## La Memoria non è un Hard Disk
 

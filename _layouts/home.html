@@ -2,7 +2,43 @@
 layout: default
 ---
 
+<script>
+  // Eseguito immediatamente per prevenire FOUC (Flash of Unstyled Content)
+  var savedLang = localStorage.getItem('blog_lang') || 'it';
+  document.documentElement.setAttribute('data-active-lang', savedLang);
+</script>
+
 <style>
+  /* Nasconde tutti i post di default per far gestire la prima visualizzazione al CSS */
+  #post-list li { display: none; }
+
+  /* Mostra i primi 4 post italiani (Default fallback se JS è inattivo) */
+  html:not([data-active-lang="en"]) #post-list li[data-lang="it"][data-lang-index="1"],
+  html:not([data-active-lang="en"]) #post-list li[data-lang="it"][data-lang-index="2"],
+  html:not([data-active-lang="en"]) #post-list li[data-lang="it"][data-lang-index="3"],
+  html:not([data-active-lang="en"]) #post-list li[data-lang="it"][data-lang-index="4"] { display: block; }
+
+  /* Mostra i primi 4 post inglesi */
+  html[data-active-lang="en"] #post-list li[data-lang="en"][data-lang-index="1"],
+  html[data-active-lang="en"] #post-list li[data-lang="en"][data-lang-index="2"],
+  html[data-active-lang="en"] #post-list li[data-lang="en"][data-lang-index="3"],
+  html[data-active-lang="en"] #post-list li[data-lang="en"][data-lang-index="4"] { display: block; }
+
+  /* Mostra post aggiuntivi caricati con JS */
+  #post-list li.js-visible { display: block !important; }
+
+  /* Gestione istantanea opacità bottoni lingua */
+  html:not([data-active-lang="en"]) #lang-btn-it { opacity: 1; }
+  html:not([data-active-lang="en"]) #lang-btn-en { opacity: 0.5; }
+  html[data-active-lang="en"] #lang-btn-en { opacity: 1; }
+  html[data-active-lang="en"] #lang-btn-it { opacity: 0.5; }
+
+  /* Testo del bottone "Load More" gestito via CSS */
+  html:not([data-active-lang="en"]) .lm-it { display: inline; }
+  html:not([data-active-lang="en"]) .lm-en { display: none; }
+  html[data-active-lang="en"] .lm-en { display: inline; }
+  html[data-active-lang="en"] .lm-it { display: none; }
+
   .post-item-wrapper {
     display: flex;
     align-items: center;
@@ -32,6 +68,14 @@ layout: default
 
 <div class="home">
 
+  <div class="lang-switch" style="display: flex; justify-content: center; gap: 12px; margin-bottom: 2.5rem;">
+    <button onclick="filterPostsByLang('it')" id="lang-btn-it" style="padding: 6px 16px; border-radius: 20px; border: 1px solid var(--border-color, #e5e5e5); background: var(--bg-color, #ffffff); cursor: pointer; transition: opacity 0.2s; font-weight: 500;">
+      🇮🇹 Italiano
+    </button>
+    <button onclick="filterPostsByLang('en')" id="lang-btn-en" style="padding: 6px 16px; border-radius: 20px; border: 1px solid var(--border-color, #e5e5e5); background: var(--bg-color, #ffffff); cursor: pointer; transition: opacity 0.2s; font-weight: 500;">
+      🇬🇧 English
+    </button>
+  </div>
 
   {{ content }}
 
@@ -42,11 +86,16 @@ layout: default
   {% endif %}
 
   {%- if posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <h2 class="post-list-heading" id="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
     <ul class="post-list" id="post-list">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      {%- assign it_count = 0 -%}
+      {%- assign en_count = 0 -%}
       {%- for post in posts -%}
-      <li data-post-index="{{ forloop.index0 }}" {% if forloop.index0 >= 4 %}style="display:none"{% endif %}>
+      {%- assign p_lang = post.lang | default: 'it' -%}
+      {%- if p_lang == 'en' -%}{%- assign en_count = en_count | plus: 1 -%}{%- assign lang_idx = en_count -%}
+      {%- else -%}{%- assign it_count = it_count | plus: 1 -%}{%- assign lang_idx = it_count -%}{%- endif -%}
+      <li data-lang="{{ p_lang }}" data-lang-index="{{ lang_idx }}">
         {%- assign words = post.content | strip_html | number_of_words -%}
         {%- assign reading_time = words | divided_by: 200 -%}
         {%- if reading_time == 0 %}{% assign reading_time = 1 %}{% endif -%}
@@ -67,24 +116,64 @@ layout: default
       {%- endfor -%}
     </ul>
 
-    {% if posts.size > 4 %}
-    <div class="post-pagination" id="post-pagination">
-      <button id="load-more-posts" onclick="loadMorePosts()">Altri post</button>
+    <div class="post-pagination" id="post-pagination" style="display:none">
+      <button id="load-more-posts" onclick="loadMorePosts()">
+        <span class="lm-it">Altri post</span>
+        <span class="lm-en">More posts</span>
+      </button>
     </div>
-    <script>
-      var postsShown = 4;
-      function loadMorePosts() {
-        var items = document.querySelectorAll('#post-list li');
-        var end = postsShown + 4;
-        for (var i = postsShown; i < end && i < items.length; i++) {
-          items[i].style.display = '';
-        }
-        postsShown = end;
-        if (postsShown >= items.length) {
-          document.getElementById('load-more-posts').style.display = 'none';
-        }
-      }
-    </script>
-    {% endif %}
   {%- endif -%}
 </div>
+
+<script>
+(function() {
+  var PAGE_SIZE = 4;
+  var currentLang = document.documentElement.getAttribute('data-active-lang') || 'it';
+  var postsShown = PAGE_SIZE; // CSS mostra i primi PAGE_SIZE inizialmente
+
+  function getVisibleItems() {
+    return Array.from(document.querySelectorAll('#post-list li[data-lang="' + currentLang + '"]'));
+  }
+
+  function filterPostsByLang(lang) {
+    currentLang = lang;
+    postsShown = PAGE_SIZE;
+    
+    localStorage.setItem('blog_lang', lang);
+    document.documentElement.setAttribute('data-active-lang', lang);
+    
+    // Nascondi eventuali post in eccesso espansi precedentemente
+    document.querySelectorAll('#post-list li.js-visible').forEach(function(li) {
+      li.classList.remove('js-visible');
+    });
+
+    var items = getVisibleItems();
+    var btn = document.getElementById('load-more-posts');
+    var pag = document.getElementById('post-pagination');
+    
+    if (items.length > PAGE_SIZE) {
+      pag.style.display = '';
+      btn.style.display = '';
+    } else {
+      pag.style.display = 'none';
+    }
+  }
+
+  window.filterPostsByLang = filterPostsByLang;
+
+  window.loadMorePosts = function() {
+    var items = getVisibleItems();
+    var end = postsShown + PAGE_SIZE;
+    for (var i = postsShown; i < end && i < items.length; i++) {
+      items[i].classList.add('js-visible');
+    }
+    postsShown = end;
+    if (postsShown >= items.length) {
+      document.getElementById('load-more-posts').style.display = 'none';
+    }
+  };
+
+  // Initial render
+  filterPostsByLang(currentLang);
+})();
+</script>

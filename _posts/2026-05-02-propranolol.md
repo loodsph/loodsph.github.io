@@ -8,6 +8,8 @@ tags: [propranololo, neuroscienze, ptsd, memoria, libero arbitrio]
 description: "Quando i farmaci per il cuore interferiscono direttamente sul nostro cervello"
 pixel_icon: "free_will.png"
 smooth_image: true
+lang: it
+ref: propranolol
 ---
 
 ## Parte filosofica

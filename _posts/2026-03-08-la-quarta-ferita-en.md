@@ -1,32 +1,32 @@
 ---
 layout: post
-title: "La quarta ferita narcisistica"
-seo_title: "Reti neurali e pensiero: la quarta ferita narcisistica spiegata"
+title: "The fourth narcissistic wound"
+seo_title: "Neural networks and thought: the fourth narcissistic wound explained"
 date: 2026-03-08
 categories: [filosofia, coding]
 tags: [AI, reti neurali, filosofia, complessità]
-description: "Da Galileo all'AI"
+description: "From Galileo to AI"
 pixel_icon: "neural_network.png"
 smooth_image: true
-lang: it
+lang: en
 ref: fourth-wound
 ---
 
-In principio fu Galileo, a spiegarci che l'universo non ruota intorno a noi. Poi venne Darwin, a spiegarci che non siamo creature speciali, a immagine e somiglianza di un essere superiore — abbiamo solo casualmente preso un ramo evolutivo diverso. Poi toccò a Freud spiegarci che abbiamo un inconscio molto ingombrante e che non siamo padroni a casa nostra.
+In the beginning it was Galileo, explaining to us that the universe does not revolve around us. Then came Darwin, explaining to us that we are not special creatures made in the image and likeness of a superior being — we simply randomly took a different evolutionary branch. Then it was Freud's turn to explain that we have a very cumbersome unconscious and that we are not masters of our own house.
 
-Ora tocca all'AI spiegarci che la capacità di pensare non ha nulla di mistico, di speciale, di insondabile. L'idea che avanzate capacità cognitive si possano raggiungere solo tramite una struttura imperscrutabile e incredibilmente complessa appare ormai datata. Una rudimentale e parziale riproduzione del cervello umano ha già superato il test di Turing. Non solo non siamo più in grado di capire se chi abbiamo di fronte sia un umano o una macchina, ma questa è più in grado di noi di risolvere il 98% dei problemi.
+Now it's AI's turn to explain that the ability to think has nothing mystical, special, or unfathomable about it. The idea that advanced cognitive abilities can only be achieved through an impenetrable and incredibly complex structure now appears dated. A rudimentary and partial reproduction of the human brain has already passed the Turing test. Not only are we no longer able to tell whether the entity in front of us is a human or a machine, but it is more capable than us of solving 98% of problems.
 
-Tre ferite narcisistiche — cosmologica, biologica, psicologica — e ora una quarta: **quella cognitiva**.
+Three narcissistic wounds — cosmological, biological, psychological — and now a fourth: **the cognitive one**.
 
 ---
 <br>
-Ma se dico "una rete neurale impara", cosa sta succedendo davvero? Per rispondere dovremmo prima definire cosa significhi imparare o pensare. Un compito decisamente oltre la mia portata.
-Però vorrei almeno capire che cosa ci sia a livello base, pratico, di una AI.
-Da quanto ho capito nient'altro che moltiplicazioni, somme, e una regola per aggiustarsi. Questa semplicità è incredibilmente affascinante alla luce di tutto quello che abbiamo visto prima e dei risultati prodotti.
+But if I say "a neural network learns", what is really happening? To answer we should first define what it means to learn or to think. A task definitely beyond my reach.
+But I'd at least like to understand what lies at the basic, practical level of an AI.
+From what I understand, it's nothing more than multiplications, additions, and a rule to adjust itself. This simplicity is incredibly fascinating in light of everything we've seen before and the results produced.
 
-## Simulazione
+## Simulation
 
-Una rete neurale che impara a sparare un proiettile verso un bersaglio.
+A neural network learning to shoot a projectile towards a target.
 
 <style>
     #nn-sim {
@@ -249,14 +249,14 @@ Una rete neurale che impara a sparare un proiettile verso un bersaglio.
         <div class="nn-panel">
             <div id="nnLossText" class="nn-loss-display">ERROR: ...</div>
             <div id="nnEpochText" class="nn-epoch-display">epoch: 0</div>
-            <div id="nnStatusText" class="nn-status-indicator">In Apprendimento...</div>
+            <div id="nnStatusText" class="nn-status-indicator">Learning...</div>
             <canvas id="nnSimCanvas" width="400" height="400"></canvas>
         </div>
     </div>
     <div class="nn-controls">
         <div class="nn-toggle-row">
             <div class="nn-toggle-group">
-                <span id="nnLabelEvo" class="nn-toggle-label inactive">Evoluzione</span>
+                <span id="nnLabelEvo" class="nn-toggle-label inactive">Evolution</span>
                 <label class="nn-toggle-switch">
                     <input type="checkbox" id="nnMethodToggle" checked>
                     <div class="nn-toggle-track"></div>
@@ -277,7 +277,7 @@ Una rete neurale che impara a sparare un proiettile verso un bersaglio.
         </div>
         <div class="nn-sliders-row">
             <div class="nn-speed-control">
-                <span class="nn-speed-label">Velocità: <span id="nnSpeedVal" style="color:#4fc3f7">5</span>x</span>
+                <span class="nn-speed-label">Speed: <span id="nnSpeedVal" style="color:#4fc3f7">5</span>x</span>
                 <input type="range" id="nnSpeedRange" min="0.25" max="200" step="0.25" value="5">
             </div>
             <div class="nn-speed-control nn-hideable" id="nnLrControlBox">
@@ -410,8 +410,8 @@ Una rete neurale che impara a sparare un proiettile verso un bersaglio.
     document.getElementById('nnResetBtn').addEventListener('click',()=>resetSim());
 
     function updateUI() {
-        if(useBP){lBp.className='nn-toggle-label active-bp';lEvo.className='nn-toggle-label inactive';methodBadge.className='nn-method-badge backprop';methodBadge.innerText=useBatch?'Backprop Batch':'Backprop';lrBox.classList.remove('hidden');}
-        else{lBp.className='nn-toggle-label inactive';lEvo.className='nn-toggle-label active-evo';methodBadge.className='nn-method-badge evolution';methodBadge.innerText=useBatch?'Evoluzione Batch':'Evoluzione';lrBox.classList.add('hidden');}
+        if(useBP){lBp.className='nn-toggle-label active-bp';lEvo.className='nn-toggle-label inactive';methodBadge.className='nn-method-badge backprop';methodBadge.innerText=useBatch?'Batch Backprop':'Backprop';lrBox.classList.remove('hidden');}
+        else{lBp.className='nn-toggle-label inactive';lEvo.className='nn-toggle-label active-evo';methodBadge.className='nn-method-badge evolution';methodBadge.innerText=useBatch?'Batch Evolution':'Evolution';lrBox.classList.add('hidden');}
         if(useBatch){lBatch.className='nn-toggle-label active-batch';lSingle.className='nn-toggle-label inactive';bsBox.classList.remove('hidden');}
         else{lBatch.className='nn-toggle-label inactive';lSingle.className='nn-toggle-label inactive';bsBox.classList.add('hidden');}
     }
@@ -457,7 +457,7 @@ Una rete neurale che impara a sparare un proiettile verso un bersaglio.
         for(let l=0;l<lc-1;l++){const cu=nc[l],nx=nc[l+1],W=nn.weights[l];for(let i=0;i<cu.length;i++)for(let j=0;j<nx.length;j++){const w=W[i*nx.length+j],aw=Math.abs(w);if(aw<0.05)continue;netCtx.beginPath();netCtx.moveTo(cu[i].x,cu[i].y);netCtx.lineTo(nx[j].x,nx[j].y);netCtx.strokeStyle=w>0?`rgba(60,160,255,${Math.min(aw,0.85)})`:`rgba(255,100,100,${Math.min(aw,0.85)})`;netCtx.lineWidth=aw*2.5;netCtx.stroke();}}
         const cls=['#32CD32','#FFD700','#D3D3D3'];
         for(let l=0;l<lc;l++){const co=(l===0)?cls[0]:(l===lc-1)?"#b0b0b0":cls[1],sc=(l===0)?"rgba(50,205,50,0.6)":(l===lc-1)?"rgba(255,255,255,0.2)":"rgba(255,215,0,0.6)";for(let n=0;n<nc[l].length;n++){const p=nc[l][n];let v=0;if(nn.nodeValues[l]&&nn.nodeValues[l][n]!==undefined)v=nn.nodeValues[l][n];netCtx.shadowBlur=Math.abs(v)*15;netCtx.shadowColor=sc;netCtx.beginPath();netCtx.arc(p.x,p.y,15,0,Math.PI*2);netCtx.fillStyle=co;netCtx.fill();netCtx.shadowBlur=0;netCtx.strokeStyle="#fff";netCtx.lineWidth=2;netCtx.stroke();netCtx.fillStyle="#111";netCtx.font="bold 10px monospace";netCtx.fillText(v.toFixed(1),p.x,p.y+1);}}
-        netCtx.fillStyle="#aaa";netCtx.font="bold 12px 'Segoe UI',sans-serif";if(nn.layerSizes[lc-1]>0)netCtx.fillText("ANG",80,385);if(nn.layerSizes[lc-1]>1)netCtx.fillText("FORZA",320,385);netCtx.fillText("OUTPUT",200,385);
+        netCtx.fillStyle="#aaa";netCtx.font="bold 12px 'Segoe UI',sans-serif";if(nn.layerSizes[lc-1]>0)netCtx.fillText("ANG",80,385);if(nn.layerSizes[lc-1]>1)netCtx.fillText("FORCE",320,385);netCtx.fillText("OUTPUT",200,385);
     }
 
     function drawScene(path,angle){
@@ -472,7 +472,7 @@ Una rete neurale che impara a sparare un proiettile verso un bersaglio.
         if(isTraining){
             spdAcc+=speed;const it=Math.floor(spdAcc);spdAcc-=it;
             if(useBatch){statusText.innerText=useBP?"BATCH BP...":"BATCH EVO...";statusText.style.color="#ce93d8";statusText.style.background="rgba(40,0,40,0.8)";statusText.style.border="1px solid #ce93d8";if(useBP)trainBatchBP(it);else trainBatchEvo(it);}
-            else{if(useBP){statusText.innerText="BACKPROP...";statusText.style.color="#66bb6a";statusText.style.background="rgba(0,40,0,0.8)";statusText.style.border="1px solid #66bb6a";trainSingleBP(it);}else{statusText.innerText="EVOLUZIONE...";statusText.style.color="#ffa726";statusText.style.background="rgba(40,25,0,0.8)";statusText.style.border="1px solid #ffa726";trainSingleEvo(it);}if(curLoss<LOSS_THRESHOLD)isTraining=false;}
+            else{if(useBP){statusText.innerText="BACKPROP...";statusText.style.color="#66bb6a";statusText.style.background="rgba(0,40,0,0.8)";statusText.style.border="1px solid #66bb6a";trainSingleBP(it);}else{statusText.innerText="EVOLUTION...";statusText.style.color="#ffa726";statusText.style.background="rgba(40,25,0,0.8)";statusText.style.border="1px solid #ffa726";trainSingleEvo(it);}if(curLoss<LOSS_THRESHOLD)isTraining=false;}
         }else{statusText.innerText="LOCKED";statusText.style.color="#4fc3f7";statusText.style.background="rgba(0,40,40,0.8)";statusText.style.border="1px solid #4fc3f7";}
         const pi=getInputs(target.x,target.y,brain.layerSizes[0]),fo=brain.predict(pi),fp=mapOutputsToPhysics(fo);
         const res=calcTraj(fp.angle,fp.force,target.x,target.y);
@@ -488,68 +488,68 @@ Una rete neurale che impara a sparare un proiettile verso un bersaglio.
 })();
 </script>
 
-*Clicca sul pannello destro per spostare il bersaglio. In modalità mini-batch, il click diventa un "test" — la rete continua ad allenarsi su target casuali e puoi testare in tempo reale quanto ha generalizzato.*
+*Click on the right panel to move the target. In mini-batch mode, the click becomes a "test" — the network continues to train on random targets and you can test in real-time how well it has generalized.*
 
-*Rallenta la velocità a 0.25x per vedere come cambiano i pesi e lo spessore delle linee nel corso della simulazione. Lo trovo affascinante.*
+*Slow the speed down to 0.25x to see how the weights and the thickness of the lines change during the simulation. I find it fascinating.*
 
-## Balistica
+## Ballistics
 
-Immaginate un cannone piazzato nell'angolo in basso a sinistra di uno schermo. Da qualche parte sul canvas c'è un bersaglio. La rete neurale deve scoprire due numeri — un angolo e una forza — tali che il proiettile, seguendo una banale parabola gravitazionale, passi il più vicino possibile al centro del target.
+Imagine a cannon placed in the bottom left corner of a screen. Somewhere on the canvas there is a target. The neural network must discover two numbers — an angle and a force — such that the projectile, following a trivial gravitational parabola, passes as close as possible to the center of the target.
 
-L'input è semplice: le coordinate (x, y) del bersaglio normalizzate. L'output sono due valori grezzi che, passati attraverso una funzione sigmoide, diventano un angolo (tra 3° e 86°) e una forza (tra 5 e 45 unità). Nessuna formula balistica è codificata nella rete. Nessuno le dice come funziona la gravità. **Deve capirlo da sola**.
+The input is simple: the normalized (x, y) coordinates of the target. The output are two raw values that, passed through a sigmoid function, become an angle (between 3° and 86°) and a force (between 5 and 45 units). No ballistic formula is coded into the network. No one tells it how gravity works. **It has to figure it out on its own**.
 
-## Anatomia di un neurone artificiale
+## Anatomy of an artificial neuron
 
-Un neurone artificiale fa esattamente tre cose:
+An artificial neuron does exactly three things:
 
-1. Prende tutti i suoi input e li moltiplica per i rispettivi **pesi** — numeri che rappresentano "quanto mi interessa questo segnale".
-2. Somma tutto e aggiunge un **bias** — un offset che sposta il punto di lavoro del neurone, determinando quanto facilmente si attiva anche in assenza di segnale forte.
-3. Passa il risultato attraverso una **funzione di attivazione** (nel nostro caso, la tangente iperbolica) che schiaccia il valore tra -1 e +1.
+1. It takes all its inputs and multiplies them by their respective **weights** — numbers representing "how much I care about this signal".
+2. It sums everything up and adds a **bias** — an offset that shifts the working point of the neuron, determining how easily it activates even in the absence of a strong signal.
+3. It passes the result through an **activation function** (in our case, the hyperbolic tangent) which squashes the value between -1 and +1.
 
-Ecco cosa fa concretamente un singolo neurone del primo livello nascosto della nostra rete:
+Here is what a single neuron in the first hidden layer of our network actually does:
 
->output = tanh(x × peso_x + y × peso_y + bias)
+> output = tanh(x × weight_x + y × weight_y + bias)
 
-Tre moltiplicazioni, due somme, una funzione. Non c'è un "ragionamento" qui, non c'è "comprensione". Eppure, quando colleghi abbastanza di questi nodi e trovi i pesi giusti, il sistema *funziona*.
+Three multiplications, two additions, one function. There is no "reasoning" here, there is no "understanding". And yet, when you connect enough of these nodes and find the right weights, the system *works*.
 
-## Due strategie per imparare
+## Two strategies to learn
 
-La simulazione implementa due approcci radicalmente diversi per trovare i pesi giusti, ed è confrontandoli che emerge qualcosa di interessante.
+The simulation implements two radically different approaches to find the right weights, and it is by comparing them that something interesting emerges.
 
-### L'evoluzione: tentativi alla cieca
+### Evolution: blind guessing
 
-Il primo metodo è ispirato all'evoluzione biologica. Funziona così: prendi la rete attuale, creane una copia, cambia casualmente qualche peso (mutazione), e vedi se la copia fa meglio dell'originale. Se sì, la copia diventa il nuovo campione. Se no, scartala e riprova.
+The first method is inspired by biological evolution. It works like this: take the current network, make a copy, randomly change some weights (mutation), and see if the copy does better than the original. If yes, the copy becomes the new champion. If not, discard it and try again.
 
-Nessun calcolo, nessuna direzione. Solo generazione casuale e selezione. È esattamente il meccanismo darwiniano: variazione cieca e selezione non-cieca. Non sa *perché* un cambiamento ha funzionato — sa solo che ha funzionato.
+No calculations, no direction. Just random generation and selection. It is exactly the Darwinian mechanism: blind variation and non-blind selection. It doesn't know *why* a change worked — it just knows that it worked.
 
-### La backpropagation: seguire il gradiente
+### Backpropagation: following the gradient
 
-Il secondo metodo è la vera backpropagation, l'algoritmo che ha reso possibile il deep learning moderno. L'idea è concettualmente elegante: invece di andare alla cieca, **calcola in che direzione aggiustare ogni peso per ridurre l'errore**.
+The second method is true backpropagation, the algorithm that made modern deep learning possible. The idea is conceptually elegant: instead of going blind, **calculate in which direction to adjust each weight to reduce the error**.
 
-C'è un dettaglio tecnico significativo nella nostra simulazione. La rete neurale in sé è differenziabile — possiamo calcolare analiticamente come una piccola variazione di un peso influenzi l'output. Ma la simulazione fisica (il proiettile che vola, rimbalza, e la cui distanza minima dal target viene misurata) non lo è. È un sistema discreto con un `min()` dentro.
+There is a significant technical detail in our simulation. The neural network itself is differentiable — we can calculate analytically how a small variation in a weight affects the output. But the physical simulation (the projectile flying, bouncing, and whose minimum distance from the target is measured) is not. It is a discrete system with a `min()` inside it.
 
-La soluzione è un approccio ibrido: usiamo **differenze numeriche** per capire come i due output della rete (angolo e forza grezzi) influenzano la distanza dal bersaglio — perturbiamo ogni output di una quantità microscopica ε e misuriamo come cambia l'errore. Una volta ottenuti questi gradienti "esterni", li propaghiamo all'indietro **analiticamente** attraverso la rete usando la regola della catena e la derivata della tangente iperbolica: `tanh'(z) = 1 - tanh²(z)`.
+The solution is a hybrid approach: we use **numerical differences** to understand how the two network outputs (raw angle and force) affect the distance from the target — we perturb each output by a microscopic amount ε and measure how the error changes. Once we have obtained these "external" gradients, we propagate them backwards **analytically** through the network using the chain rule and the derivative of the hyperbolic tangent: `tanh'(z) = 1 - tanh²(z)`.
 
-Il risultato è che ogni singolo peso riceve un'istruzione precisa: "spostati di tanto in questa direzione". Non è un tentativo — è una discesa calcolata lungo la superficie dell'errore.
+The result is that every single weight receives a precise instruction: "move by this much in this direction". It's not a guess — it's a calculated descent along the error surface.
 
-## Dal singolo al generale: il mini-batch
+## From singular to general: the mini-batch
 
-C'è un problema fondamentale con l'approccio "un bersaglio alla volta". La rete non sta veramente *imparando* — sta *memorizzando*. Trova i pesi che risolvono un singolo esercizio, e quando cambi target quei pesi non servono più.
+There is a fundamental problem with the "one target at a time" approach. The network isn't really *learning* — it's *memorizing*. It finds the weights that solve a single exercise, and when you change the target those weights are no longer useful.
 
-Il mini-batch risolve questo in modo elegante. Ad ogni iterazione, invece di allenare la rete su un solo punto, le presentiamo un gruppo di bersagli casuali sparsi per tutto il canvas — 16, 32, 64 alla volta. I gradienti di ogni bersaglio vengono mediati in un unico aggiornamento dei pesi.
+The mini-batch solves this elegantly. At each iteration, instead of training the network on a single point, we present it with a group of random targets scattered throughout the canvas — 16, 32, 64 at a time. The gradients of each target are averaged into a single weight update.
 
-Il punto chiave: quel singolo aggiornamento deve accontentare *tutti* i bersagli contemporaneamente. La rete non può memorizzare la risposta per un punto perché verrebbe penalizzata sugli altri. È costretta a trovare la **regola sottostante** — la relazione fisica tra posizione e parametri di tiro.
+The key point: that single update must satisfy *all* targets simultaneously. The network cannot memorize the answer for one point because it would be penalized on the others. It is forced to find the **underlying rule** — the physical relationship between position and shooting parameters.
 
-È la differenza tra imparare a memoria le risposte di un singolo esercizio e capire il metodo generale.
+It is the difference between memorizing the answers of a single exercise and understanding the general method.
 
 ---
 
-## La quarta ferita
+## The fourth wound
 
-Torniamo al punto di partenza. Cosa c'è dentro questa rete che "impara a sparare"? Moltiplicazioni di numeri decimali, somme, tangenti iperboliche, e una regola ricorsiva per aggiustare i coefficienti. Niente di più. Eppure il sistema *generalizza*: impara la balistica senza che nessuno gli abbia spiegato la gravità.
+Let's go back to the starting point. What is inside this network that "learns to shoot"? Multiplications of decimal numbers, additions, hyperbolic tangents, and a recursive rule to adjust the coefficients. Nothing more. Yet the system *generalizes*: it learns ballistics without anyone having explained gravity to it.
 
-Da quanto ho capito, i vari modelli AI hanno alla base la stessa cosa — solo che invece di 20 pesi ne hanno miliardi, invece di due input ne hanno migliaia, e invece della balistica hanno imparato a predire la prossima parola in un testo.
+From what I understand, the various AI models have the same thing at their base — only instead of 20 weights they have billions, instead of two inputs they have thousands, and instead of ballistics they have learned to predict the next word in a text.
 
-E quando quel meccanismo, scalato, produce qualcosa che non sappiamo più distinguere dal pensiero umano, la domanda non è "come è possibile che una macchina pensi?" ma piuttosto: "cos'è davvero il pensiero, se bastano moltiplicazioni e somme?"
+And when that mechanism, scaled up, produces something that we can no longer distinguish from human thought, the question is not "how is it possible that a machine thinks?" but rather: "what is thought really, if multiplications and additions are enough?"
 
-La quarta ferita narcisistica non è che le macchine ci superano. È che ci mostrano la meccanica di ciò che credevamo fosse magia.
+The fourth narcissistic wound is not that machines surpass us. It is that they show us the mechanics of what we thought was magic.

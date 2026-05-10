@@ -8,6 +8,8 @@ tags: [chemistry, medicine, phenylephrine, pseudoephedrine]
 description: "Cosa funziona e cosa no."
 pixel_icon: "raffreddore.png"
 smooth_image: true
+lang: it
+ref: cold-medicine
 ---
 
 >“Il raffreddore passa in una settimana senza farmaci e in sette giorni con i farmaci.”

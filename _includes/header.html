@@ -5,6 +5,18 @@
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
 
+    {%- comment -%}Find translation URL for this page if it exists{%- endcomment -%}
+    {%- assign page_translation_url = nil -%}
+    {%- if page.ref -%}
+      {%- for p in site.posts -%}
+        {%- if p.ref == page.ref and p.url != page.url -%}
+          {%- unless page_translation_url -%}
+            {%- assign page_translation_url = p.url | relative_url -%}
+          {%- endunless -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+
     {%- if page_paths -%}
       <nav class="site-nav">
         <button class="theme-toggle" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
@@ -24,6 +36,15 @@
           </svg>
         </button>
 
+        <button class="lang-toggle"
+                aria-label="Switch language / Cambia lingua"
+                title="IT / EN"
+                {% if page_translation_url %}data-translation-url="{{ page_translation_url }}"{% endif %}>
+          <span class="lang-it">IT</span>
+          <span class="lang-sep">/</span>
+          <span class="lang-en">EN</span>
+        </button>
+
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
           <span class="menu-icon">
@@ -34,9 +55,11 @@
         </label>
 
         <div class="trigger">
-          {%- assign manifesto = site.posts | where: "title", "Manifesto" | first -%}
-          {%- if manifesto -%}
-          <a class="page-link" href="{{ manifesto.url | relative_url }}">Manifesto</a>
+          {%- assign manifesto_it = site.posts | where: "ref", "manifesto" | where: "lang", "it" | first -%}
+          {%- assign manifesto_en = site.posts | where: "ref", "manifesto" | where: "lang", "en" | first -%}
+          {%- if manifesto_it or manifesto_en -%}
+          <a class="page-link manifesto-link-it" href="{{ manifesto_it.url | relative_url }}" {% unless manifesto_it %}style="display:none"{% endunless %}>Manifesto</a>
+          <a class="page-link manifesto-link-en" href="{{ manifesto_en.url | relative_url }}" style="display:none">Manifesto</a>
           {%- endif -%}
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
@@ -51,6 +74,7 @@
   </div>
 
   <script>
+    // Theme toggle
     document.querySelector('.theme-toggle').addEventListener('click', function() {
       var root = document.documentElement;
       var current = root.getAttribute('data-theme');
@@ -66,5 +90,42 @@
       root.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
     });
+
+    // Language toggle
+    (function() {
+      var btn = document.querySelector('.lang-toggle');
+      if (!btn) return;
+
+      function updateManifestoLink(lang) {
+        var itLink = document.querySelector('.manifesto-link-it');
+        var enLink = document.querySelector('.manifesto-link-en');
+        if (itLink) itLink.style.display = (lang === 'it') ? '' : 'none';
+        if (enLink) enLink.style.display = (lang === 'en') ? '' : 'none';
+      }
+
+      // Initialize manifesto link based on current lang
+      var currentLang = document.documentElement.getAttribute('data-lang') || 'it';
+      updateManifestoLink(currentLang);
+
+      btn.addEventListener('click', function() {
+        var root = document.documentElement;
+        var cur = root.getAttribute('data-lang') || 'it';
+        var next = cur === 'it' ? 'en' : 'it';
+        root.setAttribute('data-lang', next);
+        localStorage.setItem('lang', next);
+
+        var translationUrl = btn.getAttribute('data-translation-url');
+        if (translationUrl) {
+          // On a post page with a translation: navigate to it
+          window.location.href = translationUrl;
+        } else {
+          // On home or a post without translation: filter in place
+          updateManifestoLink(next);
+          if (typeof filterPostsByLang === 'function') {
+            filterPostsByLang(next);
+          }
+        }
+      });
+    })();
   </script>
 </header>

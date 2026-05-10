@@ -1,25 +1,25 @@
 ---
 layout: post
-title: Il disegno intelligente
-seo_title: "Modello Gray-Scott e morfogenesi: la matematica dell'emergenza"
+title: Intelligent Design
+seo_title: "Gray-Scott model and morphogenesis: the mathematics of emergence"
 date: 2026-01-13 10:00:00 +0100
 categories: [complexity, filosofia, math]
 tags: [gray-scott, turing, emergenza, chaos-theory]
-description: "Tutto è troppo perfetto, o forse no"
+description: "Everything is too perfect — or maybe not"
 pixel_icon: "disegno_intelligente.png"
 smooth_image: true
-lang: it
+lang: en
 ref: intelligent-design
 ---
 
-Ho disegnato un esperimento che si può fare in pochi minuti su uno schermo.
+I've designed an experiment you can run in a few minutes on a screen.
 
-Prendi due sostanze virtuali, chiamale **U** e **V**. Dai loro due regole semplicissime:
+Take two virtual substances, call them **U** and **V**. Give them two very simple rules:
 
-1.  **V** consuma **U** per riprodursi.
-2.  Entrambe si diffondono nello spazio, ma **U** più velocemente di **V**.
+1.  **V** consumes **U** to reproduce.
+2.  Both diffuse through space, but **U** faster than **V**.
 
-Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
+Press play. Wait a few thousand iterations (it's quick).
 
 <link rel="stylesheet" href="/assets/css/widgets.css">
 
@@ -28,7 +28,7 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
         <!-- Left: Canvas -->
         <div class="flex-1 p-4 bg-gray-900 flex flex-col items-center justify-center border-b lg:border-b-0 lg:border-r border-gray-700">
             <canvas id="gs-canvas" width="600" height="600" class="rounded shadow-lg cursor-crosshair touch-none w-full max-w-[400px] aspect-square"></canvas>
-            <p class="text-sm text-gray-400 mt-2">Clicca per aggiungere perturbazioni</p>
+            <p class="text-sm text-gray-400 mt-2">Click to add perturbations</p>
         </div>
 
         <!-- Right: Controls -->
@@ -36,7 +36,7 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
             
             <!-- Iteration -->
             <div class="bg-gray-700/50 p-3 rounded border border-gray-600">
-                <p class="text-lg font-mono">Iterazione: <span id="gs-iteration">0</span></p>
+                <p class="text-lg font-mono">Iteration: <span id="gs-iteration">0</span></p>
             </div>
 
             <!-- Buttons -->
@@ -50,14 +50,14 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
             <div class="bg-gray-700/50 p-3 rounded border border-gray-600">
                 <label class="flex items-center gap-2 cursor-pointer">
                     <input type="checkbox" id="gs-check-perturbation" checked class="w-4 h-4 rounded text-blue-600 bg-gray-700 border-gray-500">
-                    <span class="text-sm">Perturbazione iniziale al centro</span>
+                    <span class="text-sm">Initial perturbation at center</span>
                 </label>
-                <p class="text-xs text-gray-400 mt-1">Disattiva per partire con tela vuota.</p>
+                <p class="text-xs text-gray-400 mt-1">Disable to start with blank canvas.</p>
             </div>
 
             <!-- Steps Slider -->
             <div class="bg-gray-700/50 p-3 rounded border border-gray-600">
-                <label class="block text-sm mb-2">Passi per frame: <span id="gs-val-steps">20</span></label>
+                <label class="block text-sm mb-2">Steps per frame: <span id="gs-val-steps">20</span></label>
                 <input type="range" id="gs-slider-steps" min="1" max="100" value="20" class="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer">
             </div>
 
@@ -80,7 +80,7 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
 
             <!-- Legend -->
             <div class="bg-gray-700/50 p-3 rounded border border-gray-600">
-                <p class="text-xs font-semibold mb-2 text-gray-400">Legenda (concentrazione V):</p>
+                <p class="text-xs font-semibold mb-2 text-gray-400">Legend (concentration of V):</p>
                 <div class="h-4 rounded w-full" style="background: linear-gradient(to right, #000004, #280b54, #65156e, #9f2a63, #d44842, #f57d15, #fac127, #fcffa4);"></div>
                 <div class="flex justify-between text-xs mt-1 text-gray-400">
                     <span>0</span><span>max</span>
@@ -102,7 +102,6 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
         const height = 200;
         const scale = 3;
     
-        // Stato
         let stepsPerFrame = 20;
         let f = 0.055;
         let k = 0.062;
@@ -114,28 +113,25 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
         let animationId;
         let currentPreset = 'mitosis';
 
-        // Buffer
         let U = new Float32Array(width * height);
         let V = new Float32Array(width * height);
         let nextU = new Float32Array(width * height);
         let nextV = new Float32Array(width * height);
 
-        // Palette
         const infernoColors = [
           [0, 0, 4], [40, 11, 84], [101, 21, 110], [159, 42, 99],
           [212, 72, 66], [245, 125, 21], [250, 193, 39], [252, 255, 164]
         ];
 
         const presets = {
-            mitosis: { f: 0.055, k: 0.062, name: 'Mitosi' },
-            coral: { f: 0.062, k: 0.063, name: 'Corallo' },
-            fingerprint: { f: 0.037, k: 0.06, name: 'Impronte' },
-            spots: { f: 0.03, k: 0.062, name: 'Macchie' },
-            waves: { f: 0.014, k: 0.054, name: 'Onde' },
-            maze: { f: 0.029, k: 0.057, name: 'Labirinto' },
+            mitosis: { f: 0.055, k: 0.062, name: 'Mitosis' },
+            coral: { f: 0.062, k: 0.063, name: 'Coral' },
+            fingerprint: { f: 0.037, k: 0.06, name: 'Fingerprints' },
+            spots: { f: 0.03, k: 0.062, name: 'Spots' },
+            waves: { f: 0.014, k: 0.054, name: 'Waves' },
+            maze: { f: 0.029, k: 0.057, name: 'Maze' },
         };
 
-        // --- CORE ---
         function interpolateColor(t) {
           t = Math.max(0, Math.min(1, t));
           const idx = t * (infernoColors.length - 1);
@@ -224,7 +220,6 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
             let tempV = V; V = nextV; nextV = tempV;
         }
 
-        // --- RENDERING ---
         const tempCanvas = document.createElement('canvas');
         tempCanvas.width = width;
         tempCanvas.height = height;
@@ -259,7 +254,6 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
             animationId = requestAnimationFrame(loop);
         }
 
-        // --- UI & EVENTS ---
         const ui = {
             iteration: document.getElementById('gs-iteration'),
             btnPlay: document.getElementById('gs-btn-play'),
@@ -281,12 +275,10 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
             ui.valF.innerText = f.toFixed(3);
             ui.valK.innerText = k.toFixed(3);
             
-            // Update sliders if changed programmatically (e.g. presets)
             if (document.activeElement !== ui.sliderF) ui.sliderF.value = f;
             if (document.activeElement !== ui.sliderK) ui.sliderK.value = k;
         }
 
-        // Presets Buttons
         ui.presetsContainer.innerHTML = '';
         Object.entries(presets).forEach(([key, p]) => {
             const btn = document.createElement('button');
@@ -319,7 +311,7 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
         highlightPreset('mitosis');
 
         function updatePlayButton() {
-            ui.btnPlay.innerText = isPlaying ? "⏸ Pausa" : "▶ Play";
+            ui.btnPlay.innerText = isPlaying ? "⏸ Pause" : "▶ Play";
             ui.btnPlay.className = isPlaying 
                 ? "flex-1 py-2 px-4 rounded font-bold transition bg-yellow-600 hover:bg-yellow-500 text-white"
                 : "flex-1 py-2 px-4 rounded font-bold transition bg-green-600 hover:bg-green-500 text-white";
@@ -371,7 +363,6 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
             updateUI();
         };
 
-        // Canvas Interaction
         function handleInput(e) {
             const rect = canvas.getBoundingClientRect();
             const scaleX = width / rect.width;
@@ -394,7 +385,6 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
         canvas.addEventListener('touchstart', (e) => { e.preventDefault(); isDrawing = true; handleInput(e); }, {passive: false});
         canvas.addEventListener('touchmove', (e) => { e.preventDefault(); if(isDrawing) handleInput(e); }, {passive: false});
 
-        // Init
         reset(true);
     }
 
@@ -407,118 +397,118 @@ Premi play. Aspetta qualche migliaio di iterazioni (è veloce).
 </script>
 {% endraw %}
 
-Dal nulla emergono macchie, strisce, labirinti, strutture che si dividono come cellule. Pattern che sembrano progettati da un artista, o copiati dalla pelle di un leopardo, dalle conchiglie marine, dalle impronte digitali.
+From nothing, spots emerge, stripes, labyrinths, structures that divide like cells. Patterns that look designed by an artist, or copied from a leopard's skin, from seashells, from fingerprints.
 
-Chi li ha disegnati? **Nessuno.**
+Who drew them? **Nobody.**
 
-Nessuno li ha programmati. Sono *emersi*.
+Nobody programmed them. They *emerged*.
 
-## Il sistema Gray-Scott
+## The Gray-Scott System
 
-Le equazioni sembrano complesse, ma sono quasi banali:
+The equations look complex, but are almost trivial:
 
 $\dfrac{\partial u}{\partial t} = D_u \nabla^2 u - uv^2 + F(1-u)$
 
-$\dfrac{\partial v}{\partial t} = D_v \nabla^2 v + uv^2 - (F + k)v$ 
+$\dfrac{\partial v}{\partial t} = D_v \nabla^2 v + uv^2 - (F + k)v$ 
 
-Matematicamente, il sistema Gray-Scott descrive come due quantità cambiano nel tempo e nello spazio.
+Mathematically, the Gray-Scott system describes how two quantities change in time and space.
 
-# **Il Modello Matematico del Gray-Scott**
+# **The Gray-Scott Mathematical Model**
 
-Matematicamente, il sistema Gray-Scott descrive come **due quantità cambiano nel tempo e nello spazio**.
+Mathematically, the Gray-Scott system describes how **two quantities change in time and space**.
 
-Immagina due sostanze chimiche, $u$ e $v$, su una griglia (come i pixel di un'immagine). Le equazioni calcolano, per ogni istante $t$, tre azioni principali che avvengono simultaneamente:
+Imagine two chemical substances, $u$ and $v$, on a grid (like the pixels of an image). The equations calculate, at each instant $t$, three main actions happening simultaneously:
 
-### **1\. Diffusione (Il movimento)**
+### **1\. Diffusion (The movement)**
 
-Entrambe le sostanze tendono a spandersi, muovendosi da zone dove sono concentrate a zone dove ce n'è meno (come una goccia di colorante nell'acqua).
+Both substances tend to spread, moving from zones where they are concentrated to zones where there is less (like a drop of colourant in water).
 
-* Matematicamente, questo è il **Laplaciano** ($\nabla^2$).  
-* La sostanza $u$ si diffonde più velocemente di $v$. Questa differenza di velocità è cruciale per creare i disegni.
+* Mathematically, this is the **Laplacian** ($\nabla^2$).  
+* Substance $u$ diffuses faster than $v$. This speed difference is crucial for creating the patterns.
 
-### **2\. Reazione (La trasformazione)**
+### **2\. Reaction (The transformation)**
 
-Qui avviene la "magia". È un processo non lineare dove la sostanza $v$ "mangia" la sostanza $u$ per riprodursi.
+Here the "magic" happens. It's a non-linear process where substance $v$ "eats" substance $u$ to reproduce.
 
-* La formula specifica è $uv^2$.  
-* Significa: serve una particella di $u$ e due di $v$ per creare ancora più $v$. Più $v$ c'è, più velocemente consuma $u$.
+* The specific formula is $uv^2$.  
+* Meaning: it takes one particle of $u$ and two of $v$ to create more $v$. The more $v$ there is, the faster it consumes $u$.
 
-### **3\. Equilibrio (Feed e Kill)**
+### **3\. Balance (Feed and Kill)**
 
-Per evitare che la reazione finisca subito, il sistema ha due "rubinetti" di controllo (parametri):
+To prevent the reaction from ending immediately, the system has two "control taps" (parameters):
 
-* **Feed (**$f$**):** Aggiunge costantemente nuova sostanza $u$ (cibo).  
-* **Kill (**$k$**):** Rimuove costantemente una parte di $v$ (morte naturale).
+* **Feed (**$f$**):** Constantly adds new substance $u$ (food).  
+* **Kill (**$k$**):** Constantly removes a portion of $v$ (natural death).
 
-### **In sintesi:**
+### **In summary:**
 
-Senza entrare nel calcolo avanzato, la logica è questa:
+Without going into advanced calculus, the logic is this:
 
-$$\text{Cambio di } u = (\text{Si diffonde}) - (\text{Viene mangiata da } v) + (\text{Rifornimento } f)$$
+$$\text{Change in } u = (\text{Diffuses}) - (\text{Eaten by } v) + (\text{Feed supply } f)$$
 
-$$\text{Cambio di } v = (\text{Si diffonde}) + (\text{Nasce mangiando } u) - (\text{Rimozione } k)$$
+$$\text{Change in } v = (\text{Diffuses}) + (\text{Born by eating } u) - (\text{Removal } k)$$
 
-Basta cambiare di pochissimo i valori numerici di $f$ (rifornimento) e $k$ (rimozione) per passare matematicamente dal creare macchie (come un ghepardo) a strisce (come una zebra).
+Just changing the numerical values of $f$ (feed) and $k$ (kill) by a tiny amount is mathematically enough to go from creating spots (like a cheetah) to stripes (like a zebra).
 <br>
 <br>
-Eppure, da questo sistema minimale nascono pattern di una varietà stupefacente. Cambiando leggermente i parametri $f$ (feed) e $k$ (kill), ottieni strutture completamente diverse: punti che si moltiplicano come batteri, onde che pulsano, labirinti che si intrecciano, coralli che crescono.
+Yet from this minimal system arise patterns of breathtaking variety. By slightly changing parameters $f$ (feed) and $k$ (kill), you get completely different structures: dots that multiply like bacteria, pulsing waves, interlocking labyrinths, growing corals.
 
-La domanda sorge spontanea: **chi ha progettato questi pattern?**
+The question arises spontaneously: **who designed these patterns?**
 
-La risposta è: nessuno. O meglio: la matematica stessa, le proprietà intrinseche dello spazio e del tempo, le conseguenze inevitabili di regole semplici applicate ripetutamente.
+The answer is: nobody. Or rather: mathematics itself, the intrinsic properties of space and time, the inevitable consequences of simple rules applied repeatedly.
 
-## L’argomento del “disegno intelligente”
+## The argument for "intelligent design"
 
-I sostenitori del disegno intelligente (*Intelligent Design*) partono da un’osservazione corretta: la natura è piena di strutture incredibilmente complesse. L’occhio umano, il flagello batterico, i pattern sulle ali delle farfalle.
+Supporters of Intelligent Design start from a correct observation: nature is full of incredibly complex structures. The human eye, the bacterial flagellum, the patterns on butterfly wings.
 
-Da questa osservazione traggono una conclusione: tale complessità non può essere emersa spontaneamente. Deve esserci stato un progettista, un’intelligenza che ha disegnato queste strutture.
+From this observation they draw a conclusion: such complexity cannot have arisen spontaneously. There must have been a designer, an intelligence that drew these structures.
 
-L’argomento ha un nome tecnico: **“complessità irriducibile”**. L’idea è che certi sistemi siano così intricati, così finemente calibrati, che rimuovendo un singolo componente smetterebbero di funzionare. E quindi, sostengono, non possono essere emersi gradualmente: devono essere stati creati tutti insieme, in un atto di progettazione consapevole.
+The argument has a technical name: **"irreducible complexity"**. The idea is that certain systems are so intricate, so finely calibrated, that removing a single component would cause them to stop functioning. And therefore, they argue, they could not have arisen gradually: they must have been created all at once, in an act of conscious design.
 
-È un argomento seducente. Ha l’eleganza della semplicità: vedo complessità, quindi deduco un creatore.
+It's a seductive argument. It has the elegance of simplicity: I see complexity, therefore I deduce a creator.
 
-Ma c’è un problema fondamentale.
+But there's a fundamental problem.
 
-L’argomento del disegno intelligente si basa sulla assunzione implicita che esistano solo due possibilità:
-1.  **Caso puro** (caos, rumore, disordine)
-2.  **Progettazione intelligente** (un creatore con un piano)
+The intelligent design argument rests on the implicit assumption that only two possibilities exist:
+1.  **Pure chance** (chaos, noise, disorder)
+2.  **Intelligent design** (a creator with a plan)
 
-Se la complessità non può nascere dal caso, deve esserci un progettista.
+If complexity cannot arise from chance, there must be a designer.
 
-Ma questa è una falsa dicotomia. Esiste una terza via, e il sistema Gray-Scott ce la mostra con chiarezza cristallina: **l’emergenza**.
+But this is a false dichotomy. There is a third way, and the Gray-Scott system shows it with crystal clarity: **emergence**.
 
-## La Terza Via
+## The Third Way
 
-L’emergenza è quel fenomeno per cui sistemi con regole semplici, iterati nel tempo, producono comportamenti complessi che non erano “contenuti” nelle regole stesse. Nessuno, guardando le due equazioni di Gray-Scott, potrebbe prevedere i pattern che ne emergono. Eppure quei pattern sono conseguenze necessarie delle equazioni.
+Emergence is that phenomenon by which systems with simple rules, iterated over time, produce complex behaviours that were not "contained" in the rules themselves. Nobody, looking at the two Gray-Scott equations, could predict the patterns that emerge from them. And yet those patterns are necessary consequences of the equations.
 
-Certo, se i parametri fossero variati di pochissimo, ad esempio, il Carbonio non avrebbe potuto esistere. Ma questo non vuol dire che non si sarebbe creata una struttura altrettanto complessa. Ci sono molte combinazioni di $f$ e $k$ che portano comunque ad un pattern.
+Sure, if the parameters had varied by the tiniest amount — for example, Carbon might not have been able to exist. But that doesn't mean a structure equally complex wouldn't have formed. There are many combinations of $f$ and $k$ that still lead to a pattern.
 
-Magari non assomiglia a una cellula, magari assomiglia a un labirinto o a un corallo. L’errore sta nel pensare che l’universo sia stato calibrato per produrre *esattamente* noi (o il carbonio).
+Maybe it wouldn't look like a cell, maybe it would look like a labyrinth or a coral. The mistake lies in thinking that the universe was calibrated to produce *exactly* us (or carbon).
 
-La verità che ci insegna il sistema Gray-Scott è che **la complessità è robusta**: non serve "centrare" un parametro miracoloso per ottenere struttura. L’ordine emerge in molteplici regioni dello spazio delle possibilità. Noi siamo semplicemente i figli della regione in cui siamo capitati, non i destinatari predestinati di un piano.
+The truth that the Gray-Scott system teaches us is that **complexity is robust**: you don't need to "nail" a miraculous parameter to obtain structure. Order emerges in multiple regions of the space of possibilities. We are simply the children of the region we happened to land in — not the predestined recipients of a plan.
 
-Come scriveva Douglas Adams (l’autore della più bella trilogia in cinque parti mai prodotta):
+As Douglas Adams wrote (the author of the most beautiful five-part trilogy ever produced):
 
-> «Immaginate una pozzanghera che si sveglia una mattina e pensa: “Che mondo interessante è questo in cui mi trovo, non è vero? Un buco interessante, vero? Mi si adatta piuttosto bene, non vi pare? In effetti, mi si adatta in modo talmente perfetto che deve essere stato fatto su misura per me!”»
+> «Imagine a puddle waking up one morning and thinking, "This is an interesting world I find myself in — an interesting hole I find myself in — fits me rather neatly, doesn't it? In fact it fits me staggeringly well, must have been made to have me in it!"»
 
-Non c’è caso. Non c’è progetto. **C’è matematica.**
+There is no chance. There is no design. **There is mathematics.**
 
-## Turing e la morfogenesi
+## Turing and morphogenesis
 
-Nel 1952, Alan Turing — sì, lo stesso Turing della macchina di Turing e della decifrazione di Enigma — pubblicò un paper rivoluzionario intitolato *“The Chemical Basis of Morphogenesis”*.
+In 1952, Alan Turing — yes, the same Turing of the Turing machine and the breaking of Enigma — published a revolutionary paper titled *"The Chemical Basis of Morphogenesis"*.
 
-Turing dimostrò matematicamente che se hai due sostanze (un “attivatore” e un “inibitore”) che diffondono a velocità diverse, l’equilibrio uniforme diventa instabile. Piccole fluttuazioni casuali vengono amplificate invece che smorzate. E il sistema “precipita” spontaneamente in configurazioni strutturate.
+Turing demonstrated mathematically that if you have two substances (an "activator" and an "inhibitor") diffusing at different speeds, the uniform equilibrium becomes unstable. Small random fluctuations are amplified rather than dampened. And the system "falls" spontaneously into structured configurations.
 
-Sessant’anni dopo, i biologi hanno trovato esattamente questi meccanismi in azione: nelle strisce delle zebre, nelle dita delle mani, nella disposizione dei follicoli piliferi.
+Sixty years later, biologists found exactly these mechanisms in action: in zebra stripes, in the fingers of hands, in the arrangement of hair follicles.
 
-La natura usa lo stesso trucco del nostro modello Gray-Scott. Non perché qualcuno l’abbia programmata così, ma perché è una conseguenza matematica inevitabile di come funzionano reazione e diffusione.
+Nature uses the same trick as our Gray-Scott model. Not because someone programmed it that way, but because it is a mathematically inevitable consequence of how reaction and diffusion work.
 
-## Diventare adulti
+## Growing up
 
-C’è qualcosa di profondamente umiliante — e al tempo stesso liberatorio — in questa prospettiva.
+There's something profoundly humbling — and at the same time liberating — about this perspective.
 
-**Umiliante**, perché dissolve l’illusione che la complessità richieda un creatore superiore, che tutto sa e tutto può, sostanzialmente quello che pensano i bambini di 5 anni del loro padre. I pattern che vediamo in natura non sono “per” qualcosa, non sono stati pensati da nessuno. Sono semplicemente ciò che accade quando certe condizioni sono soddisfatte.
+**Humbling**, because it dissolves the illusion that complexity requires a superior creator, who knows all and can do all, which is essentially what 5-year-old children think about their fathers. The patterns we see in nature aren't "for" anything, weren't thought up by anyone. They are simply what happens when certain conditions are satisfied.
 
-**Liberatorio**, perché ci mostra che l’universo è più ricco di quanto la dicotomia caso/progetto suggerisca. Non siamo costretti a scegliere tra il nichilismo del caos e il comfort di un progettista benevolo. Esiste una terza opzione: un universo dove la struttura emerge spontaneamente, dove la complessità è una proprietà naturale della materia organizzata.
+**Liberating**, because it shows us that the universe is richer than the chance/design dichotomy suggests. We are not forced to choose between the nihilism of chaos and the comfort of a benevolent designer. There is a third option: a universe where structure emerges spontaneously, where complexity is a natural property of organised matter.
 
-E, a mio parere, questa opzione è più meravigliosa di entrambe le alternative.
+And, in my opinion, this option is more wonderful than both alternatives.
