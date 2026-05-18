@@ -14,6 +14,12 @@ ref: tagliatelle
 
 Come credo si sia capito: mi piace cucinare. Perché? Potrei fare tutto un discorso sulla cucina come chimica applicata, ma la realtà è che mi piace mangiare. *That's it.*
 
+---
+<br>
+<img src="/assets/tagliatelle.jpeg" alt="Tagliatelle" style="border-radius: 16px; width: 100%;" />
+
+---
+
 ## INGREDIENTI E DOSI
 
 Uova e farina.
@@ -30,7 +36,10 @@ Da qui si è capito che l'ideale è un mix di farine. Da ragionamenti sulla reol
 
 Ora le uova: mediamente un uovo (50 g) ha il 75% di peso in acqua. L'idratazione ideale è intorno al 30-35%. Quindi basta fare il peso delle uova × 2 e abbiamo il peso del mix di farina da aggiungere.
 
+<details markdown="1">
+  <summary>Nerdate un po' chimiche</summary>
 Le farine commerciali hanno un'umidità residua fisiologica (circa il 12-14%). Su 100 g di farina (mix), ci sono già circa 13 g di acqua. Aggiungendo un uovo medio da 50 g (costituito al 75% da acqua), inseriamo altri 37,5 g di liquidi. Arriviamo a un totale di circa 50,5 g di acqua su 150 g di massa complessiva. Questo genera un'idratazione assoluta del **33,6%**, posizionando il sistema esattamente al centro del range ottimale.
+</details>
 
 <!-- ==================== SIMULATORE REOLOGICO ==================== -->
 

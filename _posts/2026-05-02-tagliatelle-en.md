@@ -14,6 +14,12 @@ ref: tagliatelle
 
 As you might have guessed: I like to cook. Why? I could make a whole speech about cooking as applied chemistry, but the reality is that I like to eat. *That's it.*
 
+---
+<br>
+<img src="/assets/tagliatelle.jpeg" alt="Tagliatelle" style="border-radius: 16px; width: 100%;" />
+
+---
+
 ## INGREDIENTS AND DOSES
 
 Eggs and flour.
@@ -30,7 +36,10 @@ From this it is clear that the ideal is a mix of flours. Through reasoning on rh
 
 Now the eggs: on average an egg (50 g) is 75% water by weight. Ideal hydration is around 30-35%. So just do egg weight × 2 and we have the weight of the flour mix to add.
 
+<details markdown="1">
+  <summary>Some chemistry nerdiness</summary>
 Commercial flours have physiological residual moisture (around 12-14%). In 100 g of flour (mix), there is already about 13 g of water. By adding a medium 50 g egg (made up of 75% water), we introduce another 37.5 g of liquids. We reach a total of about 50.5 g of water for 150 g of total mass. This generates an absolute hydration of **33.6%**, positioning the system exactly in the middle of the optimal range.
+</details>
 
 <!-- ==================== RHEOLOGICAL SIMULATOR ==================== -->
 
