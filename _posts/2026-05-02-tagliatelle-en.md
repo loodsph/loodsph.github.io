@@ -212,7 +212,7 @@ Commercial flours have physiological residual moisture (around 12-14%). In 100 g
     opacity: 0.5;
 }
 #tagliatella-sim .ts-sweet-spot::after {
-    content: 'optimal';
+    content: '';
     position: absolute;
     top: -27px;
     transform: translateX(-50%);

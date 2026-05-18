@@ -212,7 +212,7 @@ Le farine commerciali hanno un'umidità residua fisiologica (circa il 12-14%). S
     opacity: 0.5;
 }
 #tagliatella-sim .ts-sweet-spot::after {
-    content: 'ottimale';
+    content: '';
     position: absolute;
     top: -27px;
     transform: translateX(-50%);
