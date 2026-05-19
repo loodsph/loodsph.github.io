@@ -191,9 +191,29 @@ a:visited {
   }
 
   @media (max-width: 600px) {
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 56px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    .site-title {
+      flex: 1;
+      min-width: 0;
+      padding-right: 8px;
+    }
+
     .site-nav {
-      background-color: var(--bg-color);
-      border-color: var(--border-color);
+      position: static !important;
+      border: none !important;
+      border-radius: 0;
+      background-color: transparent !important;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
       line-height: 1;
 
       .menu-icon > svg {
@@ -462,10 +482,9 @@ pre {
 
 @media (max-width: 600px) {
   .theme-toggle {
-    float: right;
+    float: none;
     height: 36px;
-    line-height: 36px;
-    margin-right: 36px;
+    margin-right: 0;
     padding: 0 4px;
   }
 }
@@ -528,10 +547,10 @@ pre {
 
 @media (max-width: 600px) {
   .lang-toggle {
-    float: right;
+    float: none;
     height: 36px;
     line-height: 36px;
-    margin-right: 80px;
+    margin-right: 0;
   }
 }
 
