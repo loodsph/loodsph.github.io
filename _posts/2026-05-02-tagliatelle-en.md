@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The science of tagliatelle"
+title: "The chemistry of tagliatelle"
 seo_title: "The science of tagliatelle: rheology and chemistry of the perfect dough"
 date: 2026-05-18
 categories: [cucina, scienza]

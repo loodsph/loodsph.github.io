@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "La scienza della tagliatella"
+title: "La chimica della tagliatella"
 seo_title: "La scienza della tagliatella: reologia e chimica dell'impasto perfetto"
 date: 2026-05-18
 categories: [cucina, scienza]
