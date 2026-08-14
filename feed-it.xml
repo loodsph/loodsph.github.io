@@ -1,0 +1,36 @@
+---
+layout: null
+feed_lang: it
+sitemap: false
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="it">
+  <generator uri="https://jekyllrb.com/" version="{{ jekyll.version }}">Jekyll</generator>
+  <link href="{{ page.url | absolute_url }}" rel="self" type="application/atom+xml" />
+  <link href="{{ '/' | absolute_url }}" rel="alternate" type="text/html" hreflang="it" />
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ page.url | absolute_url | xml_escape }}</id>
+  <title type="html">{{ site.title | smartify | xml_escape }} (Italiano)</title>
+  <subtitle>{{ site.description | strip_newlines | xml_escape }}</subtitle>
+  <author>
+    <name>{{ site.author | xml_escape }}</name>
+  </author>
+  {%- assign lang_posts = site.posts | where_exp: "p", "p.lang == page.feed_lang" -%}
+  {%- for post in lang_posts limit: 20 %}
+  <entry xml:lang="{{ page.feed_lang }}">
+    <title type="html">{{ post.display_title | default: post.title | smartify | strip_html | normalize_whitespace | xml_escape }}</title>
+    <link href="{{ post.url | absolute_url }}" rel="alternate" type="text/html" title="{{ post.display_title | default: post.title | xml_escape }}" />
+    <published>{{ post.date | date_to_xmlschema }}</published>
+    <updated>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</updated>
+    <id>{{ post.id | absolute_url | xml_escape }}</id>
+    <content type="html" xml:base="{{ post.url | absolute_url | xml_escape }}">{{ post.content | strip | xml_escape }}</content>
+    <author>
+      <name>{{ post.author | default: site.author | xml_escape }}</name>
+    </author>
+    {%- for category in post.categories %}
+    <category term="{{ category | xml_escape }}" />
+    {%- endfor %}
+    <summary type="html">{{ post.description | default: post.excerpt | strip_html | normalize_whitespace | xml_escape }}</summary>
+  </entry>
+  {%- endfor %}
+</feed>

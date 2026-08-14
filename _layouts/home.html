@@ -2,41 +2,36 @@
 layout: default
 ---
 
-<script>
-  // Eseguito immediatamente per prevenire FOUC (Flash of Unstyled Content)
-  var savedLang = localStorage.getItem('blog_lang') || 'it';
-  document.documentElement.setAttribute('data-active-lang', savedLang);
-</script>
-
 <style>
-  /* Nasconde tutti i post di default per far gestire la prima visualizzazione al CSS */
+  /* Nasconde tutti i post di default per far gestire la prima visualizzazione al CSS.
+     La lingua attiva è nell'attributo data-lang, impostato dallo script inline in head.html. */
   #post-list li { display: none; }
 
   /* Mostra i primi 4 post italiani (Default fallback se JS è inattivo) */
-  html:not([data-active-lang="en"]) #post-list li[data-lang="it"][data-lang-index="1"],
-  html:not([data-active-lang="en"]) #post-list li[data-lang="it"][data-lang-index="2"],
-  html:not([data-active-lang="en"]) #post-list li[data-lang="it"][data-lang-index="3"],
-  html:not([data-active-lang="en"]) #post-list li[data-lang="it"][data-lang-index="4"] { display: block; }
+  html:not([data-lang="en"]) #post-list li[data-lang="it"][data-lang-index="1"],
+  html:not([data-lang="en"]) #post-list li[data-lang="it"][data-lang-index="2"],
+  html:not([data-lang="en"]) #post-list li[data-lang="it"][data-lang-index="3"],
+  html:not([data-lang="en"]) #post-list li[data-lang="it"][data-lang-index="4"] { display: block; }
 
   /* Mostra i primi 4 post inglesi */
-  html[data-active-lang="en"] #post-list li[data-lang="en"][data-lang-index="1"],
-  html[data-active-lang="en"] #post-list li[data-lang="en"][data-lang-index="2"],
-  html[data-active-lang="en"] #post-list li[data-lang="en"][data-lang-index="3"],
-  html[data-active-lang="en"] #post-list li[data-lang="en"][data-lang-index="4"] { display: block; }
+  html[data-lang="en"] #post-list li[data-lang="en"][data-lang-index="1"],
+  html[data-lang="en"] #post-list li[data-lang="en"][data-lang-index="2"],
+  html[data-lang="en"] #post-list li[data-lang="en"][data-lang-index="3"],
+  html[data-lang="en"] #post-list li[data-lang="en"][data-lang-index="4"] { display: block; }
 
   /* Mostra post aggiuntivi caricati con JS */
   #post-list li.js-visible { display: block !important; }
 
   /* Testo del bottone "Load More" gestito via CSS */
-  html:not([data-active-lang="en"]) .lm-it { display: inline; }
-  html:not([data-active-lang="en"]) .lm-en { display: none; }
-  html[data-active-lang="en"] .lm-en { display: inline; }
-  html[data-active-lang="en"] .lm-it { display: none; }
+  html:not([data-lang="en"]) .lm-it { display: inline; }
+  html:not([data-lang="en"]) .lm-en { display: none; }
+  html[data-lang="en"] .lm-en { display: inline; }
+  html[data-lang="en"] .lm-it { display: none; }
 
   /* Subtitle language switching */
   .subtitle-en { display: none; }
-  html[data-active-lang="en"] .subtitle-it { display: none; }
-  html[data-active-lang="en"] .subtitle-en { display: inline; }
+  html[data-lang="en"] .subtitle-it { display: none; }
+  html[data-lang="en"] .subtitle-en { display: inline; }
 
   .post-item-wrapper {
     display: flex;
@@ -92,11 +87,11 @@ layout: default
         <div class="post-item-wrapper">
           {% if post.pixel_icon %}
             {% assign icon_url = '/assets/pixel_art/' | append: post.pixel_icon | relative_url %}
-            <img class="pixel-icon-wrapper" src="{{ icon_url }}?v={{ site.time | date: '%s' }}" alt="Icona" {% unless post.smooth_image %}style="image-rendering: pixelated;"{% endunless %}>
+            <img class="pixel-icon-wrapper" src="{{ icon_url }}" alt="Icona" {% unless post.smooth_image %}style="image-rendering: pixelated;"{% endunless %}>
           {% endif %}
           <div class="post-item-content">
             <span class="post-meta">{{ post.date | date: date_format }} &middot; {{ reading_time }} min</span>
-            <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+            <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.display_title | default: post.title | escape }}</a></h3>
             {%- if post.description -%}
               <p class="post-excerpt">{{ post.description }}</p>
             {%- endif -%}
@@ -118,7 +113,7 @@ layout: default
 <script>
 (function() {
   var PAGE_SIZE = 4;
-  var currentLang = document.documentElement.getAttribute('data-active-lang') || 'it';
+  var currentLang = document.documentElement.getAttribute('data-lang') || 'it';
   var postsShown = PAGE_SIZE; // CSS mostra i primi PAGE_SIZE inizialmente
 
   function getVisibleItems() {
@@ -128,10 +123,10 @@ layout: default
   function filterPostsByLang(lang) {
     currentLang = lang;
     postsShown = PAGE_SIZE;
-    
-    localStorage.setItem('blog_lang', lang);
-    document.documentElement.setAttribute('data-active-lang', lang);
-    
+
+    localStorage.setItem('lang', lang);
+    document.documentElement.setAttribute('data-lang', lang);
+
     // Nascondi eventuali post in eccesso espansi precedentemente
     document.querySelectorAll('#post-list li.js-visible').forEach(function(li) {
       li.classList.remove('js-visible');

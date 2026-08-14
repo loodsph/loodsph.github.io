@@ -545,6 +545,10 @@ pre {
   background-color: rgba(224, 122, 95, 0.12);
 }
 
+// Link Manifesto: mostra solo la versione nella lingua attiva
+:root:not([data-lang="en"]) .manifesto-link-en { display: none; }
+:root[data-lang="en"] .manifesto-link-it { display: none; }
+
 @media (max-width: 600px) {
   .lang-toggle {
     float: none;

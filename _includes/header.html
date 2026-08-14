@@ -58,8 +58,12 @@
           {%- assign manifesto_it = site.posts | where: "ref", "manifesto" | where: "lang", "it" | first -%}
           {%- assign manifesto_en = site.posts | where: "ref", "manifesto" | where: "lang", "en" | first -%}
           {%- if manifesto_it or manifesto_en -%}
-          <a class="page-link manifesto-link-it" href="{{ manifesto_it.url | relative_url }}" {% unless manifesto_it %}style="display:none"{% endunless %}>Manifesto</a>
-          <a class="page-link manifesto-link-en" href="{{ manifesto_en.url | relative_url }}" style="display:none">Manifesto</a>
+          {%- if manifesto_it -%}
+          <a class="page-link manifesto-link-it" href="{{ manifesto_it.url | relative_url }}">Manifesto</a>
+          {%- endif -%}
+          {%- if manifesto_en -%}
+          <a class="page-link manifesto-link-en" href="{{ manifesto_en.url | relative_url }}">Manifesto</a>
+          {%- endif -%}
           {%- endif -%}
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
@@ -96,17 +100,6 @@
       var btn = document.querySelector('.lang-toggle');
       if (!btn) return;
 
-      function updateManifestoLink(lang) {
-        var itLink = document.querySelector('.manifesto-link-it');
-        var enLink = document.querySelector('.manifesto-link-en');
-        if (itLink) itLink.style.display = (lang === 'it') ? '' : 'none';
-        if (enLink) enLink.style.display = (lang === 'en') ? '' : 'none';
-      }
-
-      // Initialize manifesto link based on current lang
-      var currentLang = document.documentElement.getAttribute('data-lang') || 'it';
-      updateManifestoLink(currentLang);
-
       btn.addEventListener('click', function() {
         var root = document.documentElement;
         var cur = root.getAttribute('data-lang') || 'it';
@@ -118,12 +111,9 @@
         if (translationUrl) {
           // On a post page with a translation: navigate to it
           window.location.href = translationUrl;
-        } else {
-          // On home or a post without translation: filter in place
-          updateManifestoLink(next);
-          if (typeof filterPostsByLang === 'function') {
-            filterPostsByLang(next);
-          }
+        } else if (typeof filterPostsByLang === 'function') {
+          // On home: filter posts in place
+          filterPostsByLang(next);
         }
       });
     })();
